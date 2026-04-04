@@ -22,14 +22,14 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <Image
-              src="/sja-logo.png"
+              src="/sja-logo-circle.png"
               alt="SJA Logo"
-              width={36}
-              height={36}
-              className="rounded-lg mix-blend-screen"
+              width={40}
+              height={40}
+              className="rounded-full"
+              unoptimized
             />
             <span className="text-lg font-bold">
-              SJA{" "}
               <span className="text-accent">Robotics</span>
             </span>
           </Link>

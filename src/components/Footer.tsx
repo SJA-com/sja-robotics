@@ -28,14 +28,14 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/sja-logo.png"
+                src="/sja-logo-circle.png"
                 alt="SJA Logo"
-                width={36}
-                height={36}
-                className="rounded-lg mix-blend-screen"
+                width={40}
+                height={40}
+                className="rounded-full"
               />
               <span className="text-lg font-bold">
-                SJA <span className="text-accent">Robotics</span>
+                <span className="text-accent">Robotics</span>
               </span>
             </div>
             <p className="text-foreground/50 text-sm leading-relaxed mb-4">
