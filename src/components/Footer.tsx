@@ -13,11 +13,9 @@ const footerLinks = {
     { label: "Careers", href: "#contact" },
     { label: "Contact", href: "#contact" },
   ],
-  Ecosystem: [
-    { label: "SJA Hospitals", href: "#" },
-    { label: "SJA Education", href: "#" },
-    { label: "SJA Tech", href: "#" },
-    { label: "SJA Finance", href: "#" },
+  Divisions: [
+    { label: "SJA Tech", href: "#divisions" },
+    { label: "SJA AI", href: "#divisions" },
   ],
 };
 
@@ -29,9 +27,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-2 flex items-center justify-center font-bold text-white text-sm">
-                SJA
-              </div>
+              <img
+                src="/sja-logo.png"
+                alt="SJA Logo"
+                width={36}
+                height={36}
+                className="rounded-lg mix-blend-screen"
+              />
               <span className="text-lg font-bold">
                 SJA <span className="text-accent">Robotics</span>
               </span>
@@ -39,7 +41,7 @@ export default function Footer() {
             <p className="text-foreground/50 text-sm leading-relaxed mb-4">
               Empowering everyday life through intelligent, automated solutions.
             </p>
-            <p className="text-accent/60 text-xs font-mono">ai.sja.com</p>
+            <p className="text-accent/60 text-xs font-mono">robotics.sja.com</p>
           </div>
 
           {/* Link Columns */}

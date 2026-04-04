@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
   { href: "#about", label: "About" },
+  { href: "#divisions", label: "Divisions" },
   { href: "#products", label: "Products" },
   { href: "#vision", label: "Vision" },
   { href: "#contact", label: "Contact" },
@@ -19,9 +21,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-2 flex items-center justify-center font-bold text-white text-sm">
-              SJA
-            </div>
+            <Image
+              src="/sja-logo.png"
+              alt="SJA Logo"
+              width={36}
+              height={36}
+              className="rounded-lg mix-blend-screen"
+            />
             <span className="text-lg font-bold">
               SJA{" "}
               <span className="text-accent">Robotics</span>
