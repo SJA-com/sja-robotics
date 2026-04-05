@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SJA Robotics | Empowering Everyday Life Through Automation",
+  title: "Robotics | Empowering Everyday Life Through Automation",
   description:
     "SJA Robotics is at the forefront of integrating AI and automation into everyday devices. Discover Atiana, Sueen, and our suite of intelligent products.",
   keywords: [
