@@ -30,8 +30,20 @@ const atianaVariants = [
 
 export default function Vision() {
   return (
-    <section id="vision" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="vision" className="py-24 relative bg-radar overflow-hidden">
+      {/* Radar/scan background accents */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/8 rounded-full blur-[150px]" />
+        {/* Crosshair lines */}
+        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
+        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-accent-2/15 to-transparent" />
+        {/* Corner brackets */}
+        <div className="absolute top-12 left-12 w-8 h-8 border-t border-l border-accent/20 rounded-tl" />
+        <div className="absolute top-12 right-12 w-8 h-8 border-t border-r border-accent-2/20 rounded-tr" />
+        <div className="absolute bottom-12 left-12 w-8 h-8 border-b border-l border-accent-3/20 rounded-bl" />
+        <div className="absolute bottom-12 right-12 w-8 h-8 border-b border-r border-accent/20 rounded-br" />
+      </div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-accent text-sm font-mono mb-3 tracking-wider uppercase">

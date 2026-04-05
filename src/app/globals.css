@@ -93,3 +93,64 @@ html {
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
+
+/* Section backgrounds */
+
+/* Hero - Circuit board pattern */
+.bg-circuit {
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.25) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(99, 102, 241, 0.25) 1px, transparent 1px),
+    linear-gradient(rgba(59, 130, 246, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.12) 1px, transparent 1px);
+  background-size: 40px 40px, 40px 40px, 80px 80px, 80px 80px;
+}
+
+/* About - Neural network nodes */
+.bg-neural {
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(129, 140, 248, 0.08) 0px, transparent 60%),
+    radial-gradient(circle at 20% 70%, rgba(59, 130, 246, 0.12) 2px, transparent 2px),
+    radial-gradient(circle at 80% 30%, rgba(99, 102, 241, 0.12) 2px, transparent 2px),
+    radial-gradient(circle at 40% 40%, rgba(129, 140, 248, 0.12) 2px, transparent 2px),
+    radial-gradient(circle at 60% 60%, rgba(59, 130, 246, 0.12) 2px, transparent 2px),
+    radial-gradient(circle at 30% 90%, rgba(99, 102, 241, 0.12) 2px, transparent 2px),
+    radial-gradient(circle at 70% 10%, rgba(129, 140, 248, 0.12) 2px, transparent 2px);
+  background-size:
+    100% 100%, 100% 100%, 100% 100%,
+    120px 120px, 150px 150px, 100px 100px, 130px 130px, 110px 110px, 140px 140px;
+}
+
+/* Divisions - Hexagonal tech grid */
+.bg-hextech {
+  background-image:
+    linear-gradient(30deg, rgba(99, 102, 241, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(99, 102, 241, 0.08) 87.5%, rgba(99, 102, 241, 0.08)),
+    linear-gradient(150deg, rgba(99, 102, 241, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(99, 102, 241, 0.08) 87.5%, rgba(99, 102, 241, 0.08)),
+    linear-gradient(30deg, rgba(99, 102, 241, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(99, 102, 241, 0.08) 87.5%, rgba(99, 102, 241, 0.08)),
+    linear-gradient(150deg, rgba(99, 102, 241, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(99, 102, 241, 0.08) 87.5%, rgba(99, 102, 241, 0.08)),
+    linear-gradient(60deg, rgba(129, 140, 248, 0.08) 25%, transparent 25.5%, transparent 75%, rgba(129, 140, 248, 0.08) 75%, rgba(129, 140, 248, 0.08)),
+    linear-gradient(60deg, rgba(129, 140, 248, 0.08) 25%, transparent 25.5%, transparent 75%, rgba(129, 140, 248, 0.08) 75%, rgba(129, 140, 248, 0.08));
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+/* Products - Data stream / matrix dots */
+.bg-datastream {
+  background-image:
+    radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px),
+    radial-gradient(circle, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+    linear-gradient(180deg, transparent 0%, rgba(59, 130, 246, 0.06) 50%, transparent 100%);
+  background-size: 30px 30px, 50px 50px, 100% 100%;
+  background-position: 0 0, 15px 15px, 0 0;
+}
+
+/* Vision - Radiating concentric circles (radar/scan) */
+.bg-radar {
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 0%, transparent 20%, rgba(59, 130, 246, 0.06) 20.5%, transparent 21.5%, transparent 40%, rgba(99, 102, 241, 0.06) 40.5%, transparent 41.5%, transparent 60%, rgba(129, 140, 248, 0.06) 60.5%, transparent 61.5%, transparent 80%, rgba(59, 130, 246, 0.06) 80.5%, transparent 81.5%),
+    linear-gradient(0deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+}

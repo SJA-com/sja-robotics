@@ -396,8 +396,17 @@ export default function Products() {
   const regular = products.filter((p) => !p.flagship && !p.featured);
 
   return (
-    <section id="products" className="py-24 relative grid-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="products" className="py-24 relative bg-datastream overflow-hidden">
+      {/* Data stream background accents */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent-2/10 rounded-full blur-[100px]" />
+        {/* Vertical data streams */}
+        <div className="absolute top-0 left-[15%] w-px h-full bg-gradient-to-b from-transparent via-accent/15 to-transparent" />
+        <div className="absolute top-0 left-[45%] w-px h-full bg-gradient-to-b from-transparent via-accent-2/15 to-transparent" />
+        <div className="absolute top-0 left-[75%] w-px h-full bg-gradient-to-b from-transparent via-accent-3/15 to-transparent" />
+      </div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-accent text-sm font-mono mb-3 tracking-wider uppercase">
             Our Products

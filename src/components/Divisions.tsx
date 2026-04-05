@@ -37,8 +37,14 @@ const divisions = [
 
 export default function Divisions() {
   return (
-    <section id="divisions" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="divisions" className="py-24 relative bg-hextech overflow-hidden">
+      {/* Hexagonal tech background accents */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-2/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-10 w-48 h-48 bg-accent-3/10 rounded-full blur-3xl" />
+      </div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-accent text-sm font-mono mb-3 tracking-wider uppercase">
             Our Divisions
