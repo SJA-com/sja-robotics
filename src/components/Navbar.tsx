@@ -7,8 +7,9 @@ import Link from "next/link";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#divisions", label: "Divisions" },
-  { href: "#products", label: "Products" },
-  { href: "#vision", label: "Vision" },
+  // { href: "/divisions/sja-tech", label: "Tech" }, // Uncomment when needed
+  { href: "/divisions/sja-ai", label: "AI" },
+  { href: "/divisions/sja-autonomous", label: "Autonomous" },
   { href: "#contact", label: "Contact" },
 ];
 

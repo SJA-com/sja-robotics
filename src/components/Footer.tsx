@@ -1,21 +1,26 @@
 const footerLinks = {
-  Products: [
-    { label: "Atiana Robot", href: "#products" },
-    { label: "Sueen Drone", href: "#products" },
-    { label: "Smart Scale", href: "#products" },
-    { label: "Smart Bell", href: "#products" },
-    { label: "Smart Kitchen", href: "#products" },
-    { label: "Health Monitoring", href: "#products" },
+  // "SJA Tech": [ // Uncomment when needed
+  //   { label: "Smart Scale", href: "/products/weighing-scale" },
+  //   { label: "Smart Bell", href: "/products/smart-bell" },
+  //   { label: "Smart Kitchen", href: "/products/smart-kitchen" },
+  //   { label: "Home Security", href: "/products/home-security" },
+  //   { label: "Health Monitoring", href: "/products/health-monitoring" },
+  // ],
+  "SJA AI": [
+    { label: "Voice Agent", href: "/divisions/sja-ai" },
+    { label: "Faiya", href: "/divisions/sja-ai" },
+    { label: "Companion", href: "/divisions/sja-ai" },
+    // { label: "AI Factory Auditor", href: "/divisions/sja-ai" }, // Uncomment when needed
+  ],
+  "SJA Autonomous": [
+    { label: "Atiana Robot", href: "/products/atiana" },
+    { label: "Sueen Drone", href: "/products/sueen" },
   ],
   Company: [
     { label: "About", href: "#about" },
-    { label: "Vision", href: "#vision" },
+    { label: "Divisions", href: "#divisions" },
     { label: "Careers", href: "#contact" },
     { label: "Contact", href: "#contact" },
-  ],
-  Divisions: [
-    { label: "SJA Tech", href: "#divisions" },
-    { label: "SJA AI", href: "#divisions" },
   ],
 };
 
