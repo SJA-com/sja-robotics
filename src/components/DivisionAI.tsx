@@ -108,6 +108,7 @@ const voicePricing = [
 
 import Fari from "@/components/Fari";
 import Mari from "@/components/Mari";
+import MoussFeatures from "@/components/MoussFeatures";
 
 /* ─── Component ─── */
 
@@ -389,7 +390,12 @@ export default function DivisionAI() {
             </p>
           </div>
         </div>
+      </div>
 
+      {/* ─── WHAT MAKES MOUSS DIFFERENT — Full-width breakout ─── */}
+      <MoussFeatures />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ─── PRODUCT 2: SJA COMPANION — merged into Fari (uncomment when needed) ─── */}
         {/* Full SJA Companion section preserved in git history */}
 
