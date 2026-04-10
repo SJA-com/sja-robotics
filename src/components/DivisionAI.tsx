@@ -151,8 +151,8 @@ export default function DivisionAI() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               {
-                name: "SJA Voice Agent",
-                tagline: "AI phone agents for businesses",
+                name: "AFRIA",
+                tagline: "Autonomous Fluent Response Intelligence Agent",
                 badge: "Coming Soon",
                 icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z",
               },
@@ -232,16 +232,19 @@ export default function DivisionAI() {
           </div>
         </div>
 
-        {/* ─── PRODUCT 1: SJA VOICE AGENT ─── */}
+        {/* ─── PRODUCT 1: AFRIA ─── */}
         <div className="mb-24">
           <div className="text-center mb-10">
             <p className="text-accent-2 text-xs font-mono mb-2 tracking-wider uppercase">
               Product 01
             </p>
             <h3 className="text-3xl sm:text-4xl font-bold mb-2">
-              SJA <span className="text-accent-2">Voice Agent</span>
+              <span className="text-accent-2">AFRIA</span>
             </h3>
-            <p className="text-accent-2/60 text-sm font-mono mb-4">
+            <p className="text-accent-2/60 text-sm font-mono mb-3">
+              Autonomous Fluent Response Intelligence Agent
+            </p>
+            <p className="text-lg font-semibold text-foreground/90 mb-3">
               Give Your Business a Voice
             </p>
             <span className="inline-flex px-3 py-1 rounded-full bg-accent-2/10 text-accent-2 text-[10px] font-mono tracking-wider mb-4">

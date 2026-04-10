@@ -47,8 +47,8 @@ const divisions = [
     bgColor: "bg-accent-2/5",
     highlights: [
       {
-        name: "AI Voice Agent Platform",
-        detail: "Deploy AI voice agents for any business — no coding needed",
+        name: "AFRIA",
+        detail: "AI voice agent platform — deploy in minutes, no coding needed",
         badge: "Coming Soon",
       },
       {
