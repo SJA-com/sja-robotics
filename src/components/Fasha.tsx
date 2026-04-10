@@ -240,61 +240,6 @@ export default function Fasha() {
         </div>
 
         {/* ═══════════════════════════════════════════
-            FASHA → ATIANA CONNECTION
-            ═══════════════════════════════════════════ */}
-        <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3">
-              The Brain Behind{" "}
-              <span className="text-amber-400">Atiana</span>
-            </h3>
-            <p className="text-foreground/50 text-sm max-w-xl mx-auto">
-              Fasha is the brain and intelligence powering Atiana —
-              Automated Technology for Intelligent Assistance, Navigation, and
-              Action. When Atiana launches, Fasha is what makes her think,
-              speak, decide, and act.
-            </p>
-          </div>
-
-          {/* Visual connection: Fasha → Atiana */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-0">
-            {/* Fasha (Software) */}
-            <div className="rounded-xl bg-gradient-to-br from-amber-400/10 to-amber-600/5 border border-amber-400/20 px-8 py-6 text-center w-full sm:w-auto sm:min-w-[200px]">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center mx-auto mb-3 shadow-[0_0_30px_rgba(251,191,36,0.2)]">
-                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <p className="text-lg font-bold text-amber-400">Fasha</p>
-              <p className="text-xs text-foreground/40 font-mono">SOFTWARE / AI</p>
-            </div>
-
-            {/* Arrow connector */}
-            <div className="flex items-center gap-2 py-4 sm:px-6">
-              <div className="w-8 h-px bg-gradient-to-r from-amber-400/40 to-amber-400/80 hidden sm:block" />
-              <div className="flex flex-col items-center gap-1">
-                <svg className="w-5 h-5 text-amber-400 rotate-90 sm:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-                <span className="text-[9px] font-mono text-amber-400/60 tracking-wider">POWERS</span>
-              </div>
-              <div className="w-8 h-px bg-gradient-to-r from-amber-400/80 to-amber-400/40 hidden sm:block" />
-            </div>
-
-            {/* Atiana (Hardware) */}
-            <div className="rounded-xl bg-gradient-to-br from-emerald-400/10 to-teal-500/5 border border-emerald-400/20 px-8 py-6 text-center w-full sm:w-auto sm:min-w-[200px]">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto mb-3 shadow-[0_0_30px_rgba(52,211,153,0.15)]">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                </svg>
-              </div>
-              <p className="text-lg font-bold text-emerald-400">Atiana</p>
-              <p className="text-xs text-foreground/40 font-mono">HARDWARE / ROBOT</p>
-            </div>
-          </div>
-        </div>
-
-        {/* ═══════════════════════════════════════════
             MOST POWERFUL AI COMPANION
             ═══════════════════════════════════════════ */}
         <div className="mb-20">
