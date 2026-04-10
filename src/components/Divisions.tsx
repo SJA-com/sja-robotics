@@ -53,7 +53,7 @@ const divisions = [
       },
       {
         name: "Faiya",
-        detail: "Bilingual Arabic-English AI companion for the Arab world",
+        detail: "Multilingual AI companion — your Rafiq for life",
         badge: "Coming Soon",
       },
       {

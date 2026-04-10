@@ -68,8 +68,8 @@ const modes = [
 
 const differentiators = [
   {
-    text: "Bilingual Arabic + English",
-    detail: "switches instantly",
+    text: "Multilingual",
+    detail: "Arabic + English first, more languages coming",
     icon: "M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129",
   },
   {
@@ -88,8 +88,8 @@ const differentiators = [
     icon: "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z",
   },
   {
-    text: "Built for Arab world",
-    detail: "understands the culture",
+    text: "Built for the world",
+    detail: "culturally aware, globally available",
     icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9",
   },
   {
@@ -164,8 +164,8 @@ export default function Faiya() {
             COMING SOON
           </span>
           <p className="text-foreground/60 max-w-2xl mx-auto text-lg leading-relaxed">
-            SJA&apos;s bilingual Arabic-English AI companion — the first AI built
-            specifically for the Arab world. Not a generic assistant. Faiya is
+            SJA&apos;s multilingual AI companion — starting with Arabic and English,
+            expanding to every language. Not a generic assistant. Faiya is
             your Rafiq (companion) for life — with specialized modes, permanent
             memory, and a warm personality that feels like a trusted friend.
           </p>
@@ -253,8 +253,8 @@ export default function Faiya() {
             <span className="text-amber-400">Different</span>
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-10 max-w-lg mx-auto">
-            Built from the ground up for the Arab world — not a translation of
-            something else
+            Built from the ground up to be truly personal — not a translation of
+            something generic
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {differentiators.map((item) => (
