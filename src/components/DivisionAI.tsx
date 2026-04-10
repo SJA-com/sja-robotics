@@ -73,6 +73,7 @@ const voicePricing = [
 
 import Fari from "@/components/Fari";
 import Mari from "@/components/Mari";
+import MariGenZ from "@/components/MariGenZ";
 import MoussFeatures from "@/components/MoussFeatures";
 
 /* ─── Component ─── */
@@ -357,6 +358,9 @@ export default function DivisionAI() {
           <Mari />
         </div>
       </section>
+
+      {/* ─── WHY GEN Z LOVES MARI ─── */}
+      <MariGenZ />
     </div>
   );
 }
