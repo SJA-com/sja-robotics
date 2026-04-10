@@ -47,16 +47,16 @@ const divisions = [
     bgColor: "bg-accent-2/5",
     highlights: [
       {
-        name: "AFRIA",
+        name: "Moussa",
         detail: "AI voice agent platform — deploy in minutes, no coding needed",
         badge: "Coming Soon",
       },
       {
-        name: "Faiya",
+        name: "Fasha",
         detail: "Multilingual AI companion — your Rafiq for life",
         badge: "Coming Soon",
       },
-      // SJA Companion — merged into Faiya (uncomment when needed)
+      // SJA Companion — merged into Fasha (uncomment when needed)
       // {
       //   name: "SJA Companion",
       //   detail: "A personal AI that remembers everything about you — forever",

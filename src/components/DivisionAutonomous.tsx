@@ -173,12 +173,15 @@ export default function DivisionAutonomous() {
               Automated Technology for Intelligent Assistance, Navigation, and
               Action
             </p>
-            <p className="text-foreground/60 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-foreground/60 leading-relaxed mb-4 max-w-2xl">
               Atiana is a revolutionary robot designed to perform a wide variety
               of tasks, making it suitable for households, medical facilities,
               and even military applications. It embodies the future of
               intelligent robotics, with capabilities that exceed current
               limitations in the field.
+            </p>
+            <p className="text-emerald-400/70 text-sm font-semibold mb-8">
+              Powered by Fasha — SJA&apos;s AI brain
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
@@ -289,13 +292,21 @@ export default function DivisionAutonomous() {
             <p className="text-emerald-400/70 text-sm font-mono mb-4">
               Smart Utility Efficient Errand Navigator
             </p>
-            <p className="text-foreground/60 text-sm leading-relaxed mb-8 max-w-2xl">
+            <p className="text-foreground/60 text-sm leading-relaxed mb-4 max-w-2xl">
               Sueen is a state-of-the-art drone designed by SJA Robotics to
               assist with everyday household tasks, seamlessly integrating into
               modern smart homes. Equipped with advanced AI, Sueen performs a
               variety of simple yet essential tasks, such as delivering items
               around the house — handing over a glass of water, delivering milk,
               or transporting small objects from one room to another.
+            </p>
+            <p className="text-emerald-400/70 text-sm font-semibold mb-4">
+              Powered by Fasha — SJA&apos;s AI brain gives Sueen intelligent
+              navigation, face and voice recognition, and object handling. Same
+              intelligence. Different form.
+            </p>
+            <p className="text-foreground/40 text-xs font-mono mb-8">
+              Part of the SJA Autonomous division
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">

@@ -70,7 +70,7 @@ const capabilities = [
   {
     name: "Reasoning & Analysis",
     description:
-      "Deep thinking, complex problem solving, logical analysis, strategic planning — Faiya reasons through anything you throw at her",
+      "Deep thinking, complex problem solving, logical analysis, strategic planning — Fasha reasons through anything you throw at her",
     icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
     color: "text-violet-400",
     bg: "bg-violet-400/10",
@@ -86,7 +86,7 @@ const capabilities = [
   {
     name: "Creative & Writing",
     description:
-      "Stories, content, ideas, essays, marketing copy, poetry — Faiya creates with soul, not just algorithms",
+      "Stories, content, ideas, essays, marketing copy, poetry — Fasha creates with soul, not just algorithms",
     icon: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z",
     color: "text-rose-400",
     bg: "bg-rose-400/10",
@@ -94,7 +94,7 @@ const capabilities = [
   {
     name: "Knowledge & Research",
     description:
-      "Real-time information, facts, deep research, academic analysis — Faiya finds and synthesizes knowledge from everywhere",
+      "Real-time information, facts, deep research, academic analysis — Fasha finds and synthesizes knowledge from everywhere",
     icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
     color: "text-sky-400",
     bg: "bg-sky-400/10",
@@ -140,13 +140,13 @@ const differentiators = [
 ];
 
 const comparisonRows = [
-  { feature: "Permanent Memory", claude: "Limited", chatgpt: "Limited", deepseek: false, faiya: "Forever" },
-  { feature: "Arabic First", claude: false, chatgpt: false, deepseek: false, faiya: true },
-  { feature: "5 Specialized Modes", claude: false, chatgpt: false, deepseek: false, faiya: true },
-  { feature: "Voice + Chat", claude: false, chatgpt: "Partial", deepseek: false, faiya: "Full" },
-  { feature: "Powers a Robot", claude: false, chatgpt: false, deepseek: false, faiya: "Atiana" },
-  { feature: "Culturally Aware", claude: false, chatgpt: false, deepseek: false, faiya: true },
-  { feature: "Truly Personal", claude: false, chatgpt: false, deepseek: false, faiya: true },
+  { feature: "Permanent Memory", claude: "Limited", chatgpt: "Limited", deepseek: false, fasha: "Forever" },
+  { feature: "Arabic First", claude: false, chatgpt: false, deepseek: false, fasha: true },
+  { feature: "5 Specialized Modes", claude: false, chatgpt: false, deepseek: false, fasha: true },
+  { feature: "Voice + Chat", claude: false, chatgpt: "Partial", deepseek: false, fasha: "Full" },
+  { feature: "Powers a Robot", claude: false, chatgpt: false, deepseek: false, fasha: "Atiana" },
+  { feature: "Culturally Aware", claude: false, chatgpt: false, deepseek: false, fasha: true },
+  { feature: "Truly Personal", claude: false, chatgpt: false, deepseek: false, fasha: true },
 ];
 
 function ComparisonCell({ value }: { value: boolean | string }) {
@@ -172,28 +172,28 @@ const pricing = [
     name: "Personal",
     price: "$9.99",
     period: "/month",
-    description: "Faiya all to yourself — your personal Rafiq",
+    description: "Fasha all to yourself — your personal Rafiq",
     highlight: false,
   },
   {
     name: "Family",
     price: "$19.99",
     period: "/month",
-    description: "Up to 5 family members — each with their own Faiya",
+    description: "Up to 5 family members — each with their own Fasha",
     highlight: true,
   },
   {
     name: "Lifetime",
     price: "$299",
     period: " one-time",
-    description: "Pay once — Faiya is yours for life",
+    description: "Pay once — Fasha is yours for life",
     highlight: false,
   },
 ];
 
-export default function Faiya() {
+export default function Fasha() {
   return (
-    <section className="py-24 relative bg-faiya overflow-hidden">
+    <section className="py-24 relative bg-fasha overflow-hidden">
       {/* Premium dark background with gold accents */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-amber-500/4 rounded-full blur-[180px]" />
@@ -219,11 +219,11 @@ export default function Faiya() {
           </p>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-3">
             <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
-              FAIYA
+              FASHA
             </span>
           </h2>
           <p className="text-amber-400/60 text-sm font-mono mb-5 tracking-wide">
-            Futuristic Artificial Intelligence Your Assistant
+            Futuristic Artificial Superintelligent Holistic Agent
           </p>
           <p className="text-xl sm:text-2xl font-semibold text-foreground/90 mb-3">
             Every Intelligence. One Companion. Your Life.
@@ -233,14 +233,14 @@ export default function Faiya() {
           </span>
           <p className="text-foreground/60 max-w-2xl mx-auto text-lg leading-relaxed">
             SJA&apos;s multilingual AI companion — starting with Arabic and English,
-            expanding to every language. Not a generic assistant. Faiya is
+            expanding to every language. Not a generic assistant. Fasha is
             your Rafiq (companion) for life — with specialized modes, permanent
             memory, and a warm personality that feels like a trusted friend.
           </p>
         </div>
 
         {/* ═══════════════════════════════════════════
-            FAIYA → ATIANA CONNECTION
+            FASHA → ATIANA CONNECTION
             ═══════════════════════════════════════════ */}
         <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
           <div className="text-center mb-8">
@@ -249,22 +249,23 @@ export default function Faiya() {
               <span className="text-amber-400">Atiana</span>
             </h3>
             <p className="text-foreground/50 text-sm max-w-xl mx-auto">
-              Faiya is the intelligence that will power Atiana — SJA&apos;s
-              humanoid robot. When Atiana launches, Faiya is what makes her
-              think, speak, decide, and act.
+              Fasha is the brain and intelligence powering Atiana —
+              Automated Technology for Intelligent Assistance, Navigation, and
+              Action. When Atiana launches, Fasha is what makes her think,
+              speak, decide, and act.
             </p>
           </div>
 
-          {/* Visual connection: Faiya → Atiana */}
+          {/* Visual connection: Fasha → Atiana */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-0">
-            {/* Faiya (Software) */}
+            {/* Fasha (Software) */}
             <div className="rounded-xl bg-gradient-to-br from-amber-400/10 to-amber-600/5 border border-amber-400/20 px-8 py-6 text-center w-full sm:w-auto sm:min-w-[200px]">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center mx-auto mb-3 shadow-[0_0_30px_rgba(251,191,36,0.2)]">
                 <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <p className="text-lg font-bold text-amber-400">Faiya</p>
+              <p className="text-lg font-bold text-amber-400">Fasha</p>
               <p className="text-xs text-foreground/40 font-mono">SOFTWARE / AI</p>
             </div>
 
@@ -303,7 +304,7 @@ export default function Faiya() {
               <span className="text-amber-400">Ever Built</span>
             </h3>
             <p className="text-foreground/60 max-w-2xl mx-auto leading-relaxed">
-              Faiya combines the best capabilities of the world&apos;s leading AI
+              Fasha combines the best capabilities of the world&apos;s leading AI
               systems into one unified companion. She doesn&apos;t just use one AI —
               she intelligently routes every request to the best possible
               intelligence available.
@@ -344,7 +345,7 @@ export default function Faiya() {
           {/* Bold statement */}
           <div className="text-center">
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto italic leading-relaxed">
-              &ldquo;Faiya is not built to replace Claude, ChatGPT, or DeepSeek —
+              &ldquo;Fasha is not built to replace Claude, ChatGPT, or DeepSeek —
               she is built to be{" "}
               <span className="text-amber-400 font-semibold not-italic">
                 better than all of them combined
@@ -355,23 +356,23 @@ export default function Faiya() {
         </div>
 
         {/* ═══════════════════════════════════════════
-            ARCHITECTURE — HOW FAIYA WORKS
+            ARCHITECTURE — HOW FASHA WORKS
             ═══════════════════════════════════════════ */}
         <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
           <div className="text-center mb-10">
             <h3 className="text-2xl sm:text-3xl font-bold mb-3">
-              How Faiya{" "}
+              How Fasha{" "}
               <span className="text-amber-400">Works</span>
             </h3>
             <p className="text-foreground/50 text-sm max-w-xl mx-auto">
-              You don&apos;t need to choose between AIs. Faiya uses all of them —
+              You don&apos;t need to choose between AIs. Fasha uses all of them —
               and picks the best one for you, every time.
             </p>
           </div>
 
           {/* Architecture visual */}
           <div className="max-w-3xl mx-auto">
-            {/* FAIYA — top node */}
+            {/* FASHA — top node */}
             <div className="flex justify-center mb-6">
               <div className="rounded-xl bg-gradient-to-r from-amber-400/15 to-amber-500/10 border-2 border-amber-400/30 px-8 py-4 text-center shadow-[0_0_40px_rgba(251,191,36,0.08)]">
                 <div className="flex items-center justify-center gap-2 mb-1">
@@ -381,7 +382,7 @@ export default function Faiya() {
                     </svg>
                   </div>
                   <span className="text-xl font-bold bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
-                    FAIYA
+                    FASHA
                   </span>
                 </div>
                 <p className="text-[10px] font-mono text-amber-400/50 tracking-wider">
@@ -479,7 +480,7 @@ export default function Faiya() {
                   Custom SJA Layer
                 </p>
                 <p className="text-[10px] font-mono text-foreground/40 tracking-wider">
-                  WHAT MAKES FAIYA UNIQUELY FAIYA
+                  WHAT MAKES FASHA UNIQUELY FASHA
                 </p>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -519,7 +520,7 @@ export default function Faiya() {
 
           {/* Pitch line */}
           <p className="text-center text-foreground/50 text-sm mt-8 max-w-lg mx-auto">
-            If any single AI improves or a new one launches, Faiya just adds it.
+            If any single AI improves or a new one launches, Fasha just adds it.
             Your experience stays the same — only better.
           </p>
         </div>
@@ -529,11 +530,11 @@ export default function Faiya() {
             ═══════════════════════════════════════════ */}
         <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-6 sm:p-10 mb-20 overflow-x-auto">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
-            Why Faiya is{" "}
+            Why Fasha is{" "}
             <span className="text-amber-400">Different</span>
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-8 max-w-lg mx-auto">
-            A side-by-side look at what sets Faiya apart from every other AI
+            A side-by-side look at what sets Fasha apart from every other AI
           </p>
           <div className="min-w-[500px]">
             <table className="w-full">
@@ -552,7 +553,7 @@ export default function Faiya() {
                     DeepSeek
                   </th>
                   <th className="text-center text-sm font-bold text-amber-400 py-3 pl-3">
-                    Faiya
+                    Fasha
                   </th>
                 </tr>
               </thead>
@@ -576,7 +577,7 @@ export default function Faiya() {
                     </td>
                     <td className="text-center py-3.5 pl-3">
                       <div className="text-amber-400 font-semibold">
-                        <ComparisonCell value={row.faiya} />
+                        <ComparisonCell value={row.fasha} />
                       </div>
                     </td>
                   </tr>
@@ -595,7 +596,7 @@ export default function Faiya() {
             <span className="text-amber-400">Modes</span>
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-10 max-w-lg mx-auto">
-            Not just a chatbot — Faiya transforms into what you need, when you
+            Not just a chatbot — Fasha transforms into what you need, when you
             need it
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -664,7 +665,7 @@ export default function Faiya() {
             ═══════════════════════════════════════════ */}
         <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
-            What Makes Faiya{" "}
+            What Makes Fasha{" "}
             <span className="text-amber-400">Unstoppable</span>
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-10 max-w-lg mx-auto">
@@ -778,11 +779,104 @@ export default function Faiya() {
         </div>
 
         {/* ═══════════════════════════════════════════
+            FASHA POWERS EVERYTHING
+            ═══════════════════════════════════════════ */}
+        <div className="rounded-2xl bg-[#07090f] border-2 border-amber-400/20 p-8 sm:p-12 mb-12 shadow-[0_0_60px_rgba(251,191,36,0.04)]">
+          <div className="text-center mb-10">
+            <h3 className="text-3xl sm:text-4xl font-bold mb-3">
+              One Brain.{" "}
+              <span className="text-amber-400">Three Forms.</span>
+            </h3>
+            <p className="text-foreground/50 text-sm max-w-lg mx-auto">
+              Fasha is the intelligence behind every SJA product
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-6 mb-10">
+            {/* Fasha on Devices */}
+            <div className="rounded-xl bg-[#0a0c14] border border-amber-400/15 p-7 hover:border-amber-400/30 transition-all group text-center">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center mx-auto mb-5 shadow-[0_0_30px_rgba(251,191,36,0.2)] group-hover:shadow-[0_0_40px_rgba(251,191,36,0.3)] transition-shadow">
+                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h4 className="text-lg font-bold mb-1">Fasha on Your Devices</h4>
+              <p className="text-amber-400/50 text-xs font-mono mb-3">
+                PERSONAL COMPANION
+              </p>
+              <p className="text-foreground/50 text-sm leading-relaxed">
+                Your personal AI companion — voice + chat, permanent memory,
+                5 modes, Arabic + English
+              </p>
+            </div>
+
+            {/* Fasha inside Atiana */}
+            <div className="rounded-xl bg-[#0a0c14] border border-emerald-400/15 p-7 hover:border-emerald-400/30 transition-all group text-center">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto mb-5 shadow-[0_0_30px_rgba(52,211,153,0.15)] group-hover:shadow-[0_0_40px_rgba(52,211,153,0.25)] transition-shadow">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
+              </div>
+              <h4 className="text-lg font-bold mb-1">Fasha inside Atiana</h4>
+              <p className="text-emerald-400/50 text-xs font-mono mb-3">
+                HUMANOID ROBOT
+              </p>
+              <p className="text-foreground/50 text-sm leading-relaxed">
+                The brain of SJA&apos;s humanoid robot — thinks, speaks, decides,
+                acts autonomously
+              </p>
+            </div>
+
+            {/* Fasha inside Sueen */}
+            <div className="rounded-xl bg-[#0a0c14] border border-sky-400/15 p-7 hover:border-sky-400/30 transition-all group text-center">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center mx-auto mb-5 shadow-[0_0_30px_rgba(56,189,248,0.15)] group-hover:shadow-[0_0_40px_rgba(56,189,248,0.25)] transition-shadow">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              </div>
+              <h4 className="text-lg font-bold mb-1">Fasha inside Sueen</h4>
+              <p className="text-sky-400/50 text-xs font-mono mb-3">
+                HOUSEHOLD DRONE
+              </p>
+              <p className="text-foreground/50 text-sm leading-relaxed">
+                Powers the household drone — navigation, face recognition,
+                voice commands, object handling
+              </p>
+            </div>
+          </div>
+
+          {/* Tagline + CTA */}
+          <div className="text-center">
+            <p className="text-lg sm:text-xl font-semibold text-foreground/80 mb-6">
+              Fasha —{" "}
+              <span className="text-amber-400">One Intelligence</span>. Every
+              Device. Your World.
+            </p>
+            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(251,191,36,0.25)]">
+              Join Waitlist
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* ═══════════════════════════════════════════
             CLOSING
             ═══════════════════════════════════════════ */}
         <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-10 text-center">
           <p className="text-lg sm:text-xl font-semibold text-foreground/90 mb-3 leading-relaxed">
-            Faiya is not just an AI — she is your{" "}
+            Fasha is not just an AI — she is your{" "}
             <span className="text-amber-400">companion for life</span>.
             <br />
             <span className="text-foreground/60">
@@ -790,7 +884,7 @@ export default function Faiya() {
             </span>
           </p>
           <p className="text-foreground/40 text-sm">
-            Currently in development. Faiya will power Atiana — SJA&apos;s
+            Currently in development. Fasha will power Atiana — SJA&apos;s
             humanoid robot — when it launches.
           </p>
         </div>

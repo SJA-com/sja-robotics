@@ -7,10 +7,8 @@ const footerLinks = {
   //   { label: "Health Monitoring", href: "/products/health-monitoring" },
   // ],
   "SJA AI": [
-    { label: "AFRIA", href: "/divisions/sja-ai" },
-    { label: "Faiya", href: "/divisions/sja-ai" },
-    // { label: "Companion", href: "/divisions/sja-ai" }, // Merged into Faiya
-    // { label: "AI Factory Auditor", href: "/divisions/sja-ai" }, // Uncomment when needed
+    { label: "Moussa", href: "/divisions/sja-ai" },
+    { label: "Fasha", href: "/divisions/sja-ai" },
   ],
   "SJA Autonomous": [
     { label: "Atiana Robot", href: "/products/atiana" },
