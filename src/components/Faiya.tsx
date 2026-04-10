@@ -66,6 +66,41 @@ const modes = [
   },
 ];
 
+const capabilities = [
+  {
+    name: "Reasoning & Analysis",
+    description:
+      "Deep thinking, complex problem solving, logical analysis, strategic planning — Faiya reasons through anything you throw at her",
+    icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
+    color: "text-violet-400",
+    bg: "bg-violet-400/10",
+  },
+  {
+    name: "Coding & Technical",
+    description:
+      "Writes, debugs, and explains code in any language — from Python to Rust, frontend to backend, beginner to architect",
+    icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
+    color: "text-emerald-400",
+    bg: "bg-emerald-400/10",
+  },
+  {
+    name: "Creative & Writing",
+    description:
+      "Stories, content, ideas, essays, marketing copy, poetry — Faiya creates with soul, not just algorithms",
+    icon: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z",
+    color: "text-rose-400",
+    bg: "bg-rose-400/10",
+  },
+  {
+    name: "Knowledge & Research",
+    description:
+      "Real-time information, facts, deep research, academic analysis — Faiya finds and synthesizes knowledge from everywhere",
+    icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+    color: "text-sky-400",
+    bg: "bg-sky-400/10",
+  },
+];
+
 const differentiators = [
   {
     text: "Multilingual",
@@ -103,6 +138,34 @@ const differentiators = [
     icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z",
   },
 ];
+
+const comparisonRows = [
+  { feature: "Permanent Memory", claude: "Limited", chatgpt: "Limited", deepseek: false, faiya: "Forever" },
+  { feature: "Arabic First", claude: false, chatgpt: false, deepseek: false, faiya: true },
+  { feature: "5 Specialized Modes", claude: false, chatgpt: false, deepseek: false, faiya: true },
+  { feature: "Voice + Chat", claude: false, chatgpt: "Partial", deepseek: false, faiya: "Full" },
+  { feature: "Powers a Robot", claude: false, chatgpt: false, deepseek: false, faiya: "Atiana" },
+  { feature: "Culturally Aware", claude: false, chatgpt: false, deepseek: false, faiya: true },
+  { feature: "Truly Personal", claude: false, chatgpt: false, deepseek: false, faiya: true },
+];
+
+function ComparisonCell({ value }: { value: boolean | string }) {
+  if (value === false) {
+    return (
+      <svg className="w-5 h-5 text-red-400/60 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    );
+  }
+  if (value === true) {
+    return (
+      <svg className="w-5 h-5 text-amber-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+      </svg>
+    );
+  }
+  return <span className="text-xs font-medium">{value}</span>;
+}
 
 const pricing = [
   {
@@ -147,18 +210,23 @@ export default function Faiya() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
+        {/* ═══════════════════════════════════════════
+            SECTION HEADER
+            ═══════════════════════════════════════════ */}
+        <div className="text-center mb-20">
           <p className="text-amber-400 text-xs font-mono mb-2 tracking-wider uppercase">
-            Product 03
+            Product 02
           </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-3">
             <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
-              Faiya
+              FAIYA
             </span>
           </h2>
+          <p className="text-amber-400/60 text-sm font-mono mb-5 tracking-wide">
+            Futuristic Artificial Intelligence Your Assistant
+          </p>
           <p className="text-xl sm:text-2xl font-semibold text-foreground/90 mb-3">
-            Your AI. Your Life. Your Language.
+            Every Intelligence. One Companion. Your Life.
           </p>
           <span className="inline-flex px-3 py-1 rounded-full bg-amber-400/10 text-amber-400 text-[10px] font-mono tracking-wider mb-6">
             COMING SOON
@@ -169,13 +237,188 @@ export default function Faiya() {
             your Rafiq (companion) for life — with specialized modes, permanent
             memory, and a warm personality that feels like a trusted friend.
           </p>
-          <p className="text-amber-400/50 text-sm font-mono mt-4 max-w-xl mx-auto">
-            Faiya is also the intelligence that will power Atiana — SJA&apos;s
-            humanoid robot — when it launches.
-          </p>
         </div>
 
-        {/* ─── 5 MODES ─── */}
+        {/* ═══════════════════════════════════════════
+            FAIYA → ATIANA CONNECTION
+            ═══════════════════════════════════════════ */}
+        <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3">
+              The Brain Behind{" "}
+              <span className="text-amber-400">Atiana</span>
+            </h3>
+            <p className="text-foreground/50 text-sm max-w-xl mx-auto">
+              Faiya is the intelligence that will power Atiana — SJA&apos;s
+              humanoid robot. When Atiana launches, Faiya is what makes her
+              think, speak, decide, and act.
+            </p>
+          </div>
+
+          {/* Visual connection: Faiya → Atiana */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-0">
+            {/* Faiya (Software) */}
+            <div className="rounded-xl bg-gradient-to-br from-amber-400/10 to-amber-600/5 border border-amber-400/20 px-8 py-6 text-center w-full sm:w-auto sm:min-w-[200px]">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center mx-auto mb-3 shadow-[0_0_30px_rgba(251,191,36,0.2)]">
+                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <p className="text-lg font-bold text-amber-400">Faiya</p>
+              <p className="text-xs text-foreground/40 font-mono">SOFTWARE / AI</p>
+            </div>
+
+            {/* Arrow connector */}
+            <div className="flex items-center gap-2 py-4 sm:px-6">
+              <div className="w-8 h-px bg-gradient-to-r from-amber-400/40 to-amber-400/80 hidden sm:block" />
+              <div className="flex flex-col items-center gap-1">
+                <svg className="w-5 h-5 text-amber-400 rotate-90 sm:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                <span className="text-[9px] font-mono text-amber-400/60 tracking-wider">POWERS</span>
+              </div>
+              <div className="w-8 h-px bg-gradient-to-r from-amber-400/80 to-amber-400/40 hidden sm:block" />
+            </div>
+
+            {/* Atiana (Hardware) */}
+            <div className="rounded-xl bg-gradient-to-br from-emerald-400/10 to-teal-500/5 border border-emerald-400/20 px-8 py-6 text-center w-full sm:w-auto sm:min-w-[200px]">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto mb-3 shadow-[0_0_30px_rgba(52,211,153,0.15)]">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
+              </div>
+              <p className="text-lg font-bold text-emerald-400">Atiana</p>
+              <p className="text-xs text-foreground/40 font-mono">HARDWARE / ROBOT</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ═══════════════════════════════════════════
+            MOST POWERFUL AI COMPANION
+            ═══════════════════════════════════════════ */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+              The Most Powerful AI Companion{" "}
+              <span className="text-amber-400">Ever Built</span>
+            </h3>
+            <p className="text-foreground/60 max-w-2xl mx-auto leading-relaxed">
+              Faiya combines the best capabilities of the world&apos;s leading AI
+              systems into one unified companion. She doesn&apos;t just use one AI —
+              she intelligently routes every request to the best possible
+              intelligence available.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {capabilities.map((cap) => (
+              <div
+                key={cap.name}
+                className="rounded-xl bg-[#0a0c14] border border-amber-400/10 p-6 hover:border-amber-400/25 transition-all group"
+              >
+                <div
+                  className={`w-12 h-12 rounded-xl ${cap.bg} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform`}
+                >
+                  <svg
+                    className={`w-6 h-6 ${cap.color}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d={cap.icon}
+                    />
+                  </svg>
+                </div>
+                <h4 className="text-base font-bold mb-2">{cap.name}</h4>
+                <p className="text-foreground/50 text-sm leading-relaxed">
+                  {cap.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Bold statement */}
+          <div className="text-center">
+            <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto italic leading-relaxed">
+              &ldquo;Faiya is not built to replace Claude, ChatGPT, or DeepSeek —
+              she is built to be{" "}
+              <span className="text-amber-400 font-semibold not-italic">
+                better than all of them combined
+              </span>
+              , for you.&rdquo;
+            </p>
+          </div>
+        </div>
+
+        {/* ═══════════════════════════════════════════
+            COMPARISON TABLE
+            ═══════════════════════════════════════════ */}
+        <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-6 sm:p-10 mb-20 overflow-x-auto">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
+            Why Faiya is{" "}
+            <span className="text-amber-400">Different</span>
+          </h3>
+          <p className="text-foreground/50 text-sm text-center mb-8 max-w-lg mx-auto">
+            A side-by-side look at what sets Faiya apart from every other AI
+          </p>
+          <div className="min-w-[500px]">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-amber-400/10">
+                  <th className="text-left text-sm font-semibold text-foreground/70 py-3 pr-4">
+                    Feature
+                  </th>
+                  <th className="text-center text-sm font-medium text-foreground/40 py-3 px-3">
+                    Claude
+                  </th>
+                  <th className="text-center text-sm font-medium text-foreground/40 py-3 px-3">
+                    ChatGPT
+                  </th>
+                  <th className="text-center text-sm font-medium text-foreground/40 py-3 px-3">
+                    DeepSeek
+                  </th>
+                  <th className="text-center text-sm font-bold text-amber-400 py-3 pl-3">
+                    Faiya
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonRows.map((row) => (
+                  <tr
+                    key={row.feature}
+                    className="border-b border-amber-400/5 hover:bg-amber-400/[0.02] transition-colors"
+                  >
+                    <td className="text-sm font-medium text-foreground/70 py-3.5 pr-4">
+                      {row.feature}
+                    </td>
+                    <td className="text-center py-3.5 px-3 text-foreground/40">
+                      <ComparisonCell value={row.claude} />
+                    </td>
+                    <td className="text-center py-3.5 px-3 text-foreground/40">
+                      <ComparisonCell value={row.chatgpt} />
+                    </td>
+                    <td className="text-center py-3.5 px-3 text-foreground/40">
+                      <ComparisonCell value={row.deepseek} />
+                    </td>
+                    <td className="text-center py-3.5 pl-3">
+                      <div className="text-amber-400 font-semibold">
+                        <ComparisonCell value={row.faiya} />
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* ═══════════════════════════════════════════
+            5 MODES
+            ═══════════════════════════════════════════ */}
         <div className="mb-20">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
             5 Specialized{" "}
@@ -246,11 +489,13 @@ export default function Faiya() {
           </div>
         </div>
 
-        {/* ─── DIFFERENTIATORS ─── */}
+        {/* ═══════════════════════════════════════════
+            DIFFERENTIATORS
+            ═══════════════════════════════════════════ */}
         <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
             What Makes Faiya{" "}
-            <span className="text-amber-400">Different</span>
+            <span className="text-amber-400">Unstoppable</span>
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-10 max-w-lg mx-auto">
             Built from the ground up to be truly personal — not a translation of
@@ -288,7 +533,9 @@ export default function Faiya() {
           </div>
         </div>
 
-        {/* ─── PRICING ─── */}
+        {/* ═══════════════════════════════════════════
+            PRICING
+            ═══════════════════════════════════════════ */}
         <div className="text-center mb-10">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3">
             Choose Your{" "}
@@ -320,7 +567,9 @@ export default function Faiya() {
           ))}
         </div>
 
-        {/* ─── CTA ─── */}
+        {/* ═══════════════════════════════════════════
+            CTA
+            ═══════════════════════════════════════════ */}
         <div className="text-center mb-12">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
             <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(251,191,36,0.25)]">
@@ -358,7 +607,9 @@ export default function Faiya() {
           </div>
         </div>
 
-        {/* ─── CLOSING ─── */}
+        {/* ═══════════════════════════════════════════
+            CLOSING
+            ═══════════════════════════════════════════ */}
         <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-10 text-center">
           <p className="text-lg sm:text-xl font-semibold text-foreground/90 mb-3 leading-relaxed">
             Faiya is not just an AI — she is your{" "}

@@ -63,78 +63,10 @@ const voicePricing = [
   },
 ];
 
-/* ─── Companion Data ─── */
-
-const companionFeatures = [
-  {
-    title: "Permanent memory",
-    description:
-      "Remembers your preferences, history, goals, context — always",
-    icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
-    color: "text-violet-400",
-    bg: "bg-violet-400/10",
-  },
-  {
-    title: "Voice + Chat",
-    description: "Talk or type, your choice",
-    icon: "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z",
-    color: "text-sky-400",
-    bg: "bg-sky-400/10",
-  },
-  {
-    title: "Any device",
-    description: "Phone, tablet, laptop — seamless across all",
-    icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-    color: "text-emerald-400",
-    bg: "bg-emerald-400/10",
-  },
-  {
-    title: "Truly personal",
-    description: "Feels like YOUR AI — not a shared product",
-    icon: "M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z",
-    color: "text-amber-400",
-    bg: "bg-amber-400/10",
-  },
-  {
-    title: "Gets smarter",
-    description: "Learns you more deeply over time",
-    icon: "M13 10V3L4 14h7v7l9-11h-7z",
-    color: "text-rose-400",
-    bg: "bg-rose-400/10",
-  },
-  {
-    title: "Private",
-    description: "Your data belongs to you — only",
-    icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
-    color: "text-cyan-400",
-    bg: "bg-cyan-400/10",
-  },
-];
-
-const companionPricing = [
-  {
-    name: "Personal",
-    price: "$9.99",
-    period: "/month",
-    description: "Your own AI companion that grows with you every day",
-    highlight: false,
-  },
-  {
-    name: "Family",
-    price: "$19.99",
-    period: "/month",
-    description:
-      "A personal companion for every family member — each one unique",
-    highlight: true,
-  },
-  {
-    name: "Lifetime",
-    price: "$299",
-    period: " one-time",
-    description: "Pay once, keep your companion forever — the best value",
-    highlight: false,
-  },
-];
+// SJA Companion — merged into Faiya (uncomment when needed)
+// const companionFeatures = [ ... ];
+// const companionPricing = [ ... ];
+// Full companion data preserved in git history
 
 /* ─── AI Capabilities ─── */
 
@@ -224,12 +156,13 @@ export default function DivisionAI() {
                 badge: "Coming Soon",
                 icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z",
               },
-              {
-                name: "SJA Companion",
-                tagline: "Personal AI that remembers you forever",
-                badge: "Coming Soon",
-                icon: "M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z",
-              },
+              // SJA Companion — merged into Faiya (uncomment when needed)
+              // {
+              //   name: "SJA Companion",
+              //   tagline: "Personal AI that remembers you forever",
+              //   badge: "Coming Soon",
+              //   icon: "M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+              // },
               {
                 name: "Faiya",
                 tagline: "Multilingual AI companion — your Rafiq for life",
@@ -447,171 +380,12 @@ export default function DivisionAI() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="flex items-center gap-6 mb-24">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-          <div className="w-2 h-2 rounded-full bg-accent-2/50" />
-          <div className="w-2 h-2 rounded-full bg-accent-3/50" />
-          <div className="w-2 h-2 rounded-full bg-accent-2/50" />
-          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-border to-transparent" />
-        </div>
+        {/* ─── PRODUCT 2: SJA COMPANION — merged into Faiya (uncomment when needed) ─── */}
+        {/* Full SJA Companion section preserved in git history */}
 
-        {/* ─── PRODUCT 2: SJA COMPANION ─── */}
-        <div className="mb-24">
-          <div className="text-center mb-10">
-            <p className="text-accent-2 text-xs font-mono mb-2 tracking-wider uppercase">
-              Product 02
-            </p>
-            <h3 className="text-3xl sm:text-4xl font-bold mb-2">
-              SJA <span className="text-accent-2">Companion</span>
-            </h3>
-            <p className="text-accent-2/60 text-sm font-mono mb-4">
-              Your Personal AI — For Life
-            </p>
-            <span className="inline-flex px-3 py-1 rounded-full bg-accent-2/10 text-accent-2 text-[10px] font-mono tracking-wider mb-4">
-              COMING SOON
-            </span>
-            <p className="text-foreground/60 max-w-2xl mx-auto text-lg">
-              A voice and chat AI companion that remembers everything about you —
-              forever. No re-explaining. No starting over.
-            </p>
-          </div>
-
-          {/* Features Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {companionFeatures.map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-xl bg-surface border border-border p-6 hover:border-accent-2/30 transition-all"
-              >
-                <div
-                  className={`w-12 h-12 rounded-xl ${feature.bg} flex items-center justify-center mb-4`}
-                >
-                  <svg
-                    className={`w-6 h-6 ${feature.color}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d={feature.icon}
-                    />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-bold mb-1">{feature.title}</h4>
-                <p className="text-foreground/60 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Comparison Note */}
-          <div className="gradient-border rounded-2xl bg-surface p-8 sm:p-10 mb-12 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-2/10 text-accent-2 text-xs font-mono mb-4 tracking-wider">
-              WHAT MAKES US DIFFERENT
-            </div>
-            <p className="text-xl sm:text-2xl font-semibold mb-3">
-              Unlike ChatGPT or Claude —{" "}
-              <span className="text-accent-2">SJA Companion</span> is
-              exclusively yours
-            </p>
-            <p className="text-foreground/50 text-sm max-w-xl mx-auto">
-              Other AI assistants reset every conversation. SJA Companion builds
-              a lasting understanding of who you are, what you need, and how you
-              think — so every interaction feels like talking to someone who truly
-              knows you.
-            </p>
-          </div>
-
-          {/* Pricing */}
-          <div className="text-center mb-8">
-            <h4 className="text-xl font-bold mb-2">
-              Plans That Grow{" "}
-              <span className="text-accent-2">With You</span>
-            </h4>
-            <p className="text-foreground/60 text-sm">
-              Start personal. Expand to family. Or commit for life.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-6 mb-10">
-            {companionPricing.map((plan) => (
-              <div
-                key={plan.name}
-                className={`rounded-xl p-7 text-center transition-all ${
-                  plan.highlight
-                    ? "gradient-border bg-surface"
-                    : "bg-surface border border-border hover:border-accent-2/30"
-                }`}
-              >
-                <p className="text-accent-2 text-sm font-mono mb-2 tracking-wider uppercase">
-                  {plan.name}
-                </p>
-                <div className="mb-3">
-                  <span className="text-3xl font-bold">{plan.price}</span>
-                  <span className="text-foreground/50 text-sm">
-                    {plan.period}
-                  </span>
-                </div>
-                <p className="text-foreground/50 text-sm">{plan.description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-3">
-              <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold hover:opacity-90 transition-opacity glow-accent">
-                Join Waitlist
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </button>
-              <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-accent-2/50 text-accent-2 font-semibold hover:bg-accent-2/10 transition-colors">
-                Request Early Access
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <p className="text-foreground/40 text-sm">
-              Currently in development with our AI team
-            </p>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="flex items-center gap-6 mb-24">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-          <div className="w-2 h-2 rounded-full bg-accent-2/50" />
-          <div className="w-2 h-2 rounded-full bg-accent-3/50" />
-          <div className="w-2 h-2 rounded-full bg-accent-2/50" />
-          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-border to-transparent" />
-        </div>
       </div>
 
-      {/* ─── PRODUCT 3: FAIYA — Full-width breakout section ─── */}
+      {/* ─── PRODUCT 2: FAIYA — Full-width breakout section ─── */}
       <Faiya />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

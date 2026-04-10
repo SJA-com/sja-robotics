@@ -9,7 +9,7 @@ const footerLinks = {
   "SJA AI": [
     { label: "Voice Agent", href: "/divisions/sja-ai" },
     { label: "Faiya", href: "/divisions/sja-ai" },
-    { label: "Companion", href: "/divisions/sja-ai" },
+    // { label: "Companion", href: "/divisions/sja-ai" }, // Merged into Faiya
     // { label: "AI Factory Auditor", href: "/divisions/sja-ai" }, // Uncomment when needed
   ],
   "SJA Autonomous": [
