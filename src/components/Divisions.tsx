@@ -38,7 +38,7 @@ const divisions = [
     tagline: "Artificial Intelligence",
     description:
       "Pioneering artificial intelligence research, building machine learning models, and developing intelligent software solutions that power every product across SJA Robotics.",
-    productCount: "2 Products",
+    productCount: "3 Products",
     href: "/divisions/sja-ai",
     icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
     gradient: "from-accent-2 to-accent-3",
@@ -47,21 +47,20 @@ const divisions = [
     bgColor: "bg-accent-2/5",
     highlights: [
       {
+        name: "Fari",
+        detail: "Futuristic Artificial Reasoning Intelligence — personal AI companion",
+        badge: "Coming Soon",
+      },
+      {
         name: "Mouss",
         detail: "AI voice agent platform — deploy in minutes, no coding needed",
         badge: "Coming Soon",
       },
       {
-        name: "Fari",
-        detail: "Multilingual AI companion — your Rafiq for life",
+        name: "MARI",
+        detail: "Smart home AI controller — so you don't have to",
         badge: "Coming Soon",
       },
-      // SJA Companion — merged into Fari (uncomment when needed)
-      // {
-      //   name: "SJA Companion",
-      //   detail: "A personal AI that remembers everything about you — forever",
-      //   badge: "Coming Soon",
-      // },
     ],
   },
   {
@@ -69,7 +68,7 @@ const divisions = [
     tagline: "Physical Robots & Drones",
     description:
       "Engineering autonomous machines that operate in the real world — from household robots and rescue drones to military-grade defense systems built for any environment.",
-    productCount: "3 Products",
+    productCount: "2 Products",
     href: "/divisions/sja-autonomous",
     icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z",
     gradient: "from-emerald-400 to-teal-500",
@@ -86,11 +85,6 @@ const divisions = [
         name: "Sueen Drone",
         detail: "Smart household drone for delivering items around your home",
         badge: "In Development",
-      },
-      {
-        name: "MARI",
-        detail: "Smart home AI controller — so you don't have to",
-        badge: "Coming Soon",
       },
     ],
   },

@@ -9,11 +9,11 @@ const footerLinks = {
   "SJA AI": [
     { label: "Fari", href: "/divisions/sja-ai" },
     { label: "Mouss", href: "/divisions/sja-ai" },
+    { label: "MARI", href: "/divisions/sja-ai" },
   ],
   "SJA Autonomous": [
     { label: "Atiana Robot", href: "/divisions/sja-autonomous" },
     { label: "Sueen Drone", href: "/divisions/sja-autonomous" },
-    { label: "MARI", href: "/divisions/sja-autonomous" },
   ],
   Company: [
     { label: "About", href: "#about" },
