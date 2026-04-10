@@ -4,8 +4,8 @@ const uniqueFeatures = [
     description:
       "Mouss doesn't just speak Arabic — she speaks YOUR Arabic. Understands Saudi, Egyptian, Emirati, Lebanese and Moroccan dialects natively. Your Riyadh customers and Cairo customers both feel at home. No more generic Arabic that sounds foreign to your customers.",
     icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
-    color: "text-amber-400",
-    bg: "bg-amber-400/10",
+    color: "text-accent-2",
+    bg: "bg-accent-2/10",
   },
   {
     name: "Cultural Intelligence",
@@ -94,7 +94,7 @@ function Cell({ value }: { value: boolean | string }) {
   }
   if (value === true) {
     return (
-      <svg className="w-5 h-5 text-amber-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-accent-2 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
       </svg>
     );
@@ -104,18 +104,18 @@ function Cell({ value }: { value: boolean | string }) {
 
 export default function MoussFeatures() {
   return (
-    <section className="py-24 relative bg-fari overflow-hidden">
-      {/* Premium dark background */}
+    <section className="py-24 relative bg-hextech overflow-hidden">
+      {/* Background accents matching AI division */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-amber-500/4 rounded-full blur-[180px]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-400/5 rounded-full blur-[120px]" />
-        <div className="absolute top-1/3 left-0 w-72 h-72 bg-amber-600/4 rounded-full blur-[100px]" />
-        <div className="absolute top-0 left-[25%] w-px h-full bg-gradient-to-b from-transparent via-amber-400/8 to-transparent" />
-        <div className="absolute top-0 left-[75%] w-px h-full bg-gradient-to-b from-transparent via-amber-400/8 to-transparent" />
-        <div className="absolute top-10 left-10 w-12 h-12 border-t-2 border-l-2 border-amber-400/15 rounded-tl-lg" />
-        <div className="absolute top-10 right-10 w-12 h-12 border-t-2 border-r-2 border-amber-400/15 rounded-tr-lg" />
-        <div className="absolute bottom-10 left-10 w-12 h-12 border-b-2 border-l-2 border-amber-400/15 rounded-bl-lg" />
-        <div className="absolute bottom-10 right-10 w-12 h-12 border-b-2 border-r-2 border-amber-400/15 rounded-br-lg" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-accent-2/6 rounded-full blur-[180px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-3/5 rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 left-0 w-72 h-72 bg-accent-2/4 rounded-full blur-[100px]" />
+        <div className="absolute top-0 left-[25%] w-px h-full bg-gradient-to-b from-transparent via-accent-2/10 to-transparent" />
+        <div className="absolute top-0 left-[75%] w-px h-full bg-gradient-to-b from-transparent via-accent-3/10 to-transparent" />
+        <div className="absolute top-10 left-10 w-12 h-12 border-t-2 border-l-2 border-accent-2/15 rounded-tl-lg" />
+        <div className="absolute top-10 right-10 w-12 h-12 border-t-2 border-r-2 border-accent-2/15 rounded-tr-lg" />
+        <div className="absolute bottom-10 left-10 w-12 h-12 border-b-2 border-l-2 border-accent-3/15 rounded-bl-lg" />
+        <div className="absolute bottom-10 right-10 w-12 h-12 border-b-2 border-r-2 border-accent-2/15 rounded-br-lg" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -123,16 +123,16 @@ export default function MoussFeatures() {
             HEADER
             ═══════════════════════════════════════════ */}
         <div className="text-center mb-16">
-          <p className="text-amber-400 text-xs font-mono mb-3 tracking-wider uppercase">
+          <p className="text-accent-2 text-xs font-mono mb-3 tracking-wider uppercase">
             What Makes Mouss Different
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Mouss — Built for the{" "}
-            <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent via-accent-2 to-accent-3 bg-clip-text text-transparent">
               Arab World
             </span>
             . Built for{" "}
-            <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent via-accent-2 to-accent-3 bg-clip-text text-transparent">
               Everyone
             </span>
             .
@@ -150,7 +150,7 @@ export default function MoussFeatures() {
           {uniqueFeatures.map((feature) => (
             <div
               key={feature.name}
-              className="rounded-xl bg-[#0a0c14] border border-amber-400/10 p-7 hover:border-amber-400/25 transition-all"
+              className="rounded-xl bg-surface border border-accent-2/10 p-7 hover:border-accent-2/25 transition-all"
             >
               <div
                 className={`w-12 h-12 rounded-xl ${feature.bg} flex items-center justify-center mb-4`}
@@ -180,11 +180,11 @@ export default function MoussFeatures() {
         {/* ═══════════════════════════════════════════
             WORLD FIRSTS
             ═══════════════════════════════════════════ */}
-        <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
+        <div className="rounded-2xl bg-surface border border-accent-2/15 p-8 sm:p-12 mb-20">
           <div className="text-center mb-10">
             <h3 className="text-2xl sm:text-3xl font-bold mb-3">
               Three things{" "}
-              <span className="text-amber-400">nobody in the world</span>{" "}
+              <span className="text-accent-2">nobody in the world</span>{" "}
               has built before
             </h3>
             <p className="text-foreground/50 text-sm">Until Mouss.</p>
@@ -193,7 +193,7 @@ export default function MoussFeatures() {
             {firsts.map((item) => (
               <div
                 key={item.title}
-                className={`rounded-xl bg-[#07090f] border ${item.border} p-6 text-center`}
+                className={`rounded-xl bg-surface-2 border ${item.border} p-6 text-center`}
               >
                 <div
                   className={`w-14 h-14 rounded-xl ${item.bg} flex items-center justify-center mx-auto mb-4`}
@@ -223,10 +223,10 @@ export default function MoussFeatures() {
         {/* ═══════════════════════════════════════════
             COMPARISON TABLE
             ═══════════════════════════════════════════ */}
-        <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-6 sm:p-10 mb-20 overflow-x-auto">
+        <div className="rounded-2xl bg-surface border border-accent-2/15 p-6 sm:p-10 mb-20 overflow-x-auto">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
             Mouss vs{" "}
-            <span className="text-amber-400">The Rest</span>
+            <span className="text-accent-2">The Rest</span>
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-8 max-w-lg mx-auto">
             No other voice agent was built for the Arab world like this
@@ -234,7 +234,7 @@ export default function MoussFeatures() {
           <div className="min-w-[500px]">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-amber-400/10">
+                <tr className="border-b border-accent-2/10">
                   <th className="text-left text-sm font-semibold text-foreground/70 py-3 pr-4">
                     Feature
                   </th>
@@ -247,7 +247,7 @@ export default function MoussFeatures() {
                   <th className="text-center text-sm font-medium text-foreground/40 py-3 px-3">
                     Retell AI
                   </th>
-                  <th className="text-center text-sm font-bold text-amber-400 py-3 pl-3">
+                  <th className="text-center text-sm font-bold text-accent-2 py-3 pl-3">
                     Mouss
                   </th>
                 </tr>
@@ -256,7 +256,7 @@ export default function MoussFeatures() {
                 {comparisonRows.map((row) => (
                   <tr
                     key={row.feature}
-                    className="border-b border-amber-400/5 hover:bg-amber-400/[0.02] transition-colors"
+                    className="border-b border-accent-2/5 hover:bg-accent-2/[0.02] transition-colors"
                   >
                     <td className="text-sm font-medium text-foreground/70 py-3.5 pr-4">
                       {row.feature}
@@ -271,7 +271,7 @@ export default function MoussFeatures() {
                       <Cell value={row.retell} />
                     </td>
                     <td className="text-center py-3.5 pl-3">
-                      <div className="text-amber-400 font-semibold">
+                      <div className="text-accent-2 font-semibold">
                         <Cell value={row.mouss} />
                       </div>
                     </td>
@@ -290,11 +290,11 @@ export default function MoussFeatures() {
             Mouss — The world&apos;s first culturally intelligent,
             dialect-aware, WhatsApp-enabled voice agent.
           </p>
-          <p className="text-amber-400/70 text-sm mb-8">
+          <p className="text-accent-2/70 text-sm mb-8">
             Built for the Arab world. Built for everyone.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(251,191,36,0.25)]">
+            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold hover:opacity-90 transition-opacity glow-accent">
               Join Waitlist
               <svg
                 className="w-4 h-4"
@@ -310,7 +310,7 @@ export default function MoussFeatures() {
                 />
               </svg>
             </button>
-            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-amber-400/40 text-amber-400 font-semibold hover:bg-amber-400/10 transition-colors">
+            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-accent-2/40 text-accent-2 font-semibold hover:bg-accent-2/10 transition-colors">
               Request Demo
               <svg
                 className="w-4 h-4"
