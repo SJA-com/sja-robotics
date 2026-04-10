@@ -57,7 +57,7 @@ const divisions = [
         badge: "Coming Soon",
       },
       {
-        name: "MARI",
+        name: "Mari",
         detail: "Smart home AI controller — so you don't have to",
         badge: "Coming Soon",
       },

@@ -10,7 +10,7 @@ const mariFeatures = [
   {
     name: "Auto Ordering",
     description:
-      "Running low on groceries? MARI orders automatically. Craving food at 2am? MARI handles it. You just eat.",
+      "Running low on groceries? Mari orders automatically. Craving food at 2am? Mari handles it. You just eat.",
     icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z",
     color: "text-amber-400",
     bg: "bg-amber-400/10",
@@ -18,7 +18,7 @@ const mariFeatures = [
   {
     name: "Sleep Optimization",
     description:
-      "MARI calculates your perfect sleep cycle, dims lights automatically, sets ideal temperature, and wakes you at the perfect moment.",
+      "Mari calculates your perfect sleep cycle, dims lights automatically, sets ideal temperature, and wakes you at the perfect moment.",
     icon: "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z",
     color: "text-violet-400",
     bg: "bg-violet-400/10",
@@ -34,7 +34,7 @@ const mariFeatures = [
   {
     name: "Zero Effort Living",
     description:
-      "Everything controlled by voice. No touching your phone. No getting up. MARI does it all.",
+      "Everything controlled by voice. No touching your phone. No getting up. Mari does it all.",
     icon: "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z",
     color: "text-rose-400",
     bg: "bg-rose-400/10",
@@ -42,7 +42,7 @@ const mariFeatures = [
   {
     name: "Works with Sueen",
     description:
-      "MARI tells Sueen what to do — together they handle your entire home digitally and physically.",
+      "Mari tells Sueen what to do — together they handle your entire home digitally and physically.",
     icon: "M12 19l9 2-9-18-9 18 9-2zm0 0v-8",
     color: "text-teal-400",
     bg: "bg-teal-400/10",
@@ -81,7 +81,7 @@ export default function Mari() {
           Product 03
         </p>
         <h3 className="text-3xl sm:text-4xl font-bold mb-2">
-          <span className="text-accent-2">MARI</span>
+          <span className="text-accent-2">Mari</span>
         </h3>
         <p className="text-accent-2/60 text-sm font-mono mb-3">
           Multi-Automated Routine Intelligence
@@ -94,10 +94,10 @@ export default function Mari() {
         </span>
         <p className="text-foreground/60 max-w-2xl mx-auto text-sm leading-relaxed mb-4">
           SJA&apos;s smart home AI controller — designed for people who hate
-          doing things themselves. While you sleep, MARI manages your world.
+          doing things themselves. While you sleep, Mari manages your world.
         </p>
         <p className="text-foreground/60 max-w-2xl mx-auto text-sm leading-relaxed mb-4">
-          MARI works standalone as your complete smart home AI. Connect Sueen
+          Mari works standalone as your complete smart home AI. Connect Sueen
           for the full physical + digital home experience.
         </p>
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-400/10 border border-teal-400/20 text-teal-400 text-xs font-mono tracking-wider">
@@ -112,7 +112,7 @@ export default function Mari() {
         Designed for people who hate doing things. Powered by Fari.
       </p>
 
-      {/* MARI Features */}
+      {/* Mari Features */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
         {mariFeatures.map((feature) => (
           <div
@@ -144,10 +144,10 @@ export default function Mari() {
         ))}
       </div>
 
-      {/* MARI Pricing */}
+      {/* Mari Pricing */}
       <div className="text-center mb-8">
         <h4 className="text-xl font-bold mb-2">
-          MARI <span className="text-accent-2">Pricing</span>
+          Mari <span className="text-accent-2">Pricing</span>
         </h4>
         <p className="text-foreground/50 text-xs">
           From smart home control to full life management
@@ -175,7 +175,7 @@ export default function Mari() {
         ))}
       </div>
 
-      {/* MARI CTA */}
+      {/* Mari CTA */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
         <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold text-sm hover:opacity-90 transition-opacity glow-accent">
           Join Waitlist

@@ -301,8 +301,8 @@ export default function DivisionAutonomous() {
               or transporting small objects from one room to another.
             </p>
             <p className="text-emerald-400/70 text-sm font-semibold mb-4">
-              Sueen works standalone as your household drone. Pair with MARI
-              for the ultimate home experience — MARI thinks, Sueen acts.
+              Sueen works standalone as your household drone. Pair with Mari
+              for the ultimate home experience — Mari thinks, Sueen acts.
             </p>
             <p className="text-foreground/40 text-xs font-mono mb-8">
               Powered by Fari. Part of the SJA Autonomous division.

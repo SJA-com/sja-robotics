@@ -3,12 +3,12 @@ const genZFeatures = [
     title: "Built for People Who Love Sleep",
     emoji: "😴",
     points: [
-      "MARI optimizes your sleep cycle so you wake up at the perfect moment",
+      "Mari optimizes your sleep cycle so you wake up at the perfect moment",
       "Sets ideal room temperature while you sleep",
       "Dims lights automatically when you're dozing off",
       "Orders your breakfast before you even open your eyes",
     ],
-    quote: "Sleep is not laziness. It's self care. MARI agrees.",
+    quote: "Sleep is not laziness. It's self care. Mari agrees.",
   },
   {
     title: "Zero Screen Time Required",
@@ -16,7 +16,7 @@ const genZFeatures = [
     points: [
       "Control everything by voice — no touching your phone",
       "No apps to open, no buttons to press, no effort required",
-      "Just talk and MARI handles it",
+      "Just talk and Mari handles it",
     ],
     quote: "Your screen time goes down. Your vibe goes up.",
   },
@@ -24,11 +24,11 @@ const genZFeatures = [
     title: "Auto Pilot Your Life",
     emoji: "🛒",
     points: [
-      "Running low on snacks? MARI orders them",
-      "Need something delivered? MARI handles it",
-      "Forgot to pay a bill? MARI reminds you",
+      "Running low on snacks? Mari orders them",
+      "Need something delivered? Mari handles it",
+      "Forgot to pay a bill? Mari reminds you",
     ],
-    quote: "MARI remembers everything you forget. Which is everything. 😄",
+    quote: "Mari remembers everything you forget. Which is everything. 😄",
   },
   {
     title: "Your Home. Your Rules.",
@@ -43,11 +43,11 @@ const genZFeatures = [
     title: "Works With Sueen",
     emoji: "🤝",
     points: [
-      "MARI tells Sueen what to do physically",
+      "Mari tells Sueen what to do physically",
       "Digital + physical home management — completely hands free",
     ],
     quote:
-      "Need water but don't want to get up? MARI tells Sueen. Sueen brings it. You stay horizontal. 😄",
+      "Need water but don't want to get up? Mari tells Sueen. Sueen brings it. You stay horizontal. 😄",
   },
   {
     title: "Actually Affordable",
@@ -65,25 +65,25 @@ const scenarios = [
   {
     emoji: "😩",
     situation: "It's 2am and you're hungry",
-    you: "MARI order me food",
+    you: "Mari order me food",
     mari: "Done. Arriving in 30 minutes. I added extra sauce. 🍕",
   },
   {
     emoji: "🥶",
     situation: "Room is freezing but blanket is too comfortable",
-    you: "MARI make it warmer",
+    you: "Mari make it warmer",
     mari: "Temperature adjusted. Stay cozy. 🌡️",
   },
   {
     emoji: "😴",
     situation: "Alarm goes off but you're not ready",
-    you: "MARI 10 more minutes",
+    you: "Mari 10 more minutes",
     mari: "Snooze set. But this is the third time. 😄",
   },
   {
     emoji: "📦",
     situation: "Running out of essentials",
-    you: "MARI I need stuff",
+    you: "Mari I need stuff",
     mari: "Already ordered your usual. Arriving tomorrow. ✅",
   },
 ];
@@ -105,7 +105,7 @@ export default function MariGenZ() {
             ═══════════════════════════════════════════ */}
         <div className="text-center mb-16">
           <p className="text-violet-400 text-xs font-mono mb-3 tracking-wider uppercase">
-            Why Gen Z Loves MARI
+            Why Gen Z Loves Mari
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
             Finally. An AI That{" "}
@@ -114,12 +114,12 @@ export default function MariGenZ() {
             </span>
           </h2>
           <p className="text-foreground/60 max-w-2xl mx-auto text-lg mb-6">
-            MARI was designed for people who have better things to do than do
+            Mari was designed for people who have better things to do than do
             things. 😄
           </p>
           <p className="text-foreground/50 max-w-xl mx-auto text-sm leading-relaxed">
             Let&apos;s be real. Nobody wants to get up. Nobody wants to remember
-            things. Nobody wants to do boring tasks. MARI gets it — and she does
+            things. Nobody wants to do boring tasks. Mari gets it — and she does
             it all for you.
           </p>
         </div>
@@ -156,17 +156,17 @@ export default function MariGenZ() {
         </div>
 
         {/* ═══════════════════════════════════════════
-            MARI IN REAL LIFE
+            Mari IN REAL LIFE
             ═══════════════════════════════════════════ */}
         <div className="mb-20">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
-            MARI in{" "}
+            Mari in{" "}
             <span className="bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">
               Real Life
             </span>
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-10">
-            Actual conversations you&apos;ll have with MARI. Probably at 2am.
+            Actual conversations you&apos;ll have with Mari. Probably at 2am.
           </p>
           <div className="grid sm:grid-cols-2 gap-5">
             {scenarios.map((s) => (
@@ -191,7 +191,7 @@ export default function MariGenZ() {
                   </div>
                   <div className="flex gap-3">
                     <span className="shrink-0 px-2 py-0.5 rounded-full bg-violet-400/10 text-violet-400 text-[10px] font-mono h-fit mt-0.5">
-                      MARI
+                      Mari
                     </span>
                     <p className="text-sm text-foreground/80 font-medium">
                       &ldquo;{s.mari}&rdquo;
@@ -208,13 +208,13 @@ export default function MariGenZ() {
             ═══════════════════════════════════════════ */}
         <div className="rounded-2xl bg-gradient-to-r from-violet-400/5 via-sky-400/5 to-emerald-400/5 border border-violet-400/15 p-8 sm:p-10 mb-16 text-center">
           <p className="text-xl sm:text-2xl font-bold text-foreground/90 mb-3">
-            MARI doesn&apos;t judge your lifestyle.{" "}
+            Mari doesn&apos;t judge your lifestyle.{" "}
             <span className="bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">
               She enables it.
             </span>
           </p>
           <p className="text-foreground/50 text-sm">
-            MARI — So you don&apos;t have to.
+            Mari — So you don&apos;t have to.
           </p>
         </div>
 
