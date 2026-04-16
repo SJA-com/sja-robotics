@@ -2,7 +2,7 @@ const uniqueFeatures = [
   {
     name: "Dialect Intelligence",
     description:
-      "Mouss doesn't just speak Arabic — she speaks YOUR Arabic. Understands Saudi, Egyptian, Emirati, Lebanese and Moroccan dialects natively. Your Riyadh customers and Cairo customers both feel at home. No more generic Arabic that sounds foreign to your customers.",
+      "MOUS doesn't just speak Arabic — she speaks YOUR Arabic. Understands Saudi, Egyptian, Emirati, Lebanese and Moroccan dialects natively. Your Riyadh customers and Cairo customers both feel at home. No more generic Arabic that sounds foreign to your customers.",
     icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
     color: "text-accent-2",
     bg: "bg-accent-2/10",
@@ -18,7 +18,7 @@ const uniqueFeatures = [
   {
     name: "Emotion Detection",
     description:
-      "Mouss detects if your caller is angry, confused, sad or happy in real time. Automatically adjusts her tone to match the situation. Escalates to a human agent if the caller is very upset. Soothes anxious callers — perfect for clinics and hospitals. Your customers always feel heard.",
+      "MOUS detects if your caller is angry, confused, sad or happy in real time. Automatically adjusts her tone to match the situation. Escalates to a human agent if the caller is very upset. Soothes anxious callers — perfect for clinics and hospitals. Your customers always feel heard.",
     icon: "M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
     color: "text-rose-400",
     bg: "bg-rose-400/10",
@@ -26,7 +26,7 @@ const uniqueFeatures = [
   {
     name: "WhatsApp + Voice Combined",
     description:
-      "Middle East runs on WhatsApp — Mouss knows this. One AI handling both WhatsApp messages AND phone calls seamlessly. Customer sends WhatsApp at 2am — Mouss responds instantly. Customer calls at 9am — same Mouss, same context, remembers everything. Switches between Arabic and English mid-conversation naturally.",
+      "Middle East runs on WhatsApp — MOUS knows this. One AI handling both WhatsApp messages AND phone calls seamlessly. Customer sends WhatsApp at 2am — MOUS responds instantly. Customer calls at 9am — same MOUS, same context, remembers everything. Switches between Arabic and English mid-conversation naturally.",
     icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z",
     color: "text-sky-400",
     bg: "bg-sky-400/10",
@@ -34,7 +34,7 @@ const uniqueFeatures = [
   {
     name: "Arabic + English Document Intelligence",
     description:
-      "Caller asking about their invoice? Mouss reads it instantly — in Arabic or English. Understands contracts, receipts, medical reports, booking confirmations. Answers billing and document questions without a human. First voice agent in the world to read and understand Arabic documents in real time.",
+      "Caller asking about their invoice? MOUS reads it instantly — in Arabic or English. Understands contracts, receipts, medical reports, booking confirmations. Answers billing and document questions without a human. First voice agent in the world to read and understand Arabic documents in real time.",
     icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
     color: "text-violet-400",
     bg: "bg-violet-400/10",
@@ -42,7 +42,7 @@ const uniqueFeatures = [
   {
     name: "Business Personality Modes",
     description:
-      "Every business gets a Mouss that fits their brand perfectly. Medical mode — calm, professional, empathetic. Restaurant mode — warm, friendly. Real estate mode — confident, persuasive. Banking mode — formal, trustworthy. Faith-based mode — respectful, warm, community focused. Your Mouss sounds like YOUR business.",
+      "Every business gets a MOUS that fits their brand perfectly. Medical mode — calm, professional, empathetic. Restaurant mode — warm, friendly. Real estate mode — confident, persuasive. Banking mode — formal, trustworthy. Faith-based mode — respectful, warm, community focused. Your MOUS sounds like YOUR business.",
     icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
     color: "text-teal-400",
     bg: "bg-teal-400/10",
@@ -74,14 +74,14 @@ const firsts = [
 ];
 
 const comparisonRows = [
-  { feature: "Arabic Dialects", bland: false, vapi: false, retell: false, mouss: true },
-  { feature: "Cultural Intelligence", bland: false, vapi: false, retell: false, mouss: true },
-  { feature: "Emotion Detection", bland: false, vapi: false, retell: "Partial", mouss: true },
-  { feature: "WhatsApp + Voice", bland: false, vapi: false, retell: false, mouss: true },
-  { feature: "Arabic + English Docs", bland: false, vapi: false, retell: false, mouss: true },
-  { feature: "Muslim + Christian Aware", bland: false, vapi: false, retell: false, mouss: true },
-  { feature: "Dialect Specific", bland: false, vapi: false, retell: false, mouss: true },
-  { feature: "Arab World Focus", bland: false, vapi: false, retell: false, mouss: true },
+  { feature: "Arabic Dialects", bland: false, vapi: false, retell: false, mous: true },
+  { feature: "Cultural Intelligence", bland: false, vapi: false, retell: false, mous: true },
+  { feature: "Emotion Detection", bland: false, vapi: false, retell: "Partial", mous: true },
+  { feature: "WhatsApp + Voice", bland: false, vapi: false, retell: false, mous: true },
+  { feature: "Arabic + English Docs", bland: false, vapi: false, retell: false, mous: true },
+  { feature: "Muslim + Christian Aware", bland: false, vapi: false, retell: false, mous: true },
+  { feature: "Dialect Specific", bland: false, vapi: false, retell: false, mous: true },
+  { feature: "Arab World Focus", bland: false, vapi: false, retell: false, mous: true },
 ];
 
 function Cell({ value }: { value: boolean | string }) {
@@ -102,7 +102,7 @@ function Cell({ value }: { value: boolean | string }) {
   return <span className="text-xs font-medium">{value}</span>;
 }
 
-export default function MoussFeatures() {
+export default function MousFeatures() {
   return (
     <section className="py-24 relative bg-hextech overflow-hidden">
       {/* Background accents matching AI division */}
@@ -124,10 +124,10 @@ export default function MoussFeatures() {
             ═══════════════════════════════════════════ */}
         <div className="text-center mb-16">
           <p className="text-accent-2 text-xs font-mono mb-3 tracking-wider uppercase">
-            What Makes Mouss Different
+            What Makes MOUS Different
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Mouss — Built for the{" "}
+            MOUS — Built for the{" "}
             <span className="bg-gradient-to-r from-accent via-accent-2 to-accent-3 bg-clip-text text-transparent">
               Arab World
             </span>
@@ -138,7 +138,7 @@ export default function MoussFeatures() {
             .
           </h2>
           <p className="text-foreground/60 max-w-2xl mx-auto text-lg leading-relaxed">
-            Every other voice agent was built for the West. Mouss was built for
+            Every other voice agent was built for the West. MOUS was built for
             you — regardless of culture, religion or language.
           </p>
         </div>
@@ -187,7 +187,7 @@ export default function MoussFeatures() {
               <span className="text-accent-2">nobody in the world</span>{" "}
               has built before
             </h3>
-            <p className="text-foreground/50 text-sm">Until Mouss.</p>
+            <p className="text-foreground/50 text-sm">Until MOUS.</p>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {firsts.map((item) => (
@@ -225,7 +225,7 @@ export default function MoussFeatures() {
             ═══════════════════════════════════════════ */}
         <div className="rounded-2xl bg-surface border border-accent-2/15 p-6 sm:p-10 mb-20 overflow-x-auto">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
-            Mouss vs{" "}
+            MOUS vs{" "}
             <span className="text-accent-2">The Rest</span>
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-8 max-w-lg mx-auto">
@@ -248,7 +248,7 @@ export default function MoussFeatures() {
                     Retell AI
                   </th>
                   <th className="text-center text-sm font-bold text-accent-2 py-3 pl-3">
-                    Mouss
+                    MOUS
                   </th>
                 </tr>
               </thead>
@@ -272,7 +272,7 @@ export default function MoussFeatures() {
                     </td>
                     <td className="text-center py-3.5 pl-3">
                       <div className="text-accent-2 font-semibold">
-                        <Cell value={row.mouss} />
+                        <Cell value={row.mous} />
                       </div>
                     </td>
                   </tr>
@@ -287,7 +287,7 @@ export default function MoussFeatures() {
             ═══════════════════════════════════════════ */}
         <div className="text-center mb-12">
           <p className="text-lg sm:text-xl font-semibold text-foreground/80 mb-2 max-w-3xl mx-auto leading-relaxed">
-            Mouss — The world&apos;s first culturally intelligent,
+            MOUS — The world&apos;s first culturally intelligent,
             dialect-aware, WhatsApp-enabled voice agent.
           </p>
           <p className="text-accent-2/70 text-sm mb-8">
@@ -310,8 +310,13 @@ export default function MoussFeatures() {
                 />
               </svg>
             </button>
-            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-accent-2/40 text-accent-2 font-semibold hover:bg-accent-2/10 transition-colors">
-              Request Demo
+            <a
+              href="https://mous.sja-affu765.workers.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-accent-2/40 text-accent-2 font-semibold hover:bg-accent-2/10 transition-colors"
+            >
+              Try Demo
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -322,10 +327,10 @@ export default function MoussFeatures() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                 />
               </svg>
-            </button>
+            </a>
           </div>
           <p className="text-foreground/40 text-sm max-w-xl mx-auto">
             Currently in development. Built for Saudi Arabia, UAE, Qatar, Egypt

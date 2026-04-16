@@ -180,9 +180,22 @@ export default function DivisionAutonomous() {
               intelligent robotics, with capabilities that exceed current
               limitations in the field.
             </p>
-            <p className="text-emerald-400/70 text-sm font-semibold mb-8">
-              Powered by Fari — the most advanced humanoid robot by SJA
-            </p>
+            <div className="flex flex-wrap items-center gap-3 mb-8">
+              <p className="text-emerald-400/70 text-sm font-semibold">
+                Powered by Fari — the most advanced humanoid robot by SJA
+              </p>
+              <a
+                href="https://atiana.sja-affu765.workers.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-400/30 text-emerald-400 text-xs font-mono hover:bg-emerald-400/10 transition-colors"
+              >
+                TRY DEMO
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
               {atianaFeatures.map((feature) => (
@@ -300,10 +313,23 @@ export default function DivisionAutonomous() {
               around the house — handing over a glass of water, delivering milk,
               or transporting small objects from one room to another.
             </p>
-            <p className="text-emerald-400/70 text-sm font-semibold mb-4">
-              Sueen works standalone as your household drone. Pair with Mari
-              for the ultimate home experience — Mari thinks, Sueen acts.
-            </p>
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <p className="text-emerald-400/70 text-sm font-semibold">
+                Sueen works standalone as your household drone. Pair with SAM
+                for the ultimate home experience — SAM thinks, Sueen acts.
+              </p>
+              <a
+                href="https://sueen.pages.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-400/30 text-emerald-400 text-xs font-mono hover:bg-emerald-400/10 transition-colors"
+              >
+                TRY DEMO
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
             <p className="text-foreground/40 text-xs font-mono mb-8">
               Powered by Fari. Part of the SJA Autonomous division.
             </p>

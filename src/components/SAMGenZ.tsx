@@ -3,12 +3,12 @@ const genZFeatures = [
     title: "Built for People Who Love Sleep",
     emoji: "😴",
     points: [
-      "Mari optimizes your sleep cycle so you wake up at the perfect moment",
+      "SAM optimizes your sleep cycle so you wake up at the perfect moment",
       "Sets ideal room temperature while you sleep",
       "Dims lights automatically when you're dozing off",
       "Orders your breakfast before you even open your eyes",
     ],
-    quote: "Sleep is not laziness. It's self care. Mari agrees.",
+    quote: "Sleep is not laziness. It's self care. SAM agrees.",
   },
   {
     title: "Zero Screen Time Required",
@@ -16,7 +16,7 @@ const genZFeatures = [
     points: [
       "Control everything by voice — no touching your phone",
       "No apps to open, no buttons to press, no effort required",
-      "Just talk and Mari handles it",
+      "Just talk and SAM handles it",
     ],
     quote: "Your screen time goes down. Your vibe goes up.",
   },
@@ -24,11 +24,11 @@ const genZFeatures = [
     title: "Auto Pilot Your Life",
     emoji: "🛒",
     points: [
-      "Running low on snacks? Mari orders them",
-      "Need something delivered? Mari handles it",
-      "Forgot to pay a bill? Mari reminds you",
+      "Running low on snacks? SAM orders them",
+      "Need something delivered? SAM handles it",
+      "Forgot to pay a bill? SAM reminds you",
     ],
-    quote: "Mari remembers everything you forget. Which is everything. 😄",
+    quote: "SAM remembers everything you forget. Which is everything. 😄",
   },
   {
     title: "Your Home. Your Rules.",
@@ -43,11 +43,11 @@ const genZFeatures = [
     title: "Works With Sueen",
     emoji: "🤝",
     points: [
-      "Mari tells Sueen what to do physically",
+      "SAM tells Sueen what to do physically",
       "Digital + physical home management — completely hands free",
     ],
     quote:
-      "Need water but don't want to get up? Mari tells Sueen. Sueen brings it. You stay horizontal. 😄",
+      "Need water but don't want to get up? SAM tells Sueen. Sueen brings it. You stay horizontal. 😄",
   },
   {
     title: "Actually Affordable",
@@ -65,30 +65,30 @@ const scenarios = [
   {
     emoji: "😩",
     situation: "It's 2am and you're hungry",
-    you: "Mari order me food",
-    mari: "Done. Arriving in 30 minutes. I added extra sauce. 🍕",
+    you: "SAM order me food",
+    sam: "Done. Arriving in 30 minutes. I added extra sauce. 🍕",
   },
   {
     emoji: "🥶",
     situation: "Room is freezing but blanket is too comfortable",
-    you: "Mari make it warmer",
-    mari: "Temperature adjusted. Stay cozy. 🌡️",
+    you: "SAM make it warmer",
+    sam: "Temperature adjusted. Stay cozy. 🌡️",
   },
   {
     emoji: "😴",
     situation: "Alarm goes off but you're not ready",
-    you: "Mari 10 more minutes",
-    mari: "Snooze set. But this is the third time. 😄",
+    you: "SAM 10 more minutes",
+    sam: "Snooze set. But this is the third time. 😄",
   },
   {
     emoji: "📦",
     situation: "Running out of essentials",
-    you: "Mari I need stuff",
-    mari: "Already ordered your usual. Arriving tomorrow. ✅",
+    you: "SAM I need stuff",
+    sam: "Already ordered your usual. Arriving tomorrow. ✅",
   },
 ];
 
-export default function MariGenZ() {
+export default function SAMGenZ() {
   return (
     <section className="py-24 relative overflow-hidden bg-[#0c0e18]">
       {/* Fun gradient background — slightly lighter than main dark */}
@@ -105,7 +105,7 @@ export default function MariGenZ() {
             ═══════════════════════════════════════════ */}
         <div className="text-center mb-16">
           <p className="text-violet-400 text-xs font-mono mb-3 tracking-wider uppercase">
-            Why Gen Z Loves Mari
+            Why Gen Z Loves SAM
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
             Finally. An AI That{" "}
@@ -114,12 +114,12 @@ export default function MariGenZ() {
             </span>
           </h2>
           <p className="text-foreground/60 max-w-2xl mx-auto text-lg mb-6">
-            Mari was designed for people who have better things to do than do
+            SAM was designed for people who have better things to do than do
             things. 😄
           </p>
           <p className="text-foreground/50 max-w-xl mx-auto text-sm leading-relaxed">
             Let&apos;s be real. Nobody wants to get up. Nobody wants to remember
-            things. Nobody wants to do boring tasks. Mari gets it — and she does
+            things. Nobody wants to do boring tasks. SAM gets it — and handles
             it all for you.
           </p>
         </div>
@@ -156,17 +156,17 @@ export default function MariGenZ() {
         </div>
 
         {/* ═══════════════════════════════════════════
-            Mari IN REAL LIFE
+            SAM IN REAL LIFE
             ═══════════════════════════════════════════ */}
         <div className="mb-20">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
-            Mari in{" "}
+            SAM in{" "}
             <span className="bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">
               Real Life
             </span>
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-10">
-            Actual conversations you&apos;ll have with Mari. Probably at 2am.
+            Actual conversations you&apos;ll have with SAM. Probably at 2am.
           </p>
           <div className="grid sm:grid-cols-2 gap-5">
             {scenarios.map((s) => (
@@ -191,10 +191,10 @@ export default function MariGenZ() {
                   </div>
                   <div className="flex gap-3">
                     <span className="shrink-0 px-2 py-0.5 rounded-full bg-violet-400/10 text-violet-400 text-[10px] font-mono h-fit mt-0.5">
-                      Mari
+                      SAM
                     </span>
                     <p className="text-sm text-foreground/80 font-medium">
-                      &ldquo;{s.mari}&rdquo;
+                      &ldquo;{s.sam}&rdquo;
                     </p>
                   </div>
                 </div>
@@ -208,13 +208,13 @@ export default function MariGenZ() {
             ═══════════════════════════════════════════ */}
         <div className="rounded-2xl bg-gradient-to-r from-violet-400/5 via-sky-400/5 to-emerald-400/5 border border-violet-400/15 p-8 sm:p-10 mb-16 text-center">
           <p className="text-xl sm:text-2xl font-bold text-foreground/90 mb-3">
-            Mari doesn&apos;t judge your lifestyle.{" "}
+            SAM doesn&apos;t judge your lifestyle.{" "}
             <span className="bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">
-              She enables it.
+              It enables it.
             </span>
           </p>
           <p className="text-foreground/50 text-sm">
-            Mari — So you don&apos;t have to.
+            SAM — So you don&apos;t have to.
           </p>
         </div>
 
@@ -243,8 +243,13 @@ export default function MariGenZ() {
                 />
               </svg>
             </button>
-            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-violet-400/40 text-violet-400 font-semibold hover:bg-violet-400/10 transition-colors">
-              Request Early Access
+            <a
+              href="https://sam.sja-affu765.workers.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-violet-400/40 text-violet-400 font-semibold hover:bg-violet-400/10 transition-colors"
+            >
+              Try Demo
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -255,10 +260,10 @@ export default function MariGenZ() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                 />
               </svg>
-            </button>
+            </a>
           </div>
           <p className="text-foreground/40 text-sm max-w-lg mx-auto">
             Join thousands of Gen Z early adopters who are already on the

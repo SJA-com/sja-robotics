@@ -50,16 +50,19 @@ const divisions = [
         name: "Fari",
         detail: "Futuristic Artificial Reasoning Intelligence — personal AI companion",
         badge: "Coming Soon",
+        demo: "https://fari.sja-affu765.workers.dev/",
       },
       {
-        name: "Mouss",
+        name: "MOUS",
         detail: "AI voice agent platform — deploy in minutes, no coding needed",
         badge: "Coming Soon",
+        demo: "https://mous.sja-affu765.workers.dev/",
       },
       {
-        name: "Mari",
-        detail: "Smart home AI controller — so you don't have to",
+        name: "SAM",
+        detail: "Smart Automated Manager — so you don't have to",
         badge: "Coming Soon",
+        demo: "https://sam.sja-affu765.workers.dev/",
       },
     ],
   },
@@ -80,11 +83,13 @@ const divisions = [
         name: "Atiana Robot",
         detail: "Flagship autonomous robot for homes, hospitals, and defense",
         badge: "In Development",
+        demo: "https://atiana.sja-affu765.workers.dev/",
       },
       {
         name: "Sueen Drone",
         detail: "Smart household drone for delivering items around your home",
         badge: "In Development",
+        demo: "https://sueen.pages.dev/",
       },
     ],
   },
@@ -177,15 +182,31 @@ export default function Divisions() {
                             {product.detail}
                           </p>
                         </div>
-                        <span
-                          className={`shrink-0 px-2 py-0.5 rounded-full text-[10px] font-mono tracking-wider ${
-                            product.badge === "In Development"
-                              ? "bg-amber-400/10 text-amber-400"
-                              : "bg-accent-2/10 text-accent-2"
-                          }`}
-                        >
-                          {product.badge.toUpperCase()}
-                        </span>
+                        <div className="flex items-center gap-2 shrink-0">
+                          {product.demo && (
+                            <a
+                              href={product.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`px-2 py-0.5 rounded-full text-[10px] font-mono tracking-wider border ${
+                                product.badge === "In Development"
+                                  ? "border-amber-400/30 text-amber-400 hover:bg-amber-400/10"
+                                  : "border-accent-2/30 text-accent-2 hover:bg-accent-2/10"
+                              } transition-colors`}
+                            >
+                              DEMO
+                            </a>
+                          )}
+                          <span
+                            className={`px-2 py-0.5 rounded-full text-[10px] font-mono tracking-wider ${
+                              product.badge === "In Development"
+                                ? "bg-amber-400/10 text-amber-400"
+                                : "bg-accent-2/10 text-accent-2"
+                            }`}
+                          >
+                            {product.badge.toUpperCase()}
+                          </span>
+                        </div>
                       </div>
                     ))}
                   </div>

@@ -10,16 +10,16 @@ SJA Robotics is at the forefront of integrating AI and automation into everyday 
 
 Pioneering AI research, building ML models, and developing intelligent software solutions.
 
-- **Fari** — Futuristic Artificial Reasoning Intelligence, a personal AI companion
-- **Mouss** — AI voice agent platform, deploy in minutes with no coding needed
-- **Mari** — Smart home AI controller
+- **Fari** — Futuristic Artificial Reasoning Intelligence, a personal AI companion — [Demo](https://fari.sja-affu765.workers.dev/)
+- **MOUS** — Multilingual Omnipresent Unified System, AI voice agent platform — [Demo](https://mous.sja-affu765.workers.dev/)
+- **SAM** — Smart Automated Manager (smart home AI controller) — [Demo](https://sam.sja-affu765.workers.dev/)
 
 ### SJA Autonomous — Physical Robots & Drones
 
 Engineering autonomous machines that operate in the real world.
 
-- **Atiana Robot** — Flagship autonomous robot for homes, hospitals, and defense
-- **Sueen Drone** — Smart household drone for delivering items around your home
+- **Atiana Robot** — Flagship autonomous robot for homes, hospitals, and defense — [Demo](https://atiana.sja-affu765.workers.dev/)
+- **Sueen Drone** — Smart household drone for delivering items around your home — [Demo](https://sueen.pages.dev/)
 
 ### Products
 
@@ -75,7 +75,7 @@ src/
     ├── DivisionAutonomous.tsx
     ├── DivisionTech.tsx
     ├── Fari.tsx
-    ├── Mari.tsx
-    ├── MariGenZ.tsx
+    ├── SAM.tsx
+    ├── SAMGenZ.tsx
     └── MoussFeatures.tsx
 ```

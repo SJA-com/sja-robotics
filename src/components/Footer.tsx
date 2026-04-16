@@ -8,8 +8,8 @@ const footerLinks = {
   // ],
   "SJA AI": [
     { label: "Fari", href: "/divisions/sja-ai" },
-    { label: "Mouss", href: "/divisions/sja-ai" },
-    { label: "Mari", href: "/divisions/sja-ai" },
+    { label: "MOUS", href: "/divisions/sja-ai" },
+    { label: "SAM", href: "/divisions/sja-ai" },
   ],
   "SJA Autonomous": [
     { label: "Atiana Robot", href: "/divisions/sja-autonomous" },

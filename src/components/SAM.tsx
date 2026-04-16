@@ -1,4 +1,4 @@
-const mariFeatures = [
+const samFeatures = [
   {
     name: "Smart Home Control",
     description:
@@ -10,7 +10,7 @@ const mariFeatures = [
   {
     name: "Auto Ordering",
     description:
-      "Running low on groceries? Mari orders automatically. Craving food at 2am? Mari handles it. You just eat.",
+      "Running low on groceries? SAM orders automatically. Craving food at 2am? SAM handles it. You just eat.",
     icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z",
     color: "text-amber-400",
     bg: "bg-amber-400/10",
@@ -18,7 +18,7 @@ const mariFeatures = [
   {
     name: "Sleep Optimization",
     description:
-      "Mari calculates your perfect sleep cycle, dims lights automatically, sets ideal temperature, and wakes you at the perfect moment.",
+      "SAM calculates your perfect sleep cycle, dims lights automatically, sets ideal temperature, and wakes you at the perfect moment.",
     icon: "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z",
     color: "text-violet-400",
     bg: "bg-violet-400/10",
@@ -34,7 +34,7 @@ const mariFeatures = [
   {
     name: "Zero Effort Living",
     description:
-      "Everything controlled by voice. No touching your phone. No getting up. Mari does it all.",
+      "Everything controlled by voice. No touching your phone. No getting up. SAM does it all.",
     icon: "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z",
     color: "text-rose-400",
     bg: "bg-rose-400/10",
@@ -42,14 +42,14 @@ const mariFeatures = [
   {
     name: "Works with Sueen",
     description:
-      "Mari tells Sueen what to do — together they handle your entire home digitally and physically.",
+      "SAM tells Sueen what to do — together they handle your entire home digitally and physically.",
     icon: "M12 19l9 2-9-18-9 18 9-2zm0 0v-8",
     color: "text-teal-400",
     bg: "bg-teal-400/10",
   },
 ];
 
-const mariPricing = [
+const samPricing = [
   {
     name: "Basic",
     price: "$4.99",
@@ -73,7 +73,7 @@ const mariPricing = [
   },
 ];
 
-export default function Mari() {
+export default function SAM() {
   return (
     <div className="mb-24">
       <div className="text-center mb-10">
@@ -81,23 +81,23 @@ export default function Mari() {
           Product 03
         </p>
         <h3 className="text-3xl sm:text-4xl font-bold mb-2">
-          <span className="text-accent-2">Mari</span>
+          <span className="text-accent-2">SAM</span>
         </h3>
         <p className="text-accent-2/60 text-sm font-mono mb-3">
-          Multi-Automated Routine Intelligence
+          Smart Automated Manager
         </p>
         <p className="text-lg font-semibold text-foreground/80 mb-3">
-          So you don&apos;t have to.
+          SAM — So you don&apos;t have to.
         </p>
         <span className="inline-flex px-3 py-1 rounded-full bg-accent-2/10 text-accent-2 text-[10px] font-mono tracking-wider mb-4">
           COMING SOON
         </span>
         <p className="text-foreground/60 max-w-2xl mx-auto text-sm leading-relaxed mb-4">
           SJA&apos;s smart home AI controller — designed for people who hate
-          doing things themselves. While you sleep, Mari manages your world.
+          doing things themselves. While you sleep, SAM manages your world.
         </p>
         <p className="text-foreground/60 max-w-2xl mx-auto text-sm leading-relaxed mb-4">
-          Mari works standalone as your complete smart home AI. Connect Sueen
+          SAM works standalone as your complete smart home AI. Connect Sueen
           for the full physical + digital home experience.
         </p>
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-400/10 border border-teal-400/20 text-teal-400 text-xs font-mono tracking-wider">
@@ -109,12 +109,12 @@ export default function Mari() {
       </div>
 
       <p className="text-accent-2/50 text-xs font-mono text-center mb-10">
-        Designed for people who hate doing things. Powered by Fari.
+        Designed for people who hate doing things. Powered by Fari. Loved by Gen Z.
       </p>
 
-      {/* Mari Features */}
+      {/* SAM Features */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-        {mariFeatures.map((feature) => (
+        {samFeatures.map((feature) => (
           <div
             key={feature.name}
             className="rounded-lg bg-surface border border-border p-5 hover:border-accent-2/20 transition-colors"
@@ -144,17 +144,17 @@ export default function Mari() {
         ))}
       </div>
 
-      {/* Mari Pricing */}
+      {/* SAM Pricing */}
       <div className="text-center mb-8">
         <h4 className="text-xl font-bold mb-2">
-          Mari <span className="text-accent-2">Pricing</span>
+          SAM <span className="text-accent-2">Pricing</span>
         </h4>
         <p className="text-foreground/50 text-xs">
           From smart home control to full life management
         </p>
       </div>
       <div className="grid sm:grid-cols-3 gap-4 mb-8">
-        {mariPricing.map((plan) => (
+        {samPricing.map((plan) => (
           <div
             key={plan.name}
             className={`rounded-lg p-6 text-center transition-all ${
@@ -175,7 +175,7 @@ export default function Mari() {
         ))}
       </div>
 
-      {/* Mari CTA */}
+      {/* SAM CTA */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
         <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold text-sm hover:opacity-90 transition-opacity glow-accent">
           Join Waitlist
@@ -183,12 +183,17 @@ export default function Mari() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </button>
-        <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg border border-accent-2/40 text-accent-2 font-semibold text-sm hover:bg-accent-2/10 transition-colors">
-          Request Early Access
+        <a
+          href="https://sam.sja-affu765.workers.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg border border-accent-2/40 text-accent-2 font-semibold text-sm hover:bg-accent-2/10 transition-colors"
+        >
+          Try Demo
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
-        </button>
+        </a>
       </div>
     </div>
   );

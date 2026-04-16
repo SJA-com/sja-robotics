@@ -72,9 +72,9 @@ const voicePricing = [
 /* ─── Imports ─── */
 
 import Fari from "@/components/Fari";
-import Mari from "@/components/Mari";
-import MariGenZ from "@/components/MariGenZ";
-import MoussFeatures from "@/components/MoussFeatures";
+import SAM from "@/components/SAM";
+import SAMGenZ from "@/components/SAMGenZ";
+import MousFeatures from "@/components/MoussFeatures";
 
 /* ─── Component ─── */
 
@@ -118,8 +118,8 @@ export default function DivisionAI() {
             <div className="grid sm:grid-cols-3 gap-4">
               {[
                 {
-                  name: "Mouss",
-                  tagline: "Multilingual Omnipresent Unified Speech System",
+                  name: "MOUS",
+                  tagline: "Multilingual Omnipresent Unified System",
                   badge: "Coming Soon",
                   icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z",
                 },
@@ -130,8 +130,8 @@ export default function DivisionAI() {
                   icon: "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z",
                 },
                 {
-                  name: "Mari",
-                  tagline: "Multi-Automated Routine Intelligence",
+                  name: "SAM",
+                  tagline: "Smart Automated Manager",
                   badge: "Coming Soon",
                   icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
                 },
@@ -176,7 +176,7 @@ export default function DivisionAI() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          PRODUCT 1 — MOUSS
+          PRODUCT 1 — MOUS
           ═══════════════════════════════════════════════════ */}
       <section className="py-24 relative bg-datastream overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
@@ -191,13 +191,13 @@ export default function DivisionAI() {
               Product 01
             </p>
             <h3 className="text-3xl sm:text-4xl font-bold mb-2">
-              <span className="text-accent-2">Mouss</span>
+              <span className="text-accent-2">MOUS</span>
             </h3>
             <p className="text-accent-2/60 text-sm font-mono mb-3">
-              Multilingual Omnipresent Unified Speech System
+              Multilingual Omnipresent Unified System
             </p>
             <p className="text-lg font-semibold text-foreground/90 mb-3">
-              Give Your Business a Voice
+              MOUS — Give Your Business a Voice
             </p>
             <span className="inline-flex px-3 py-1 rounded-full bg-accent-2/10 text-accent-2 text-[10px] font-mono tracking-wider mb-4">
               COMING SOON
@@ -313,22 +313,35 @@ export default function DivisionAI() {
             ))}
           </div>
           <div className="text-center">
-            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold hover:opacity-90 transition-opacity glow-accent mb-3">
-              Join Waitlist
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-3">
+              <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold hover:opacity-90 transition-opacity glow-accent">
+                Join Waitlist
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </button>
+              <a
+                href="https://mous.sja-affu765.workers.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-accent-2/40 text-accent-2 font-semibold hover:bg-accent-2/10 transition-colors"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </button>
+                Try Demo
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
             <p className="text-foreground/40 text-sm">
               Launching soon — be among the first businesses to deploy
             </p>
@@ -336,8 +349,8 @@ export default function DivisionAI() {
         </div>
       </section>
 
-      {/* ─── WHAT MAKES MOUSS DIFFERENT ─── */}
-      <MoussFeatures />
+      {/* ─── WHAT MAKES MOUS DIFFERENT ─── */}
+      <MousFeatures />
 
       {/* ═══════════════════════════════════════════════════
           PRODUCT 2 — FARI
@@ -345,7 +358,7 @@ export default function DivisionAI() {
       <Fari />
 
       {/* ═══════════════════════════════════════════════════
-          PRODUCT 3 — Mari
+          PRODUCT 3 — SAM
           ═══════════════════════════════════════════════════ */}
       <section className="py-24 relative bg-neural overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
@@ -355,12 +368,12 @@ export default function DivisionAI() {
           <div className="absolute top-0 left-[70%] w-px h-full bg-gradient-to-b from-transparent via-accent-3/10 to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Mari />
+          <SAM />
         </div>
       </section>
 
-      {/* ─── WHY GEN Z LOVES Mari ─── */}
-      <MariGenZ />
+      {/* ─── WHY GEN Z LOVES SAM ─── */}
+      <SAMGenZ />
     </div>
   );
 }

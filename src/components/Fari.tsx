@@ -704,8 +704,13 @@ export default function Fari() {
                 />
               </svg>
             </button>
-            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-amber-400/40 text-amber-400 font-semibold hover:bg-amber-400/10 transition-colors">
-              Request Early Access
+            <a
+              href="https://fari.sja-affu765.workers.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-amber-400/40 text-amber-400 font-semibold hover:bg-amber-400/10 transition-colors"
+            >
+              Try Demo
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -716,10 +721,10 @@ export default function Fari() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                 />
               </svg>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -730,14 +735,14 @@ export default function Fari() {
           <div className="text-center mb-10">
             <h3 className="text-3xl sm:text-4xl font-bold mb-3">
               One Brain.{" "}
-              <span className="text-amber-400">Three Forms.</span>
+              <span className="text-amber-400">Four Forms.</span>
             </h3>
             <p className="text-foreground/50 text-sm max-w-lg mx-auto">
               Fari is the intelligence behind every SJA product
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6 mb-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {/* Fari on Devices */}
             <div className="rounded-xl bg-[#0a0c14] border border-amber-400/15 p-7 hover:border-amber-400/30 transition-all group text-center">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center mx-auto mb-5 shadow-[0_0_30px_rgba(251,191,36,0.2)] group-hover:shadow-[0_0_40px_rgba(251,191,36,0.3)] transition-shadow">
@@ -786,6 +791,22 @@ export default function Fari() {
               <p className="text-foreground/50 text-sm leading-relaxed">
                 Powers the household drone — navigation, face recognition,
                 voice commands, object handling
+              </p>
+            </div>
+
+            {/* SAM — powered by Fari */}
+            <div className="rounded-xl bg-[#0a0c14] border border-violet-400/15 p-7 hover:border-violet-400/30 transition-all group text-center">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-400 to-sky-500 flex items-center justify-center mx-auto mb-5 shadow-[0_0_30px_rgba(139,92,246,0.15)] group-hover:shadow-[0_0_40px_rgba(139,92,246,0.25)] transition-shadow">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </div>
+              <h4 className="text-lg font-bold mb-1">SAM — Smart Automated Manager</h4>
+              <p className="text-violet-400/50 text-xs font-mono mb-3">
+                SMART HOME AI
+              </p>
+              <p className="text-foreground/50 text-sm leading-relaxed">
+                Your Gen Z smart home AI — powered by Fari
               </p>
             </div>
           </div>
