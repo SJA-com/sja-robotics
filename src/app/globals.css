@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090b11;
+  /* Palette sampled from the SJA Robotics logo:
+     deep navy #111140 → royal blue #3432C3 → wordmark blue #4C57C8, gold tips #AB852D */
+  --background: #070912;
   --foreground: #e4e4e7;
-  --accent: #3b82f6;
-  --accent-2: #6366f1;
-  --accent-3: #818cf8;
-  --surface: #0f1117;
-  --surface-2: #161925;
-  --border: #1e2235;
+  --accent: #4C57C8;      /* wordmark royal blue */
+  --accent-2: #3432C3;    /* gradient core blue */
+  --accent-3: #7C86E8;    /* light blue for highlights */
+  --navy: #111140;        /* gradient dark end */
+  --gold: #C9A227;        /* SJA gold (logo gradient tips) */
+  --surface: #0C0F1C;
+  --surface-2: #141830;
+  --border: #23284A;
 }
 
 @theme inline {
@@ -17,6 +21,8 @@
   --color-accent: var(--accent);
   --color-accent-2: var(--accent-2);
   --color-accent-3: var(--accent-3);
+  --color-navy: var(--navy);
+  --color-gold: var(--gold);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-border: var(--border);

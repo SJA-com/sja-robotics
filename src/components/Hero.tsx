@@ -32,51 +32,51 @@ export default function Hero() {
           xmlns="http://www.w3.org/2000/svg"
         >
           {/* Robot head */}
-          <rect x="95" y="40" width="150" height="120" rx="20" stroke="#3b82f6" strokeWidth="2" />
+          <rect x="95" y="40" width="150" height="120" rx="20" stroke="#4C57C8" strokeWidth="2" />
           {/* Antenna */}
-          <line x1="170" y1="10" x2="170" y2="40" stroke="#6366f1" strokeWidth="2" />
-          <circle cx="170" cy="8" r="6" stroke="#818cf8" strokeWidth="2" />
+          <line x1="170" y1="10" x2="170" y2="40" stroke="#3432C3" strokeWidth="2" />
+          <circle cx="170" cy="8" r="6" stroke="#7C86E8" strokeWidth="2" />
           {/* Eyes */}
-          <circle cx="135" cy="90" r="16" stroke="#3b82f6" strokeWidth="2" />
-          <circle cx="205" cy="90" r="16" stroke="#3b82f6" strokeWidth="2" />
-          <circle cx="135" cy="90" r="6" fill="#3b82f6" />
-          <circle cx="205" cy="90" r="6" fill="#3b82f6" />
+          <circle cx="135" cy="90" r="16" stroke="#4C57C8" strokeWidth="2" />
+          <circle cx="205" cy="90" r="16" stroke="#4C57C8" strokeWidth="2" />
+          <circle cx="135" cy="90" r="6" fill="#4C57C8" />
+          <circle cx="205" cy="90" r="6" fill="#4C57C8" />
           {/* Mouth / speaker */}
-          <rect x="140" y="125" width="60" height="8" rx="4" stroke="#6366f1" strokeWidth="1.5" />
+          <rect x="140" y="125" width="60" height="8" rx="4" stroke="#3432C3" strokeWidth="1.5" />
           {/* Neck */}
-          <rect x="155" y="160" width="30" height="25" rx="5" stroke="#818cf8" strokeWidth="1.5" />
+          <rect x="155" y="160" width="30" height="25" rx="5" stroke="#7C86E8" strokeWidth="1.5" />
           {/* Body */}
-          <rect x="75" y="185" width="190" height="140" rx="16" stroke="#3b82f6" strokeWidth="2" />
+          <rect x="75" y="185" width="190" height="140" rx="16" stroke="#4C57C8" strokeWidth="2" />
           {/* Chest panel / AI core */}
-          <circle cx="170" cy="245" r="30" stroke="#6366f1" strokeWidth="2" />
-          <circle cx="170" cy="245" r="18" stroke="#818cf8" strokeWidth="1.5" />
-          <circle cx="170" cy="245" r="6" fill="#6366f1" />
+          <circle cx="170" cy="245" r="30" stroke="#3432C3" strokeWidth="2" />
+          <circle cx="170" cy="245" r="18" stroke="#7C86E8" strokeWidth="1.5" />
+          <circle cx="170" cy="245" r="6" fill="#3432C3" />
           {/* AI brain lines radiating from core */}
-          <line x1="170" y1="215" x2="170" y2="200" stroke="#818cf8" strokeWidth="1" />
-          <line x1="170" y1="275" x2="170" y2="290" stroke="#818cf8" strokeWidth="1" />
-          <line x1="140" y1="245" x2="125" y2="245" stroke="#818cf8" strokeWidth="1" />
-          <line x1="200" y1="245" x2="215" y2="245" stroke="#818cf8" strokeWidth="1" />
-          <line x1="149" y1="224" x2="139" y2="214" stroke="#818cf8" strokeWidth="1" />
-          <line x1="191" y1="224" x2="201" y2="214" stroke="#818cf8" strokeWidth="1" />
-          <line x1="149" y1="266" x2="139" y2="276" stroke="#818cf8" strokeWidth="1" />
-          <line x1="191" y1="266" x2="201" y2="276" stroke="#818cf8" strokeWidth="1" />
+          <line x1="170" y1="215" x2="170" y2="200" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="170" y1="275" x2="170" y2="290" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="140" y1="245" x2="125" y2="245" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="200" y1="245" x2="215" y2="245" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="149" y1="224" x2="139" y2="214" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="191" y1="224" x2="201" y2="214" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="149" y1="266" x2="139" y2="276" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="191" y1="266" x2="201" y2="276" stroke="#7C86E8" strokeWidth="1" />
           {/* Chest details */}
-          <rect x="95" y="198" width="30" height="6" rx="3" stroke="#3b82f6" strokeWidth="1" />
-          <rect x="95" y="210" width="20" height="6" rx="3" stroke="#3b82f6" strokeWidth="1" />
-          <rect x="215" y="198" width="30" height="6" rx="3" stroke="#3b82f6" strokeWidth="1" />
-          <rect x="225" y="210" width="20" height="6" rx="3" stroke="#3b82f6" strokeWidth="1" />
+          <rect x="95" y="198" width="30" height="6" rx="3" stroke="#4C57C8" strokeWidth="1" />
+          <rect x="95" y="210" width="20" height="6" rx="3" stroke="#4C57C8" strokeWidth="1" />
+          <rect x="215" y="198" width="30" height="6" rx="3" stroke="#4C57C8" strokeWidth="1" />
+          <rect x="225" y="210" width="20" height="6" rx="3" stroke="#4C57C8" strokeWidth="1" />
           {/* Arms */}
-          <rect x="30" y="195" width="40" height="100" rx="12" stroke="#6366f1" strokeWidth="2" />
-          <rect x="270" y="195" width="40" height="100" rx="12" stroke="#6366f1" strokeWidth="2" />
+          <rect x="30" y="195" width="40" height="100" rx="12" stroke="#3432C3" strokeWidth="2" />
+          <rect x="270" y="195" width="40" height="100" rx="12" stroke="#3432C3" strokeWidth="2" />
           {/* Hand joints */}
-          <circle cx="50" cy="305" r="10" stroke="#818cf8" strokeWidth="1.5" />
-          <circle cx="290" cy="305" r="10" stroke="#818cf8" strokeWidth="1.5" />
+          <circle cx="50" cy="305" r="10" stroke="#7C86E8" strokeWidth="1.5" />
+          <circle cx="290" cy="305" r="10" stroke="#7C86E8" strokeWidth="1.5" />
           {/* Legs */}
-          <rect x="105" y="325" width="45" height="70" rx="10" stroke="#3b82f6" strokeWidth="2" />
-          <rect x="190" y="325" width="45" height="70" rx="10" stroke="#3b82f6" strokeWidth="2" />
+          <rect x="105" y="325" width="45" height="70" rx="10" stroke="#4C57C8" strokeWidth="2" />
+          <rect x="190" y="325" width="45" height="70" rx="10" stroke="#4C57C8" strokeWidth="2" />
           {/* Feet */}
-          <rect x="95" y="395" width="65" height="16" rx="8" stroke="#6366f1" strokeWidth="1.5" />
-          <rect x="180" y="395" width="65" height="16" rx="8" stroke="#6366f1" strokeWidth="1.5" />
+          <rect x="95" y="395" width="65" height="16" rx="8" stroke="#3432C3" strokeWidth="1.5" />
+          <rect x="180" y="395" width="65" height="16" rx="8" stroke="#3432C3" strokeWidth="1.5" />
         </svg>
 
         {/* AI brain network - left side */}
@@ -89,44 +89,44 @@ export default function Hero() {
           {/* Brain outline */}
           <path
             d="M140 30 C80 30, 30 80, 30 140 C30 200, 80 250, 140 250 C200 250, 250 200, 250 140 C250 80, 200 30, 140 30Z"
-            stroke="#6366f1"
+            stroke="#3432C3"
             strokeWidth="1.5"
           />
           {/* Neural network nodes */}
-          <circle cx="140" cy="140" r="8" fill="#3b82f6" />
-          <circle cx="90" cy="100" r="5" fill="#6366f1" />
-          <circle cx="190" cy="100" r="5" fill="#6366f1" />
-          <circle cx="80" cy="160" r="5" fill="#818cf8" />
-          <circle cx="200" cy="160" r="5" fill="#818cf8" />
-          <circle cx="110" cy="70" r="4" fill="#3b82f6" />
-          <circle cx="170" cy="70" r="4" fill="#3b82f6" />
-          <circle cx="110" cy="210" r="4" fill="#6366f1" />
-          <circle cx="170" cy="210" r="4" fill="#6366f1" />
-          <circle cx="60" cy="130" r="3" fill="#818cf8" />
-          <circle cx="220" cy="130" r="3" fill="#818cf8" />
-          <circle cx="140" cy="60" r="4" fill="#6366f1" />
-          <circle cx="140" cy="220" r="4" fill="#3b82f6" />
+          <circle cx="140" cy="140" r="8" fill="#4C57C8" />
+          <circle cx="90" cy="100" r="5" fill="#3432C3" />
+          <circle cx="190" cy="100" r="5" fill="#3432C3" />
+          <circle cx="80" cy="160" r="5" fill="#7C86E8" />
+          <circle cx="200" cy="160" r="5" fill="#7C86E8" />
+          <circle cx="110" cy="70" r="4" fill="#4C57C8" />
+          <circle cx="170" cy="70" r="4" fill="#4C57C8" />
+          <circle cx="110" cy="210" r="4" fill="#3432C3" />
+          <circle cx="170" cy="210" r="4" fill="#3432C3" />
+          <circle cx="60" cy="130" r="3" fill="#7C86E8" />
+          <circle cx="220" cy="130" r="3" fill="#7C86E8" />
+          <circle cx="140" cy="60" r="4" fill="#3432C3" />
+          <circle cx="140" cy="220" r="4" fill="#4C57C8" />
           {/* Connections */}
-          <line x1="140" y1="140" x2="90" y2="100" stroke="#3b82f6" strokeWidth="1" />
-          <line x1="140" y1="140" x2="190" y2="100" stroke="#3b82f6" strokeWidth="1" />
-          <line x1="140" y1="140" x2="80" y2="160" stroke="#6366f1" strokeWidth="1" />
-          <line x1="140" y1="140" x2="200" y2="160" stroke="#6366f1" strokeWidth="1" />
-          <line x1="90" y1="100" x2="110" y2="70" stroke="#818cf8" strokeWidth="1" />
-          <line x1="190" y1="100" x2="170" y2="70" stroke="#818cf8" strokeWidth="1" />
-          <line x1="80" y1="160" x2="110" y2="210" stroke="#3b82f6" strokeWidth="1" />
-          <line x1="200" y1="160" x2="170" y2="210" stroke="#3b82f6" strokeWidth="1" />
-          <line x1="90" y1="100" x2="60" y2="130" stroke="#6366f1" strokeWidth="1" />
-          <line x1="190" y1="100" x2="220" y2="130" stroke="#6366f1" strokeWidth="1" />
-          <line x1="110" y1="70" x2="140" y2="60" stroke="#818cf8" strokeWidth="1" />
-          <line x1="170" y1="70" x2="140" y2="60" stroke="#818cf8" strokeWidth="1" />
-          <line x1="110" y1="210" x2="140" y2="220" stroke="#818cf8" strokeWidth="1" />
-          <line x1="170" y1="210" x2="140" y2="220" stroke="#818cf8" strokeWidth="1" />
-          <line x1="60" y1="130" x2="80" y2="160" stroke="#3b82f6" strokeWidth="1" />
-          <line x1="220" y1="130" x2="200" y2="160" stroke="#3b82f6" strokeWidth="1" />
+          <line x1="140" y1="140" x2="90" y2="100" stroke="#4C57C8" strokeWidth="1" />
+          <line x1="140" y1="140" x2="190" y2="100" stroke="#4C57C8" strokeWidth="1" />
+          <line x1="140" y1="140" x2="80" y2="160" stroke="#3432C3" strokeWidth="1" />
+          <line x1="140" y1="140" x2="200" y2="160" stroke="#3432C3" strokeWidth="1" />
+          <line x1="90" y1="100" x2="110" y2="70" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="190" y1="100" x2="170" y2="70" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="80" y1="160" x2="110" y2="210" stroke="#4C57C8" strokeWidth="1" />
+          <line x1="200" y1="160" x2="170" y2="210" stroke="#4C57C8" strokeWidth="1" />
+          <line x1="90" y1="100" x2="60" y2="130" stroke="#3432C3" strokeWidth="1" />
+          <line x1="190" y1="100" x2="220" y2="130" stroke="#3432C3" strokeWidth="1" />
+          <line x1="110" y1="70" x2="140" y2="60" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="170" y1="70" x2="140" y2="60" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="110" y1="210" x2="140" y2="220" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="170" y1="210" x2="140" y2="220" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="60" y1="130" x2="80" y2="160" stroke="#4C57C8" strokeWidth="1" />
+          <line x1="220" y1="130" x2="200" y2="160" stroke="#4C57C8" strokeWidth="1" />
           {/* Pulse rings around center */}
-          <circle cx="140" cy="140" r="25" stroke="#3b82f6" strokeWidth="0.5" strokeDasharray="4 4" />
-          <circle cx="140" cy="140" r="50" stroke="#6366f1" strokeWidth="0.5" strokeDasharray="4 4" />
-          <circle cx="140" cy="140" r="80" stroke="#818cf8" strokeWidth="0.5" strokeDasharray="4 4" />
+          <circle cx="140" cy="140" r="25" stroke="#4C57C8" strokeWidth="0.5" strokeDasharray="4 4" />
+          <circle cx="140" cy="140" r="50" stroke="#3432C3" strokeWidth="0.5" strokeDasharray="4 4" />
+          <circle cx="140" cy="140" r="80" stroke="#7C86E8" strokeWidth="0.5" strokeDasharray="4 4" />
         </svg>
       </div>
 
@@ -138,6 +138,13 @@ export default function Hero() {
         </div>
 
         {/* Heading */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/sja-robotics-logo-dark.png"
+          alt="SJA Robotics"
+          className="mx-auto mb-8 h-28 w-auto sm:h-36 lg:h-44 drop-shadow-[0_0_40px_rgba(59,130,246,0.35)]"
+        />
+
         <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight mb-6">
           <span className="block">Empowering</span>
           <span className="block bg-gradient-to-r from-accent via-accent-2 to-accent-3 bg-clip-text text-transparent animate-gradient">

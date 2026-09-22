@@ -32,15 +32,10 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/sja-logo-circle.png"
-                alt="SJA Logo"
-                width={40}
-                height={40}
-                className="rounded-full"
+                src="/sja-robotics-logo-dark.png"
+                alt="SJA Robotics"
+                className="h-16 w-auto"
               />
-              <span className="text-lg font-bold">
-                <span className="text-accent">Robotics</span>
-              </span>
             </div>
             <p className="text-foreground/50 text-sm leading-relaxed mb-4">
               Empowering everyday life through intelligent, automated solutions.

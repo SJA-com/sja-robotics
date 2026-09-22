@@ -7,19 +7,19 @@ export default function About() {
         <div className="absolute bottom-20 left-16 w-48 h-48 bg-accent-2/10 rounded-full blur-3xl" />
         {/* Connecting lines */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.15]" xmlns="http://www.w3.org/2000/svg">
-          <line x1="10%" y1="20%" x2="30%" y2="40%" stroke="#3b82f6" strokeWidth="1" />
-          <line x1="30%" y1="40%" x2="60%" y2="30%" stroke="#6366f1" strokeWidth="1" />
-          <line x1="60%" y1="30%" x2="85%" y2="55%" stroke="#818cf8" strokeWidth="1" />
-          <line x1="85%" y1="55%" x2="70%" y2="80%" stroke="#3b82f6" strokeWidth="1" />
-          <line x1="20%" y1="70%" x2="50%" y2="60%" stroke="#6366f1" strokeWidth="1" />
-          <line x1="50%" y1="60%" x2="30%" y2="40%" stroke="#818cf8" strokeWidth="1" />
-          <circle cx="10%" cy="20%" r="3" fill="#3b82f6" />
-          <circle cx="30%" cy="40%" r="3" fill="#6366f1" />
-          <circle cx="60%" cy="30%" r="3" fill="#818cf8" />
-          <circle cx="85%" cy="55%" r="3" fill="#3b82f6" />
-          <circle cx="70%" cy="80%" r="3" fill="#6366f1" />
-          <circle cx="20%" cy="70%" r="3" fill="#818cf8" />
-          <circle cx="50%" cy="60%" r="3" fill="#3b82f6" />
+          <line x1="10%" y1="20%" x2="30%" y2="40%" stroke="#4C57C8" strokeWidth="1" />
+          <line x1="30%" y1="40%" x2="60%" y2="30%" stroke="#3432C3" strokeWidth="1" />
+          <line x1="60%" y1="30%" x2="85%" y2="55%" stroke="#7C86E8" strokeWidth="1" />
+          <line x1="85%" y1="55%" x2="70%" y2="80%" stroke="#4C57C8" strokeWidth="1" />
+          <line x1="20%" y1="70%" x2="50%" y2="60%" stroke="#3432C3" strokeWidth="1" />
+          <line x1="50%" y1="60%" x2="30%" y2="40%" stroke="#7C86E8" strokeWidth="1" />
+          <circle cx="10%" cy="20%" r="3" fill="#4C57C8" />
+          <circle cx="30%" cy="40%" r="3" fill="#3432C3" />
+          <circle cx="60%" cy="30%" r="3" fill="#7C86E8" />
+          <circle cx="85%" cy="55%" r="3" fill="#4C57C8" />
+          <circle cx="70%" cy="80%" r="3" fill="#3432C3" />
+          <circle cx="20%" cy="70%" r="3" fill="#7C86E8" />
+          <circle cx="50%" cy="60%" r="3" fill="#4C57C8" />
         </svg>
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,0 +1,28 @@
+# SJA Robotics — static site on Cloudflare Workers (assets only).
+#
+#   sja-robotics      (prod, main) → https://robotics.sjapathway.com
+#   sja-robotics-dev  (dev)        → https://sja-robotics-dev.<account>.workers.dev
+#
+# Deploy (Node 22+, `wrangler login`):
+#   npm run deploy         # production
+#   npm run deploy:dev     # dev worker
+
+name = "sja-robotics"
+compatibility_date = "2024-09-23"
+workers_dev = true
+
+routes = [
+  { pattern = "robotics.sjapathway.com", custom_domain = true }
+]
+
+[assets]
+directory = "./out"
+not_found_handling = "404-page"
+
+[env.dev]
+name = "sja-robotics-dev"
+workers_dev = true
+
+[env.dev.assets]
+directory = "./out"
+not_found_handling = "404-page"

@@ -13,7 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Robotics | Empowering Everyday Life Through Automation",
+  metadataBase: new URL("https://robotics.sjapathway.com"),
+  title: "SJA Robotics | Empowering Everyday Life Through Automation",
+  icons: { icon: "/icon-64.png", apple: "/apple-touch-icon.png" },
   description:
     "SJA Robotics is at the forefront of integrating AI and automation into everyday devices. Discover Atiana, Sueen, and our suite of intelligent products.",
   keywords: [

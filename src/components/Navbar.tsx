@@ -23,12 +23,13 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <Image
-              src="/sja-logo-circle.png"
-              alt="SJA Logo"
-              width={40}
-              height={40}
-              className="rounded-full"
+              src="/sja-robotics-mark.png"
+              alt="SJA Robotics"
+              width={120}
+              height={80}
+              className="h-9 w-auto transition-transform group-hover:scale-105"
               unoptimized
+              priority
             />
             <span className="text-lg font-bold">
               <span className="text-accent">Robotics</span>
