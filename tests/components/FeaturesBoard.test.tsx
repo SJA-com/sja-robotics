@@ -18,7 +18,7 @@ describe("intern features data", () => {
 
   it("marks shipped features with the release they shipped in", () => {
     expect(shipped.length).toBeGreaterThan(0);
-    for (const f of shipped) expect(f.shipped).toMatch(/^(Fari|MOUS) \d+\.\d+$/);
+    for (const f of shipped) expect(f.shipped).toMatch(/^(Fari|MOUS|Fari app) \d+\.\d+$/);
     expect(fariBacklog.features.find((f) => f.id === "F-24")?.shipped).toBe("Fari 2.1");
     expect(mousBacklog.features.find((f) => f.id === "M-15")?.shipped).toBe("MOUS 2.1");
   });
