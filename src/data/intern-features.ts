@@ -26,7 +26,7 @@ export const fariBacklog: ProductBacklog = {
   product: "Fari",
   tagline: "Arabic-first personal AI companion with permanent memory and 5 modes",
   demo: "https://robotics.sjapathway.com/fari/",
-  repo: "https://github.com/sja-thedude/fari",
+  repo: "https://github.com/sja-thedude/Fari",
   stack: "Python on Cloudflare Workers (Pyodide) · OpenRouter · Workers KV",
   features: [
     // Voice & language
@@ -95,7 +95,7 @@ export const mousBacklog: ProductBacklog = {
   product: "MOUS",
   tagline: "Dialect-aware AI voice and WhatsApp agent for businesses",
   demo: "https://robotics.sjapathway.com/mous/",
-  repo: "https://github.com/sja-thedude/Mouss",
+  repo: "https://github.com/sja-thedude/Mous",
   stack: "JavaScript on Cloudflare Workers · OpenRouter · Workers KV · WhatsApp Cloud API",
   features: [
     // Voice & telephony
