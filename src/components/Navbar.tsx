@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -15,26 +16,45 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isHome = usePathname() === "/";
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <Image
-              src="/sja-robotics-mark.png"
-              alt="SJA Robotics"
-              width={120}
-              height={80}
-              className="h-9 w-auto transition-transform group-hover:scale-105"
-              unoptimized
-              priority
-            />
-            <span className="text-lg font-bold">
-              <span className="text-accent">Robotics</span>
-            </span>
-          </Link>
+          {/* Logo: SJA Inc. mark on the home page, Robotics logo elsewhere */}
+          {isHome ? (
+            <a
+              href="https://inc.sjapathway.com"
+              aria-label="SJA Inc."
+              className="flex items-center group"
+            >
+              <Image
+                src="/sja-inc-mark-light.png"
+                alt="SJA Inc."
+                width={476}
+                height={315}
+                className="h-9 w-auto transition-transform group-hover:scale-105"
+                unoptimized
+                priority
+              />
+            </a>
+          ) : (
+            <Link href="/" className="flex items-center gap-2 group">
+              <Image
+                src="/sja-robotics-mark.png"
+                alt="SJA Robotics"
+                width={120}
+                height={80}
+                className="h-9 w-auto transition-transform group-hover:scale-105"
+                unoptimized
+                priority
+              />
+              <span className="text-lg font-bold">
+                <span className="text-accent">Robotics</span>
+              </span>
+            </Link>
+          )}
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
