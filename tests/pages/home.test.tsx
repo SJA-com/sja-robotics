@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import Home from "@/app/page";
 
 describe("Home page (/)", () => {
-  it("renders Navbar, Hero, About, Divisions and Footer in order", () => {
+  it("renders Navbar, Hero, Products, About, Divisions and Footer in order", () => {
     const { container } = render(<Home />);
     const nav = container.querySelector("nav")!;
     const main = container.querySelector("main")!;
@@ -13,17 +13,19 @@ describe("Home page (/)", () => {
     expect(footer).toHaveAttribute("id", "contact");
 
     const sections = Array.from(main.querySelectorAll(":scope > section"));
-    expect(sections).toHaveLength(3);
+    // SocialProof renders nothing until live stats exist, so it isn't counted here.
+    expect(sections).toHaveLength(4);
     expect(sections[0]).toContainElement(screen.getByRole("heading", { level: 1 }));
-    expect(sections[1]).toHaveAttribute("id", "about");
-    expect(sections[2]).toHaveAttribute("id", "divisions");
+    expect(sections[1]).toHaveAttribute("id", "products");
+    expect(sections[2]).toHaveAttribute("id", "about");
+    expect(sections[3]).toHaveAttribute("id", "divisions");
   });
 
   it("has a single h1 with the site headline", () => {
     render(<Home />);
     const h1s = screen.getAllByRole("heading", { level: 1 });
     expect(h1s).toHaveLength(1);
-    expect(h1s[0]).toHaveTextContent(/Empowering.*Everyday Life.*Through Automation/);
+    expect(h1s[0]).toHaveTextContent(/AI products built.*for the Arab world\./);
   });
 
   it("shows the SJA Inc. mark in the navbar (home route)", () => {

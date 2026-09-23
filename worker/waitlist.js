@@ -93,6 +93,22 @@ async function listSignUps(env) {
   return json({ total: entries.length, byProduct, entries });
 }
 
+/** Number of sign-ups, cached for 10 minutes so the public stats endpoint never lists on every hit. */
+export async function waitlistCount(env) {
+  if (!env.ROBOTICS_KV) return 0;
+  const cached = await env.ROBOTICS_KV.get("cache:waitlist_count");
+  if (cached !== null && cached !== undefined) return Number(cached) || 0;
+  let count = 0;
+  let cursor;
+  do {
+    const page = await env.ROBOTICS_KV.list({ prefix: "wl:", cursor });
+    count += page.keys.length;
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  await env.ROBOTICS_KV.put("cache:waitlist_count", String(count), { expirationTtl: 600 });
+  return count;
+}
+
 /** Returns a Response for waitlist routes, or null if the path isn't one. */
 export async function handleWaitlist(request, env, path) {
   if (path === "/api/waitlist") {

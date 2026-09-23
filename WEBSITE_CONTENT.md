@@ -165,9 +165,12 @@ What's live in the demo today — and what's coming next:
 
 | Plan | Price | Description |
 | --- | --- | --- |
-| Starter | $99/month | Perfect for small businesses getting started with AI voice |
-| Business | $199/month | For growing businesses that need advanced voice capabilities |
-| Enterprise | Custom | Tailored solutions for large-scale deployments |
+| Free Trial | $0/month | 50 calls a month, 1 agent, WhatsApp — try MOUS risk-free |
+| Starter | $49/month | 500 calls, WhatsApp + voice, analytics and caller mood detection |
+| Business | $99/month | 2,000 calls, 3 agents, human hand-off and full analytics + export |
+| Enterprise | $249/month | Unlimited calls and agents, custom voice, API access and an SLA |
+
+14-day free trial on every plan, no credit card. Full comparison and FAQ: robotics.sjapathway.com/mous/pricing
 
 **CTA:** Join Waitlist · Try Demo
 Launching soon — be among the first businesses to deploy.

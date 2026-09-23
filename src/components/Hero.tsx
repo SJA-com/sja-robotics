@@ -1,3 +1,5 @@
+import { MOUS_DEMO_URL } from "./ProductShowcase";
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-circuit overflow-hidden">
@@ -134,7 +136,7 @@ export default function Hero() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-accent text-sm mb-8">
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          Pioneering the Future of Robotics
+          AI · Voice · Robotics
         </div>
 
         {/* Heading */}
@@ -145,33 +147,32 @@ export default function Hero() {
           className="mx-auto mb-8 h-28 w-auto sm:h-36 lg:h-44 drop-shadow-[0_0_40px_rgba(59,130,246,0.35)]"
         />
 
-        <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight mb-6">
-          <span className="block">Empowering</span>
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+          <span className="block">AI products built</span>
           <span className="block bg-gradient-to-r from-accent via-accent-2 to-accent-3 bg-clip-text text-transparent animate-gradient">
-            Everyday Life
+            for the Arab world.
           </span>
-          <span className="block">Through Automation</span>
         </h1>
 
         {/* Subtitle */}
         <p className="max-w-2xl mx-auto text-lg sm:text-xl text-foreground/60 mb-10">
-          SJA Robotics integrates AI and automation into everyday devices,
-          creating smart, user-friendly products that improve quality of life.
+          Voice agents that speak your customers&apos; dialect, an AI engine that remembers what matters,
+          and the robots it will power next.
         </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="#divisions"
+            href={MOUS_DEMO_URL}
             className="px-8 py-3 rounded-lg bg-gradient-to-r from-accent to-accent-2 text-white font-semibold hover:opacity-90 transition-opacity glow-accent"
           >
-            Explore Products
+            Try the MOUS Demo
           </a>
           <a
-            href="#about"
+            href="#products"
             className="px-8 py-3 rounded-lg border border-border text-foreground/80 hover:border-accent/50 hover:text-accent transition-all"
           >
-            Learn More
+            Explore Products
           </a>
         </div>
 

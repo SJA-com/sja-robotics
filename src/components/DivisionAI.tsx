@@ -40,26 +40,34 @@ const voiceFeatures: { name: string; status: Status }[] = [
   { name: "Custom voice", status: "Planned" },
 ];
 
+// Keep in sync with the full pricing page at /mous/pricing (Mous repo: worker/src/pricing.html).
 const voicePricing = [
   {
-    name: "Starter",
-    price: "$99",
+    name: "Free Trial",
+    price: "$0",
     period: "/month",
-    description: "Perfect for small businesses getting started with AI voice",
+    description: "50 calls a month, 1 agent, WhatsApp — try MOUS risk-free",
+    highlight: false,
+  },
+  {
+    name: "Starter",
+    price: "$49",
+    period: "/month",
+    description: "500 calls, WhatsApp + voice, analytics and caller mood detection",
     highlight: false,
   },
   {
     name: "Business",
-    price: "$199",
+    price: "$99",
     period: "/month",
-    description: "For growing businesses that need advanced voice capabilities",
+    description: "2,000 calls, 3 agents, human hand-off and full analytics + export",
     highlight: true,
   },
   {
     name: "Enterprise",
-    price: "Custom",
-    period: "",
-    description: "Tailored solutions for large-scale deployments",
+    price: "$249",
+    period: "/month",
+    description: "Unlimited calls and agents, custom voice, API access and an SLA",
     highlight: false,
   },
 ];
@@ -298,7 +306,7 @@ export default function DivisionAI() {
               Choose the plan that fits your business
             </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6 mb-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-4">
             {voicePricing.map((plan) => (
               <div
                 key={plan.name}
@@ -323,6 +331,17 @@ export default function DivisionAI() {
               </div>
             ))}
           </div>
+          <p className="text-center text-sm text-foreground/60 mb-10">
+            14-day free trial on every plan, no credit card.{" "}
+            <a
+              href="https://robotics.sjapathway.com/mous/pricing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent-3 hover:underline"
+            >
+              Compare plans &amp; FAQ →
+            </a>
+          </p>
           <div className="text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-3">
               <WaitlistButton product="MOUS" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold hover:opacity-90 transition-opacity glow-accent">

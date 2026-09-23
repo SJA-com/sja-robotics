@@ -2,7 +2,7 @@
  * robotics.sjapathway.com router.
  *
  * Static site assets are served directly by Workers Assets. Anything that
- * isn't an asset lands here: waitlist sign-ups (worker/waitlist.js), product
+ * isn't an asset lands here: public stats (/api/stats), waitlist sign-ups (worker/waitlist.js), product
  * demos mounted under a path prefix — forwarded to their own Workers (via
  * service bindings) or Pages project — and everything else falls through to
  * the static 404 page.
@@ -10,7 +10,7 @@
  * Each product reads X-Base-Path so its UI builds URLs under the prefix.
  */
 
-import { handleWaitlist } from "./waitlist.js";
+import { handleWaitlist, waitlistCount } from "./waitlist.js";
 
 const PRODUCTS = {
   fari: { binding: "FARI" },
@@ -20,11 +20,38 @@ const PRODUCTS = {
   sueen: { origin: "https://sueen.pages.dev" },
 };
 
+/** Aggregate traction numbers for the homepage. Never includes any personal data. */
+async function publicStats(env) {
+  const stats = { conversations_30d: 0, demo_conversations_30d: 0, businesses: 0, waitlist: 0 };
+  try {
+    if (env.MOUS) {
+      const res = await env.MOUS.fetch(new Request("https://mous.internal/api/public-stats"));
+      if (res.ok) {
+        const d = await res.json();
+        for (const k of ["conversations_30d", "demo_conversations_30d", "businesses"]) {
+          const n = Number(d[k]);
+          if (Number.isFinite(n) && n >= 0) stats[k] = Math.floor(n);
+        }
+      }
+    }
+  } catch (e) {
+    console.error("public stats (mous):", e.message);
+  }
+  try {
+    stats.waitlist = await waitlistCount(env);
+  } catch (e) {
+    console.error("public stats (waitlist):", e.message);
+  }
+  return Response.json(stats, { headers: { "Cache-Control": "public, max-age=300" } });
+}
+
 const MOUNT_RE = new RegExp(`^/(${Object.keys(PRODUCTS).join("|")})(/.*)?$`);
 
 const router = {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    if (url.pathname === "/api/stats") return publicStats(env);
 
     const waitlist = await handleWaitlist(request, env, url.pathname);
     if (waitlist) return waitlist;

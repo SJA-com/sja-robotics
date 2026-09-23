@@ -59,9 +59,10 @@ describe("<DivisionAI />", () => {
   });
 
   it.each([
-    ["Starter", "$99", "/month"],
-    ["Business", "$199", "/month"],
-    ["Enterprise", "Custom", ""],
+    ["Free Trial", "$0", "/month"],
+    ["Starter", "$49", "/month"],
+    ["Business", "$99", "/month"],
+    ["Enterprise", "$249", "/month"],
   ])("prices the MOUS %s plan", (name, price, period) => {
     render(<DivisionAI />);
     const card = screen.getByText(name, { selector: "p" }).parentElement!;
