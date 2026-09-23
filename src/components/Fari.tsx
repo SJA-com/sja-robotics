@@ -18,7 +18,7 @@ const modes: {
     color: "text-rose-400",
     bg: "bg-rose-400/10",
     features: [
-      { text: "Symptom guidance and general health advice" },
+      { text: "Symptom guidance with a triage card: self-care, see a doctor or urgent" },
       { text: "Remembers your conditions, allergies and medications" },
       { text: "A health profile you can view, edit or erase" },
       { text: "Connecting you with doctors", planned: true },
@@ -32,7 +32,7 @@ const modes: {
     bg: "bg-amber-300/10",
     features: [
       { text: "Home-security advice and safety checklists" },
-      { text: "Smart-home monitoring", planned: true },
+      { text: "Scam & phishing checks for suspicious messages" },
       { text: "Real-time alerts for unusual activity", planned: true },
       { text: "Camera & sensor integration", planned: true },
     ],
@@ -45,7 +45,7 @@ const modes: {
     bg: "bg-sky-400/10",
     features: [
       { text: "Keeps a task list you can view and edit" },
-      { text: "Drafts emails and messages, helps with research" },
+      { text: "Drafts emails and messages — open them in Gmail, Outlook or WhatsApp" },
       { text: "Reminders & push notifications", planned: true },
       { text: "Ordering online & sending emails for you", planned: true },
     ],
@@ -60,7 +60,7 @@ const modes: {
       { text: "First aid guidance step by step" },
       { text: "Calm, clear instructions in Arabic or English" },
       { text: "Contacting emergency services automatically", planned: true },
-      { text: "Alerting your chosen contacts", planned: true },
+      { text: "One-tap call, WhatsApp and location sharing to your contacts" },
     ],
   },
   {
@@ -182,13 +182,16 @@ const statusRows: { feature: string; today: string; status: Status }[] = [
   { feature: "Arabic-first", today: "Replies in the language of your latest message, mirrors your dialect, full RTL interface", status: "Live" },
   { feature: "Voice + Chat", today: "Talk or type — voice in and out through your browser", status: "Live" },
   { feature: "Images & PDFs", today: "Reads the photos and documents you share", status: "Live" },
+  { feature: "Triage, scam checks & drafts", today: "Triage cards for symptoms, scam verdicts for suspicious messages, ready-to-send email and message drafts", status: "Live" },
+  { feature: "Emergency contacts & location", today: "Saved contacts with one-tap call or WhatsApp, share your location, local emergency numbers for your country", status: "Live" },
+  { feature: "Your style & mood journal", today: "Choose tone, reply length and humour; a 7-day view of how you've been feeling", status: "Live" },
   { feature: "Reminders & notifications", today: "Push reminders for your tasks", status: "Planned" },
   { feature: "Real-time web search", today: "Live answers from the web", status: "Planned" },
   { feature: "Additional AI providers", today: "Frontier models (e.g. Claude, ChatGPT, DeepSeek, Gemini) added per route", status: "Planned" },
   { feature: "Natural neural voice", today: "Premium voices (e.g. ElevenLabs)", status: "Planned" },
   { feature: "Actions on your behalf", today: "Ordering online, sending emails", status: "Planned" },
   { feature: "Smart home & cameras", today: "Monitoring and alerts from your devices", status: "Planned" },
-  { feature: "Emergency contacts & services", today: "Automatic alerts when you need help", status: "Planned" },
+  { feature: "Automatic emergency alerts", today: "Fari alerting services or your contacts for you", status: "Planned" },
   { feature: "Powers a robot", today: "Fari as the brain of Atiana", status: "Planned" },
 ];
 

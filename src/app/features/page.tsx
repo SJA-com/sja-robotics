@@ -6,7 +6,7 @@ import FeaturesBoard from "@/components/FeaturesBoard";
 export const metadata: Metadata = {
   title: "Features Roadmap — Fari & MOUS | SJA Robotics",
   description:
-    "100 open features for interns to build on Fari, the AI companion, and MOUS, the AI voice agent — with difficulty levels, skills and where to start.",
+    "100 scoped features for interns to build on Fari, the AI companion, and MOUS, the AI voice agent — with difficulty levels, skills, where to start and what has already shipped.",
 };
 
 const steps = [
@@ -45,8 +45,8 @@ export default function FeaturesPage() {
               Features <span className="text-accent">Roadmap</span>
             </h1>
             <p className="mt-4 max-w-2xl text-foreground/70 text-lg">
-              100 open features for Fari and MOUS. Both are live today — every item here makes them more
-              useful for real people and businesses.
+              100 scoped features for Fari and MOUS — 23 already shipped, the rest open for you. Both
+              products are live today; every item here makes them more useful for real people and businesses.
             </p>
 
             <ol className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

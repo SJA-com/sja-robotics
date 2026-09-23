@@ -116,13 +116,16 @@ describe("<Fari />", () => {
       ["Arabic-first", "Live"],
       ["Voice + Chat", "Live"],
       ["Images & PDFs", "Live"],
+      ["Triage, scam checks & drafts", "Live"],
+      ["Emergency contacts & location", "Live"],
+      ["Your style & mood journal", "Live"],
       ["Reminders & notifications", "Planned"],
       ["Real-time web search", "Planned"],
       ["Additional AI providers", "Planned"],
       ["Natural neural voice", "Planned"],
       ["Actions on your behalf", "Planned"],
       ["Smart home & cameras", "Planned"],
-      ["Emergency contacts & services", "Planned"],
+      ["Automatic emergency alerts", "Planned"],
       ["Powers a robot", "Planned"],
     ])("row '%s' is marked %s", (feature, status) => {
       render(<Fari />);
@@ -153,7 +156,6 @@ describe("<Fari />", () => {
   it.each([
     ["Health Mode", ["Connecting you with doctors"]],
     ["Security Mode", [
-      "Smart-home monitoring",
       "Real-time alerts for unusual activity",
       "Camera & sensor integration",
     ]],
@@ -161,10 +163,7 @@ describe("<Fari />", () => {
       "Reminders & push notifications",
       "Ordering online & sending emails for you",
     ]],
-    ["Emergency Mode", [
-      "Contacting emergency services automatically",
-      "Alerting your chosen contacts",
-    ]],
+    ["Emergency Mode", ["Contacting emergency services automatically"]],
     ["Companion Mode", []],
   ])("marks only the not-yet-built %s features as Planned", (mode, planned) => {
     render(<Fari />);

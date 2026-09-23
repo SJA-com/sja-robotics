@@ -211,7 +211,11 @@ Designed from day one for Arabic-speaking businesses — and built to serve you,
 | Bookings & appointments | Captures structured booking details | Live in demo |
 | Arabic + English documents | Reads invoices and documents from images and PDFs | Live in demo |
 | Voice | Browser voice with a simulated hands-free call mode | Live in demo |
-| Call analytics dashboard | Conversation and call insights for your business | Live in demo |
+| Call analytics dashboard | Owner login; bookings, satisfaction, busiest hours and CSV export | Live in demo |
+| Opening hours | Per-day hours and time zone — MOUS knows if you're open right now | Live in demo |
+| Customer link & website widget | Publish your agent, share a link or embed it on your site | Live in demo |
+| Menu & price-list import | Upload a menu or price list and MOUS fills in your details | Live in demo |
+| Conversation summaries | Summary, outcome and estimated satisfaction for every conversation | Live in demo |
 | WhatsApp | Integration built; not yet connected to a live number | In development |
 | Real phone numbers | Inbound and outbound calls over telephony | Planned |
 | Custom cloned voices | Your brand's own voice | Planned |
@@ -277,37 +281,40 @@ Because the model layer is provider-agnostic, Fari is designed to adopt better m
 | Arabic-first | Replies in the language of your latest message, mirrors your dialect, full RTL interface | Live |
 | Voice + Chat | Talk or type — voice in and out through your browser | Live |
 | Images & PDFs | Reads the photos and documents you share | Live |
+| Triage, scam checks & drafts | Triage cards for symptoms, scam verdicts for suspicious messages, ready-to-send email and message drafts | Live |
+| Emergency contacts & location | Saved contacts with one-tap call or WhatsApp, share your location, local emergency numbers for your country | Live |
+| Your style & mood journal | Choose tone, reply length and humour; a 7-day view of how you've been feeling | Live |
 | Reminders & notifications | Push reminders for your tasks | Planned |
 | Real-time web search | Live answers from the web | Planned |
 | Additional AI providers | Frontier models (e.g. Claude, ChatGPT, DeepSeek, Gemini) added per route | Planned |
 | Natural neural voice | Premium voices (e.g. ElevenLabs) | Planned |
 | Actions on your behalf | Ordering online, sending emails | Planned |
 | Smart home & cameras | Monitoring and alerts from your devices | Planned |
-| Emergency contacts & services | Automatic alerts when you need help | Planned |
+| Automatic emergency alerts | Fari alerting services or your contacts for you | Planned |
 | Powers a robot | Fari as the brain of Atiana | Planned |
 
 **5 Specialized Modes** — Not just a chatbot — Fari transforms into what you need, when you need it. All five modes are live in the beta; items marked Planned are on the roadmap.
 
 - **Health Mode** — *Your personal health Rafiq*
-  - Symptom guidance and general health advice
+  - Symptom guidance with a triage card: self-care, see a doctor or urgent
   - Remembers your conditions, allergies and medications
   - A health profile you can view, edit or erase
   - Connecting you with doctors *(Planned)*
 - **Security Mode** — *Home-safety guidance, on call*
   - Home-security advice and safety checklists
-  - Smart-home monitoring *(Planned)*
+  - Scam & phishing checks for suspicious messages
   - Real-time alerts for unusual activity *(Planned)*
   - Camera & sensor integration *(Planned)*
 - **Assistant Mode** — *Your organised right hand*
   - Keeps a task list you can view and edit
-  - Drafts emails and messages, helps with research
+  - Drafts emails and messages — open them in Gmail, Outlook or WhatsApp
   - Reminders & push notifications *(Planned)*
   - Ordering online & sending emails for you *(Planned)*
 - **Emergency Mode** — *Stays calm so you don't have to*
   - First aid guidance step by step
   - Calm, clear instructions in Arabic or English
   - Contacting emergency services automatically *(Planned)*
-  - Alerting your chosen contacts *(Planned)*
+  - One-tap call, WhatsApp and location sharing to your contacts
 - **Companion Mode** — *Your Rafiq — just talk*
   - Just talk — about anything
   - Remembers the facts you share until you erase them

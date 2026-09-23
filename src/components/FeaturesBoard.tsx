@@ -18,12 +18,14 @@ const difficultyStyle: Record<Difficulty, string> = {
 };
 
 type ProductFilter = "All" | ProductBacklog["product"];
+type StatusFilter = "Open" | "Shipped" | "All";
 
 export default function FeaturesBoard() {
   const [product, setProduct] = useState<ProductFilter>("All");
   const [difficulty, setDifficulty] = useState<Difficulty | "All">("All");
   const [category, setCategory] = useState("All");
   const [query, setQuery] = useState("");
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>("Open");
 
   const visibleBacklogs = backlogs.filter((b) => product === "All" || b.product === product);
 
@@ -38,6 +40,7 @@ export default function FeaturesBoard() {
     ...b,
     features: b.features.filter(
       (f) =>
+        (statusFilter === "All" || (statusFilter === "Shipped") === Boolean(f.shipped)) &&
         (difficulty === "All" || f.difficulty === difficulty) &&
         (category === "All" || f.category === category) &&
         (!q ||
@@ -45,6 +48,8 @@ export default function FeaturesBoard() {
     ),
   }));
   const shown = filtered.reduce((n, b) => n + b.features.length, 0);
+  const total = backlogs.reduce((n, b) => n + b.features.length, 0);
+  const shippedCount = backlogs.reduce((n, b) => n + b.features.filter((f) => f.shipped).length, 0);
 
   const pill = (active: boolean) =>
     `px-3 py-1.5 rounded-full text-xs border transition-colors ${
@@ -69,6 +74,12 @@ export default function FeaturesBoard() {
                 className={pill(product === p)}
               >
                 {p === "All" ? "Both products" : p}
+              </button>
+            ))}
+            <span className="w-px h-5 bg-border mx-1 hidden sm:block" />
+            {(["Open", "Shipped", "All"] as StatusFilter[]).map((st) => (
+              <button key={st} onClick={() => setStatusFilter(st)} className={pill(statusFilter === st)}>
+                {st === "All" ? "Any status" : st}
               </button>
             ))}
             <span className="w-px h-5 bg-border mx-1 hidden sm:block" />
@@ -100,7 +111,7 @@ export default function FeaturesBoard() {
             />
           </div>
           <p className="text-xs text-foreground/50">
-            Showing {shown} of {backlogs.reduce((n, b) => n + b.features.length, 0)} features
+            Showing {shown} of {total} features · {total - shippedCount} open · {shippedCount} shipped
           </p>
         </div>
       </div>
@@ -112,7 +123,10 @@ export default function FeaturesBoard() {
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold">
-                  {b.product} <span className="text-foreground/40 font-normal">· {b.features.length}</span>
+                  {b.product}{" "}
+                  <span className="text-foreground/40 font-normal">
+                    · {b.features.length}
+                  </span>
                 </h2>
                 <p className="text-foreground/60 mt-1">{b.tagline}</p>
                 <p className="text-xs text-foreground/40 mt-1 font-mono">{b.stack}</p>
@@ -142,17 +156,25 @@ export default function FeaturesBoard() {
                 {b.features.map((f) => (
                   <li
                     key={f.id}
-                    className="p-5 rounded-xl bg-surface border border-border hover:border-accent/50 transition-colors flex flex-col"
+                    data-shipped={f.shipped ? "true" : undefined}
+                    className={`p-5 rounded-xl bg-surface border border-border hover:border-accent/50 transition-colors flex flex-col ${
+                      f.shipped ? "opacity-70" : ""
+                    }`}
                   >
                     <div className="flex items-start justify-between gap-3 mb-2">
                       <h3 className="font-semibold leading-snug">
                         <span className="font-mono text-xs text-foreground/40 mr-2">{f.id}</span>
                         {f.title}
                       </h3>
-                      <span
-                        className={`shrink-0 text-[11px] px-2 py-0.5 rounded-full border ${difficultyStyle[f.difficulty]}`}
-                      >
-                        {f.difficulty}
+                      <span className="shrink-0 flex gap-1">
+                        {f.shipped && (
+                          <span className="text-[11px] px-2 py-0.5 rounded-full border text-emerald-300 border-emerald-400/30 bg-emerald-400/10">
+                            ✓ Shipped
+                          </span>
+                        )}
+                        <span className={`text-[11px] px-2 py-0.5 rounded-full border ${difficultyStyle[f.difficulty]}`}>
+                          {f.difficulty}
+                        </span>
                       </span>
                     </div>
                     <p className="text-sm text-foreground/70 leading-relaxed flex-1">{f.detail}</p>
@@ -167,7 +189,11 @@ export default function FeaturesBoard() {
                       ))}
                     </div>
                     <p className="mt-3 text-xs text-foreground/50">
-                      Start here: <code className="font-mono text-accent-3">{f.startHere}</code>
+                      {f.shipped ? (
+                        <>Shipped in {f.shipped} — see <code className="font-mono text-accent-3">{f.startHere}</code></>
+                      ) : (
+                        <>Start here: <code className="font-mono text-accent-3">{f.startHere}</code></>
+                      )}
                     </p>
                   </li>
                 ))}
