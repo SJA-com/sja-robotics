@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FeaturesBoard from "@/components/FeaturesBoard";
+import { fariBacklog, mousBacklog } from "@/data/intern-features";
+
+const allFeatures = [...fariBacklog.features, ...mousBacklog.features];
+const shippedCount = allFeatures.filter((f) => f.shipped).length;
 
 export const metadata: Metadata = {
   title: "Features Roadmap — Fari & MOUS | SJA Robotics",
@@ -45,7 +49,7 @@ export default function FeaturesPage() {
               Features <span className="text-accent">Roadmap</span>
             </h1>
             <p className="mt-4 max-w-2xl text-foreground/70 text-lg">
-              100 scoped features for Fari and MOUS — 23 already shipped, the rest open for you. Both
+              {allFeatures.length} scoped features for Fari and MOUS — {shippedCount} already shipped, the rest open for you. Both
               products are live today; every item here makes them more useful for real people and businesses.
             </p>
 
