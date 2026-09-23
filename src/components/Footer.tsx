@@ -20,6 +20,7 @@ const footerLinks = {
     { label: "Divisions", href: "/#divisions" },
     { label: "Careers", href: "#contact" },
     { label: "Contact", href: "#contact" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/sjarobotics" },
   ],
 };
 
@@ -52,6 +53,9 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      {...(link.href.startsWith("http")
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                       className="text-sm text-foreground/50 hover:text-accent transition-colors"
                     >
                       {link.label}

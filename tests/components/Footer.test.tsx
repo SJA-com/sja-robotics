@@ -54,6 +54,7 @@ describe("<Footer />", () => {
         ["Divisions", "/#divisions"],
         ["Careers", "#contact"],
         ["Contact", "#contact"],
+        ["LinkedIn", "https://www.linkedin.com/company/sjarobotics"],
       ],
     ],
   ])("'%s' column links", (title, expected) => {
@@ -63,6 +64,13 @@ describe("<Footer />", () => {
       .getAllByRole("link")
       .map((a) => [a.textContent, a.getAttribute("href")]);
     expect(links).toEqual(expected);
+  });
+
+  it("opens the LinkedIn page in a new tab", () => {
+    render(<Footer />);
+    const link = screen.getByRole("link", { name: "LinkedIn" });
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
   });
 
   it("does not link to the disabled SJA Tech products", () => {
