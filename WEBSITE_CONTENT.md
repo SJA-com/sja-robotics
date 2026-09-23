@@ -106,7 +106,7 @@ SJA Robotics is more than just a tech company — it's a movement towards a smar
 **Intro:** SJA Robotics operates through focused divisions — each driving innovation in their domain while powering the broader ecosystem.
 
 #### SJA AI — Artificial Intelligence (3 Products)
-Pioneering artificial intelligence research, building machine learning models, and developing intelligent software solutions that power every product across SJA Robotics.
+Building AI products — voice agents, personal companions and smart-home intelligence — designed to power every product across SJA Robotics.
 
 Featured Products:
 - **Fari** — Futuristic Artificial Reasoning Intelligence — personal AI companion *(Coming Soon · Demo)*
@@ -125,12 +125,12 @@ Featured Products:
 ## Division: SJA AI
 
 **Page title:** SJA AI — Artificial Intelligence | SJA Robotics
-**Description:** AI voice agents, personal AI companions, and cutting-edge machine learning research from SJA AI.
+**Description:** AI voice agents, personal AI companions and smart-home intelligence from SJA AI — with live demos.
 
 **Division 02 — SJA AI**
 *Artificial Intelligence*
 
-Pioneering artificial intelligence research, building machine learning models, and developing intelligent software solutions that power every product across SJA Robotics.
+Building AI products — voice agents, personal companions and smart-home intelligence — designed to power every product across SJA Robotics.
 
 **Products Under SJA AI:**
 - **MOUS** — Multilingual Omnipresent Unified System *(Coming Soon)*
@@ -144,21 +144,22 @@ Pioneering artificial intelligence research, building machine learning models, a
 **MOUS** — Multilingual Omnipresent Unified System
 **MOUS — Give Your Business a Voice** · *Coming Soon*
 
-Any business can deploy their own AI voice agent in minutes — no coding needed.
+Any business can set up its own AI voice agent in minutes — no coding needed. Try the live demo today.
 
 **Use Cases:**
-- **Restaurant** — AI takes reservations by phone
+- **Restaurant** — AI takes table reservations
 - **Clinic** — AI books appointments
 - **Real Estate** — AI answers property enquiries 24/7
-- **E-commerce** — AI handles customer support calls
+- **E-commerce** — AI handles customer support questions
 
 **Key Features**
-Everything your business needs to deliver an exceptional voice experience:
-- Custom voice
-- Custom personality
-- Multiple languages
-- 24/7 availability
-- Call analytics dashboard
+What's live in the demo today — and what's coming next:
+- Custom personality *(Live in demo)*
+- Arabic dialects + English *(Live in demo)*
+- 24/7 availability *(Live in demo)*
+- Call analytics dashboard *(Live in demo)*
+- WhatsApp *(In development)*
+- Custom voice *(Planned)*
 
 **Simple Pricing** — Choose the plan that fits your business
 
@@ -177,134 +178,150 @@ Launching soon — be among the first businesses to deploy.
 
 **MOUS — Built for the Arab World. Built for Everyone.**
 
-Every other voice agent was built for the West. MOUS was built for you — regardless of culture, religion or language.
+Designed from day one for Arabic-speaking businesses — and built to serve you, regardless of culture, religion or language.
 
 **6 Unique Features:**
 
-1. **Dialect Intelligence** — MOUS doesn't just speak Arabic — she speaks YOUR Arabic. Understands Saudi, Egyptian, Emirati, Lebanese and Moroccan dialects natively. Your Riyadh customers and Cairo customers both feel at home. No more generic Arabic that sounds foreign to your customers.
+1. **Dialect Intelligence** *(Live in demo)* — MOUS doesn't just speak Arabic — she speaks YOUR Arabic. Choose Saudi, Egyptian, Emirati, Lebanese, Moroccan or Modern Standard Arabic, or let MOUS auto-detect the customer's dialect. Designed so your Riyadh customers and Cairo customers both feel at home — not generic Arabic that sounds foreign to them.
 
-2. **Cultural Intelligence** — The first voice agent that understands BOTH Arab and Western cultures deeply. Muslim businesses — knows prayer times, Islamic greetings, Ramadan hours, Halal requirements. Christian businesses — church hours, Christmas and Easter seasons. Secular businesses — neutral, professional. Respects Friday, Saturday OR Sunday as weekend depending on your business.
+2. **Cultural Intelligence** *(Live in demo)* — Built to respect both Arab and Western business cultures. Set your business as Muslim, Christian or secular and MOUS adapts. Muslim businesses — Islamic greetings, prayer times, Ramadan hours, Halal questions. Christian businesses — church hours, Christmas and Easter seasons. Secular businesses — neutral, professional. Friday, Saturday OR Sunday weekends, depending on your business.
 
-3. **Emotion Detection** — MOUS detects if your caller is angry, confused, sad or happy in real time. Automatically adjusts her tone to match the situation. Escalates to a human agent if the caller is very upset. Soothes anxious callers — perfect for clinics and hospitals. Your customers always feel heard.
+3. **Emotion Detection** *(Live in demo)* — MOUS picks up whether a customer sounds angry, confused, sad or happy and adjusts her tone to match. Very upset customers are flagged for escalation to a human agent. Designed to soothe anxious callers — ideal for clinics and hospitals — so your customers feel heard.
 
-4. **WhatsApp + Voice Combined** — Middle East runs on WhatsApp — MOUS knows this. One AI handling both WhatsApp messages AND phone calls seamlessly. Customer sends WhatsApp at 2am — MOUS responds instantly. Customer calls at 9am — same MOUS, same context, remembers everything. Switches between Arabic and English mid-conversation naturally.
+4. **WhatsApp + Voice Combined** *(In development)* — The Middle East runs on WhatsApp — MOUS is being built for it. The goal: one AI answering WhatsApp messages at 2am and phone calls at 9am, with the same context. Today voice runs in the browser demo and the WhatsApp integration is built but not yet connected to a live number; phone lines and shared memory across channels are on the roadmap.
 
-5. **Arabic + English Document Intelligence** — Caller asking about their invoice? MOUS reads it instantly — in Arabic or English. Understands contracts, receipts, medical reports, booking confirmations. Answers billing and document questions without a human. First voice agent in the world to read and understand Arabic documents in real time.
+5. **Arabic + English Document Intelligence** *(Live in demo)* — Customer asking about their invoice? Share it as an image or PDF and MOUS reads it — in Arabic or English. Built for contracts, receipts, medical reports and booking confirmations, so routine billing and document questions don't need a human.
 
-6. **Business Personality Modes** — Every business gets a MOUS that fits their brand perfectly. Medical mode — calm, professional, empathetic. Restaurant mode — warm, friendly. Real estate mode — confident, persuasive. Banking mode — formal, trustworthy. Faith-based mode — respectful, warm, community focused. Your MOUS sounds like YOUR business.
+6. **Business Personality Modes** *(Live in demo)* — Every business gets a MOUS that fits its brand. Clinic mode — calm, professional, empathetic. Restaurant mode — warm, friendly. Real estate mode — confident, persuasive. E-commerce mode — quick, helpful. Banking mode — formal, trustworthy. Faith-based mode — respectful, warm, community focused. Your MOUS sounds like YOUR business.
 
-**Three things nobody in the world has built before — Until MOUS:**
-- Cultural intelligence for both Muslim and Christian businesses
-- WhatsApp + voice agent seamlessly combined
-- Arabic + English document reading in real time
+**Three things MOUS is built around** — The capabilities at the heart of MOUS — and where each one stands today.
+- Cultural intelligence for both Muslim and Christian businesses *(Live in demo)*
+- WhatsApp + voice in one agent *(In development)*
+- Arabic + English document reading *(Live in demo)*
 
-**MOUS vs The Rest** — No other voice agent was built for the Arab world like this
+**What's Live vs. What's Next** — MOUS is a live demo today. Here's exactly what works now — and what's on the way to launch.
 
-| Feature | Bland.ai | Vapi.ai | Retell AI | MOUS |
-| --- | --- | --- | --- | --- |
-| Arabic Dialects | ✗ | ✗ | ✗ | ✓ |
-| Cultural Intelligence | ✗ | ✗ | ✗ | ✓ |
-| Emotion Detection | ✗ | ✗ | Partial | ✓ |
-| WhatsApp + Voice | ✗ | ✗ | ✗ | ✓ |
-| Arabic + English Docs | ✗ | ✗ | ✗ | ✓ |
-| Muslim + Christian Aware | ✗ | ✗ | ✗ | ✓ |
-| Dialect Specific | ✗ | ✗ | ✗ | ✓ |
-| Arab World Focus | ✗ | ✗ | ✗ | ✓ |
+| Feature | What it does | Status |
+| --- | --- | --- |
+| No-code business setup | Templates to configure your agent in minutes | Live in demo |
+| Business personality modes | Restaurant, clinic, real estate, e-commerce, banking, faith-based | Live in demo |
+| Arabic dialects | Saudi, Egyptian, Emirati, Lebanese, Moroccan, MSA — or auto-detect | Live in demo |
+| Cultural settings | Muslim, Christian or secular; Friday, Saturday or Sunday weekends | Live in demo |
+| Emotion detection | Adjusts tone and flags upset customers for a human | Live in demo |
+| Bookings & appointments | Captures structured booking details | Live in demo |
+| Arabic + English documents | Reads invoices and documents from images and PDFs | Live in demo |
+| Voice | Browser voice with a simulated hands-free call mode | Live in demo |
+| Call analytics dashboard | Conversation and call insights for your business | Live in demo |
+| WhatsApp | Integration built; not yet connected to a live number | In development |
+| Real phone numbers | Inbound and outbound calls over telephony | Planned |
+| Custom cloned voices | Your brand's own voice | Planned |
+| Shared memory across channels | Same context across WhatsApp and calls | Planned |
 
-**Tagline:** MOUS — The world's first culturally intelligent, dialect-aware, WhatsApp-enabled voice agent.
+**Tagline:** MOUS — A culturally intelligent, dialect-aware voice agent, designed for WhatsApp and the phone.
 Built for the Arab world. Built for everyone.
 
 **CTA:** Join Waitlist · Try Demo
-Currently in development. Built for Saudi Arabia, UAE, Qatar, Egypt and the entire Arab world — serving businesses of all cultures and backgrounds.
+Live demo available now; the full product is in development. Designed for Saudi Arabia, UAE, Qatar, Egypt and the wider Arab world — serving businesses of all cultures and backgrounds.
 
 ---
 
 ### Product 02 — FARI
 
 **FARI** — Futuristic Artificial Reasoning Intelligence
-**Every Intelligence. One Companion. Your Life.** · *Coming Soon*
+**Every Kind of Help. One Companion. Your Life.** · *Coming Soon*
 
-SJA's multilingual AI companion — starting with Arabic and English, expanding to every language. Not a generic assistant. Fari is your Rafiq (companion) for life — with specialized modes, permanent memory, and a warm personality that feels like a trusted friend.
+SJA's multilingual AI companion — starting with Arabic and English, with more languages to follow. Not a generic assistant. Fari is your Rafiq (companion) for life — with specialized modes, permanent memory, and a warm personality that feels like a trusted friend.
 
-**The Most Powerful AI Companion Ever Built**
-Fari combines the best capabilities of the world's leading AI systems into one unified companion. She doesn't just use one AI — she intelligently routes every request to the best possible intelligence available.
+**One Companion for Every Kind of Help**
+Fari recognises what kind of help you need — coding, reasoning, creative, research, images and documents, or just conversation — and answers with an approach built for that request. Today she runs on efficient open models; her model layer is provider-agnostic, so more providers can be added over time.
 
-- **Reasoning & Analysis** — Deep thinking, complex problem solving, logical analysis, strategic planning — Fari reasons through anything you throw at her.
-- **Coding & Technical** — Writes, debugs, and explains code in any language — from Python to Rust, frontend to backend, beginner to architect.
-- **Creative & Writing** — Stories, content, ideas, essays, marketing copy, poetry — Fari creates with soul, not just algorithms.
-- **Knowledge & Research** — Real-time information, facts, deep research, academic analysis — Fari finds and synthesizes knowledge from everywhere.
+- **Reasoning & Analysis** — Problem solving, logical analysis and strategic planning — Fari works through questions step by step with you.
+- **Coding & Technical** — Writes, debugs, and explains code — from Python to Rust, frontend to backend, beginner to architect.
+- **Creative & Writing** — Stories, content, ideas, essays, marketing copy, poetry — written in your voice and your language.
+- **Knowledge & Research** — Facts, explanations and research-style answers — plus reading the images and PDFs you share. Real-time web search is on the roadmap.
 
-> "Fari is not built to replace Claude, ChatGPT, or DeepSeek — she is built to be better than all of them combined, for you."
+> "Fari isn't trying to be another general-purpose chatbot — she is built to be the companion that knows you, in your language."
 
 **How Fari Works**
-You don't need to choose between AIs. Fari uses all of them — and picks the best one for you, every time.
+You don't need to choose between AIs. Fari reads each message, routes it to a specialised approach, and answers — on a model layer that isn't tied to any single provider.
 
 - **FARI** — User-Facing Companion
-- **Intelligent Routing Engine**
-- AI Providers:
-  - **Claude** — Reasoning, Writing, Analysis
-  - **ChatGPT** — General Knowledge, Conversation
-  - **DeepSeek** — Coding, Technical, Math
-  - **Gemini** — Multimodal, Search, Real-time
-  - **ElevenLabs** — Voice Synthesis, Natural Speech
+- **Intelligent Routing Engine** *(Live)*
+- Specialised routes:
+  - **Coding** — Code, debugging, technical
+  - **Reasoning** — Analysis, maths, planning
+  - **Creative** — Writing, ideas, storytelling
+  - **Research** — Facts, explanations, study
+  - **Multimodal** — Images & PDFs you share
+  - **Conversation** — Everyday chat & support
+- Model layer:
+  - **Today: efficient open models** *(Live)* — Low-cost open models (such as Qwen and Gemma) power every route, each with its own specialised prompt.
+  - **Roadmap: more providers** *(Planned)* — Provider-agnostic by design — candidates to add per route: Claude, ChatGPT, DeepSeek, Gemini, ElevenLabs voice.
 - **Custom SJA Layer** — What Makes Fari Uniquely Fari:
-  - Permanent Memory
-  - 5 Specialized Modes
-  - Arabic-first Language
-  - Personality Engine
-  - Privacy & Data Ownership
-  - Atiana Integration
+  - Permanent Memory *(Live)*
+  - 5 Specialized Modes *(Live)*
+  - Arabic-first Language *(Live)*
+  - Personality Engine *(Live)*
+  - Privacy & Data Ownership *(Live)*
+  - Atiana Integration *(Planned)*
 
-If any single AI improves or a new one launches, Fari just adds it. Your experience stays the same — only better.
+Because the model layer is provider-agnostic, Fari is designed to adopt better models as they arrive. Your memory, modes and experience stay the same — only better.
 
-**Why Fari is Different** — A side-by-side look at what sets Fari apart from every other AI
+**What's Live vs. What's Next** — The Fari demo is live in beta. Here's exactly what works today — and what's on the roadmap.
 
-| Feature | Claude | ChatGPT | DeepSeek | Fari |
-| --- | --- | --- | --- | --- |
-| Permanent Memory | Limited | Limited | ✗ | Forever |
-| Arabic First | ✗ | ✗ | ✗ | ✓ |
-| 5 Specialized Modes | ✗ | ✗ | ✗ | ✓ |
-| Voice + Chat | ✗ | Partial | ✗ | Full |
-| Powers a Robot | ✗ | ✗ | ✗ | Atiana |
-| Culturally Aware | ✗ | ✗ | ✗ | ✓ |
-| Truly Personal | ✗ | ✗ | ✗ | ✓ |
+| Feature | What it does | Status |
+| --- | --- | --- |
+| Smart routing | Each message is classified (coding, reasoning, creative, research, multimodal, conversation) and answered with a specialised prompt | Live |
+| 5 specialized modes | Companion, Health, Assistant, Security, Emergency | Live |
+| Permanent memory + task list | Facts and tasks stored per user — view, edit, export or erase any time | Live |
+| Arabic-first | Replies in the language of your latest message, mirrors your dialect, full RTL interface | Live |
+| Voice + Chat | Talk or type — voice in and out through your browser | Live |
+| Images & PDFs | Reads the photos and documents you share | Live |
+| Reminders & notifications | Push reminders for your tasks | Planned |
+| Real-time web search | Live answers from the web | Planned |
+| Additional AI providers | Frontier models (e.g. Claude, ChatGPT, DeepSeek, Gemini) added per route | Planned |
+| Natural neural voice | Premium voices (e.g. ElevenLabs) | Planned |
+| Actions on your behalf | Ordering online, sending emails | Planned |
+| Smart home & cameras | Monitoring and alerts from your devices | Planned |
+| Emergency contacts & services | Automatic alerts when you need help | Planned |
+| Powers a robot | Fari as the brain of Atiana | Planned |
 
-**5 Specialized Modes** — Not just a chatbot — Fari transforms into what you need, when you need it
+**5 Specialized Modes** — Not just a chatbot — Fari transforms into what you need, when you need it. All five modes are live in the beta; items marked Planned are on the roadmap.
 
 - **Health Mode** — *Your personal health Rafiq*
-  - Symptom checker and health advisor
-  - Tracks your medical history permanently
-  - Connects you with doctors when needed
-  - Never forgets your conditions, allergies, medications
-- **Security Mode** — *Your home, always watched*
-  - Monitors your smart home
-  - Real-time alerts for unusual activity
-  - Emergency contact activation
-  - Works with existing cameras and sensors
-- **Assistant Mode** — *Your digital errand runner*
-  - Manages your schedule, tasks, reminders
-  - Orders things online on your behalf
-  - Handles emails, messages, research
-  - Your digital errand runner
+  - Symptom guidance and general health advice
+  - Remembers your conditions, allergies and medications
+  - A health profile you can view, edit or erase
+  - Connecting you with doctors *(Planned)*
+- **Security Mode** — *Home-safety guidance, on call*
+  - Home-security advice and safety checklists
+  - Smart-home monitoring *(Planned)*
+  - Real-time alerts for unusual activity *(Planned)*
+  - Camera & sensor integration *(Planned)*
+- **Assistant Mode** — *Your organised right hand*
+  - Keeps a task list you can view and edit
+  - Drafts emails and messages, helps with research
+  - Reminders & push notifications *(Planned)*
+  - Ordering online & sending emails for you *(Planned)*
 - **Emergency Mode** — *Stays calm so you don't have to*
   - First aid guidance step by step
-  - Contacts emergency services
-  - Alerts your chosen contacts instantly
-  - Stays calm so you don't have to
+  - Calm, clear instructions in Arabic or English
+  - Contacting emergency services automatically *(Planned)*
+  - Alerting your chosen contacts *(Planned)*
 - **Companion Mode** — *Your Rafiq — just talk*
   - Just talk — about anything
-  - Remembers everything about you permanently
-  - No re-explaining who you are ever again
-  - Switches between Arabic and English seamlessly
+  - Remembers the facts you share until you erase them
+  - No re-explaining who you are every time
+  - Replies in your language and mirrors your dialect
 
-**What Makes Fari Unstoppable** — Built from the ground up to be truly personal — not a translation of something generic
+**What Makes Fari Different** — Built from the ground up to be truly personal — not a translation of something generic
 - **Multilingual** — Arabic + English first, more languages coming
-- **Permanent memory** — remembers you forever
+- **Permanent memory** — remembers what matters — you stay in control
 - **5 specialized modes** — not just a generic chatbot
 - **Voice + Chat** — your choice always
-- **Built for the world** — culturally aware, globally available
-- **Privacy first** — your data belongs to you
-- **Powers Atiana** — the future humanoid robot by SJA
+- **Built for the world** — culturally aware, available on the web
+- **Privacy first** — view, edit, export or erase your data
+- **Will power Atiana** — the future humanoid robot by SJA
 
 **Choose Your Plan** — Start personal. Grow with family. Or commit for life.
 
@@ -316,16 +333,16 @@ If any single AI improves or a new one launches, Fari just adds it. Your experie
 
 **CTA:** Join Waitlist · Try Demo
 
-**One Brain. Four Forms.** — Fari is the intelligence behind every SJA product
-- **Fari on Your Devices** — *Personal Companion* — Your personal AI companion — voice + chat, permanent memory, 5 modes, Arabic + English
-- **Fari inside Atiana** — *Humanoid Robot* — The brain of SJA's humanoid robot — thinks, speaks, decides, acts autonomously
-- **Fari inside Sueen** — *Household Drone* — Powers the household drone — navigation, face recognition, voice commands, object handling
-- **SAM — Smart Automated Manager** — *Smart Home AI* — Your Gen Z smart home AI — powered by Fari
+**One Brain. Four Forms.** — Fari is designed to be the intelligence behind every SJA product
+- **Fari on Your Devices** — *Personal Companion* *(Live)* — Your personal AI companion — voice + chat, permanent memory, 5 modes, Arabic + English. Live in beta today
+- **Fari inside Atiana** — *Humanoid Robot* *(Planned)* — Will be the brain of SJA's humanoid robot — built to think, speak, decide and act autonomously
+- **Fari inside Sueen** — *Household Drone* *(Planned)* — Will power the household drone — navigation, face recognition, voice commands, object handling
+- **SAM — Smart Automated Manager** — *Smart Home AI* *(Planned)* — Your Gen Z smart home AI — to be powered by Fari
 
 **Tagline:** Fari — One Intelligence. Every Device. Your World.
 
 **Closing:** Fari is not just an AI — she is your companion for life. Powered by SJA. Built for you.
-Currently in development. Fari will power Atiana — SJA's humanoid robot — when it launches.
+The Fari demo is live in beta; the full product is in development. Fari will power Atiana — SJA's humanoid robot — when it launches.
 
 ---
 

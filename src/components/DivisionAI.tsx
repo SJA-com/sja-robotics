@@ -3,7 +3,7 @@
 const voiceUseCases = [
   {
     industry: "Restaurant",
-    description: "AI takes reservations by phone",
+    description: "AI takes table reservations",
     icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z",
     color: "text-amber-400",
     bg: "bg-amber-400/10",
@@ -24,19 +24,20 @@ const voiceUseCases = [
   },
   {
     industry: "E-commerce",
-    description: "AI handles customer support calls",
+    description: "AI handles customer support questions",
     icon: "M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z",
     color: "text-violet-400",
     bg: "bg-violet-400/10",
   },
 ];
 
-const voiceFeatures = [
-  "Custom voice",
-  "Custom personality",
-  "Multiple languages",
-  "24/7 availability",
-  "Call analytics dashboard",
+const voiceFeatures: { name: string; status: Status }[] = [
+  { name: "Custom personality", status: "Live in demo" },
+  { name: "Arabic dialects + English", status: "Live in demo" },
+  { name: "24/7 availability", status: "Live in demo" },
+  { name: "Call analytics dashboard", status: "Live in demo" },
+  { name: "WhatsApp", status: "In development" },
+  { name: "Custom voice", status: "Planned" },
 ];
 
 const voicePricing = [
@@ -75,6 +76,8 @@ import Fari from "@/components/Fari";
 import SAM from "@/components/SAM";
 import SAMGenZ from "@/components/SAMGenZ";
 import MousFeatures from "@/components/MoussFeatures";
+import WaitlistButton from "@/components/WaitlistButton";
+import StatusBadge, { type Status } from "@/components/StatusBadge";
 
 /* ─── Component ─── */
 
@@ -103,9 +106,9 @@ export default function DivisionAI() {
               Artificial Intelligence
             </p>
             <p className="text-foreground/60 max-w-2xl mx-auto">
-              Pioneering artificial intelligence research, building machine
-              learning models, and developing intelligent software solutions
-              that power every product across SJA Robotics.
+              Building AI products — voice agents, personal companions and
+              smart-home intelligence — designed to power every product across
+              SJA Robotics.
             </p>
           </div>
 
@@ -203,8 +206,8 @@ export default function DivisionAI() {
               COMING SOON
             </span>
             <p className="text-foreground/60 max-w-2xl mx-auto">
-              Any business can deploy their own AI voice agent in minutes — no
-              coding needed
+              Any business can set up its own AI voice agent in minutes — no
+              coding needed. Try the live demo today
             </p>
           </div>
 
@@ -247,18 +250,21 @@ export default function DivisionAI() {
                 Key <span className="text-accent-2">Features</span>
               </h4>
               <p className="text-foreground/60 text-sm max-w-xl mx-auto">
-                Everything your business needs to deliver an exceptional voice
-                experience
+                What&apos;s live in the demo today — and what&apos;s coming next
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-4">
               {voiceFeatures.map((feature) => (
                 <div
-                  key={feature}
+                  key={feature.name}
                   className="flex items-center gap-2 rounded-lg bg-surface-2 border border-border px-5 py-3 hover:border-accent-2/30 transition-colors"
                 >
                   <svg
-                    className="w-4 h-4 text-accent-2 shrink-0"
+                    className={`w-4 h-4 shrink-0 ${
+                      feature.status === "Live in demo"
+                        ? "text-accent-2"
+                        : "text-foreground/30"
+                    }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -267,12 +273,17 @@ export default function DivisionAI() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M5 13l4 4L19 7"
+                      d={
+                        feature.status === "Live in demo"
+                          ? "M5 13l4 4L19 7"
+                          : "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      }
                     />
                   </svg>
                   <span className="text-sm font-medium text-foreground/80">
-                    {feature}
+                    {feature.name}
                   </span>
+                  <StatusBadge status={feature.status} />
                 </div>
               ))}
             </div>
@@ -314,7 +325,7 @@ export default function DivisionAI() {
           </div>
           <div className="text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-3">
-              <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold hover:opacity-90 transition-opacity glow-accent">
+              <WaitlistButton product="MOUS" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold hover:opacity-90 transition-opacity glow-accent">
                 Join Waitlist
                 <svg
                   className="w-4 h-4"
@@ -329,7 +340,7 @@ export default function DivisionAI() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </button>
+              </WaitlistButton>
               <a
                 href="https://robotics.sjapathway.com/mous/"
                 target="_blank"

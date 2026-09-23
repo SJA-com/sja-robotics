@@ -29,6 +29,11 @@ services = [
   { binding = "ATIANA", service = "atiana" },
 ]
 
+# Waitlist sign-ups (worker/waitlist.js). Admin page: /admin/waitlist (secret ADMIN_KEY)
+kv_namespaces = [
+  { binding = "ROBOTICS_KV", id = "1be0521ad18345ae827f4b9b56cae2ec" },
+]
+
 [assets]
 directory = "./out"
 binding = "ASSETS"
@@ -42,6 +47,9 @@ services = [
   { binding = "MOUS", service = "mous" },
   { binding = "SAM", service = "sam" },
   { binding = "ATIANA", service = "atiana" },
+]
+kv_namespaces = [
+  { binding = "ROBOTICS_KV", id = "1be0521ad18345ae827f4b9b56cae2ec" },
 ]
 
 [env.dev.assets]

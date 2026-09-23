@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WaitlistButton from "./WaitlistButton";
 
 /* ─── Atiana Data ─── */
 
@@ -399,7 +400,7 @@ export default function DivisionAutonomous() {
 
         {/* Join Waitlist */}
         <div className="text-center">
-          <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-emerald-400 to-teal-500 text-white font-semibold hover:opacity-90 transition-opacity mb-3">
+          <WaitlistButton product="Autonomous" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-emerald-400 to-teal-500 text-white font-semibold hover:opacity-90 transition-opacity mb-3">
             Join Waitlist
             <svg
               className="w-4 h-4"
@@ -414,7 +415,7 @@ export default function DivisionAutonomous() {
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-          </button>
+          </WaitlistButton>
           <p className="text-foreground/40 text-sm">
             Be the first to witness SJA Autonomous in action
           </p>

@@ -1,3 +1,5 @@
+import WaitlistButton from "./WaitlistButton";
+
 const genZFeatures = [
   {
     title: "Built for People Who Love Sleep",
@@ -227,7 +229,7 @@ export default function SAMGenZ() {
             Gen Z.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-5">
-            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-sky-500 text-white font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(139,92,246,0.25)]">
+            <WaitlistButton product="SAM" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-sky-500 text-white font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(139,92,246,0.25)]">
               Join Waitlist
               <svg
                 className="w-4 h-4"
@@ -242,7 +244,7 @@ export default function SAMGenZ() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </button>
+            </WaitlistButton>
             <a
               href="https://robotics.sjapathway.com/sam/"
               target="_blank"

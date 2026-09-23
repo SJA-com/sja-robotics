@@ -8,7 +8,7 @@ SJA Robotics is at the forefront of integrating AI and automation into everyday 
 
 ### SJA AI — Artificial Intelligence
 
-Pioneering AI research, building ML models, and developing intelligent software solutions.
+AI products — voice agents, personal companions and smart-home intelligence.
 
 - **Fari** — Futuristic Artificial Reasoning Intelligence, a personal AI companion — [Demo](https://robotics.sjapathway.com/fari/)
 - **MOUS** — Multilingual Omnipresent Unified System, AI voice agent platform — [Demo](https://robotics.sjapathway.com/mous/)

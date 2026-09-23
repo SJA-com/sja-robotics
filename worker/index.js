@@ -2,12 +2,15 @@
  * robotics.sjapathway.com router.
  *
  * Static site assets are served directly by Workers Assets. Anything that
- * isn't an asset lands here: product demos mounted under a path prefix are
- * forwarded to their own Workers (via service bindings) or Pages project,
- * and everything else falls through to the static 404 page.
+ * isn't an asset lands here: waitlist sign-ups (worker/waitlist.js), product
+ * demos mounted under a path prefix — forwarded to their own Workers (via
+ * service bindings) or Pages project — and everything else falls through to
+ * the static 404 page.
  *
  * Each product reads X-Base-Path so its UI builds URLs under the prefix.
  */
+
+import { handleWaitlist } from "./waitlist.js";
 
 const PRODUCTS = {
   fari: { binding: "FARI" },
@@ -19,9 +22,13 @@ const PRODUCTS = {
 
 const MOUNT_RE = new RegExp(`^/(${Object.keys(PRODUCTS).join("|")})(/.*)?$`);
 
-export default {
+const router = {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    const waitlist = await handleWaitlist(request, env, url.pathname);
+    if (waitlist) return waitlist;
+
     const match = url.pathname.match(MOUNT_RE);
     if (!match) return env.ASSETS.fetch(request);
 
@@ -49,3 +56,5 @@ export default {
     return service ? service.fetch(forwarded) : fetch(forwarded);
   },
 };
+
+export default router;

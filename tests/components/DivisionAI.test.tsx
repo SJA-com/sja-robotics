@@ -35,27 +35,27 @@ describe("<DivisionAI />", () => {
   });
 
   it.each([
-    ["Restaurant", "AI takes reservations by phone"],
+    ["Restaurant", "AI takes table reservations"],
     ["Clinic", "AI books appointments"],
     ["Real Estate", "AI answers property enquiries 24/7"],
-    ["E-commerce", "AI handles customer support calls"],
+    ["E-commerce", "AI handles customer support questions"],
   ])("lists the %s MOUS use case", (industry, description) => {
     render(<DivisionAI />);
     const h = screen.getByRole("heading", { level: 4, name: industry });
     expect(h.nextElementSibling).toHaveTextContent(description);
   });
 
-  it("lists the MOUS key features", () => {
+  it.each([
+    ["Custom personality", "Live in demo"],
+    ["Arabic dialects + English", "Live in demo"],
+    ["24/7 availability", "Live in demo"],
+    ["Call analytics dashboard", "Live in demo"],
+    ["WhatsApp", "In development"],
+    ["Custom voice", "Planned"],
+  ])("lists the MOUS key feature '%s' as %s", (f, status) => {
     render(<DivisionAI />);
-    for (const f of [
-      "Custom voice",
-      "Custom personality",
-      "Multiple languages",
-      "24/7 availability",
-      "Call analytics dashboard",
-    ]) {
-      expect(screen.getByText(f)).toBeInTheDocument();
-    }
+    const chip = screen.getByText(f, { selector: "span" }).parentElement!;
+    expect(chip.querySelector("[data-status]")).toHaveTextContent(status);
   });
 
   it.each([

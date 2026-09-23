@@ -1,4 +1,16 @@
-const modes = [
+import WaitlistButton from "./WaitlistButton";
+import StatusBadge, { type Status } from "./StatusBadge";
+
+type ModeFeature = { text: string; planned?: boolean };
+
+const modes: {
+  name: string;
+  tagline: string;
+  icon: string;
+  color: string;
+  bg: string;
+  features: ModeFeature[];
+}[] = [
   {
     name: "Health Mode",
     tagline: "Your personal health Rafiq",
@@ -6,36 +18,36 @@ const modes = [
     color: "text-rose-400",
     bg: "bg-rose-400/10",
     features: [
-      "Symptom checker and health advisor",
-      "Tracks your medical history permanently",
-      "Connects you with doctors when needed",
-      "Never forgets your conditions, allergies, medications",
+      { text: "Symptom guidance and general health advice" },
+      { text: "Remembers your conditions, allergies and medications" },
+      { text: "A health profile you can view, edit or erase" },
+      { text: "Connecting you with doctors", planned: true },
     ],
   },
   {
     name: "Security Mode",
-    tagline: "Your home, always watched",
+    tagline: "Home-safety guidance, on call",
     icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
     color: "text-amber-300",
     bg: "bg-amber-300/10",
     features: [
-      "Monitors your smart home",
-      "Real-time alerts for unusual activity",
-      "Emergency contact activation",
-      "Works with existing cameras and sensors",
+      { text: "Home-security advice and safety checklists" },
+      { text: "Smart-home monitoring", planned: true },
+      { text: "Real-time alerts for unusual activity", planned: true },
+      { text: "Camera & sensor integration", planned: true },
     ],
   },
   {
     name: "Assistant Mode",
-    tagline: "Your digital errand runner",
+    tagline: "Your organised right hand",
     icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
     color: "text-sky-400",
     bg: "bg-sky-400/10",
     features: [
-      "Manages your schedule, tasks, reminders",
-      "Orders things online on your behalf",
-      "Handles emails, messages, research",
-      "Your digital errand runner",
+      { text: "Keeps a task list you can view and edit" },
+      { text: "Drafts emails and messages, helps with research" },
+      { text: "Reminders & push notifications", planned: true },
+      { text: "Ordering online & sending emails for you", planned: true },
     ],
   },
   {
@@ -45,10 +57,10 @@ const modes = [
     color: "text-red-500",
     bg: "bg-red-500/10",
     features: [
-      "First aid guidance step by step",
-      "Contacts emergency services",
-      "Alerts your chosen contacts instantly",
-      "Stays calm so you don't have to",
+      { text: "First aid guidance step by step" },
+      { text: "Calm, clear instructions in Arabic or English" },
+      { text: "Contacting emergency services automatically", planned: true },
+      { text: "Alerting your chosen contacts", planned: true },
     ],
   },
   {
@@ -58,10 +70,10 @@ const modes = [
     color: "text-amber-400",
     bg: "bg-amber-400/10",
     features: [
-      "Just talk — about anything",
-      "Remembers everything about you permanently",
-      "No re-explaining who you are ever again",
-      "Switches between Arabic and English seamlessly",
+      { text: "Just talk — about anything" },
+      { text: "Remembers the facts you share until you erase them" },
+      { text: "No re-explaining who you are every time" },
+      { text: "Replies in your language and mirrors your dialect" },
     ],
   },
 ];
@@ -70,7 +82,7 @@ const capabilities = [
   {
     name: "Reasoning & Analysis",
     description:
-      "Deep thinking, complex problem solving, logical analysis, strategic planning — Fari reasons through anything you throw at her",
+      "Problem solving, logical analysis and strategic planning — Fari works through questions step by step with you",
     icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
     color: "text-violet-400",
     bg: "bg-violet-400/10",
@@ -78,7 +90,7 @@ const capabilities = [
   {
     name: "Coding & Technical",
     description:
-      "Writes, debugs, and explains code in any language — from Python to Rust, frontend to backend, beginner to architect",
+      "Writes, debugs, and explains code — from Python to Rust, frontend to backend, beginner to architect",
     icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
     color: "text-emerald-400",
     bg: "bg-emerald-400/10",
@@ -86,7 +98,7 @@ const capabilities = [
   {
     name: "Creative & Writing",
     description:
-      "Stories, content, ideas, essays, marketing copy, poetry — Fari creates with soul, not just algorithms",
+      "Stories, content, ideas, essays, marketing copy, poetry — written in your voice and your language",
     icon: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z",
     color: "text-rose-400",
     bg: "bg-rose-400/10",
@@ -94,11 +106,34 @@ const capabilities = [
   {
     name: "Knowledge & Research",
     description:
-      "Real-time information, facts, deep research, academic analysis — Fari finds and synthesizes knowledge from everywhere",
+      "Facts, explanations and research-style answers — plus reading the images and PDFs you share. Real-time web search is on the roadmap",
     icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
     color: "text-sky-400",
     bg: "bg-sky-400/10",
   },
+];
+
+// Every message is classified into one of these routes and answered with a
+// specialised prompt. This is live today on efficient open models.
+const routes = [
+  { name: "Coding", role: "Code, debugging, technical", color: "text-emerald-300", border: "border-emerald-400/15", bg: "bg-emerald-400/5" },
+  { name: "Reasoning", role: "Analysis, maths, planning", color: "text-violet-300", border: "border-violet-400/15", bg: "bg-violet-400/5" },
+  { name: "Creative", role: "Writing, ideas, storytelling", color: "text-rose-300", border: "border-rose-400/15", bg: "bg-rose-400/5" },
+  { name: "Research", role: "Facts, explanations, study", color: "text-sky-300", border: "border-sky-400/15", bg: "bg-sky-400/5" },
+  { name: "Multimodal", role: "Images & PDFs you share", color: "text-blue-300", border: "border-blue-400/15", bg: "bg-blue-400/5" },
+  { name: "Conversation", role: "Everyday chat & support", color: "text-orange-300", border: "border-orange-400/15", bg: "bg-orange-400/5" },
+];
+
+// Candidate providers for the provider-agnostic model layer — roadmap only.
+const plannedProviders = ["Claude", "ChatGPT", "DeepSeek", "Gemini", "ElevenLabs voice"];
+
+const sjaLayer: { name: string; status: Status }[] = [
+  { name: "Permanent Memory", status: "Live" },
+  { name: "5 Specialized Modes", status: "Live" },
+  { name: "Arabic-first Language", status: "Live" },
+  { name: "Personality Engine", status: "Live" },
+  { name: "Privacy & Data Ownership", status: "Live" },
+  { name: "Atiana Integration", status: "Planned" },
 ];
 
 const differentiators = [
@@ -109,7 +144,7 @@ const differentiators = [
   },
   {
     text: "Permanent memory",
-    detail: "remembers you forever",
+    detail: "remembers what matters — you stay in control",
     icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
   },
   {
@@ -124,48 +159,38 @@ const differentiators = [
   },
   {
     text: "Built for the world",
-    detail: "culturally aware, globally available",
+    detail: "culturally aware, available on the web",
     icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9",
   },
   {
     text: "Privacy first",
-    detail: "your data belongs to you",
+    detail: "view, edit, export or erase your data",
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
   },
   {
-    text: "Powers Atiana",
+    text: "Will power Atiana",
     detail: "the future humanoid robot by SJA",
     icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z",
   },
 ];
 
-const comparisonRows = [
-  { feature: "Permanent Memory", claude: "Limited", chatgpt: "Limited", deepseek: false, fari: "Forever" },
-  { feature: "Arabic First", claude: false, chatgpt: false, deepseek: false, fari: true },
-  { feature: "5 Specialized Modes", claude: false, chatgpt: false, deepseek: false, fari: true },
-  { feature: "Voice + Chat", claude: false, chatgpt: "Partial", deepseek: false, fari: "Full" },
-  { feature: "Powers a Robot", claude: false, chatgpt: false, deepseek: false, fari: "Atiana" },
-  { feature: "Culturally Aware", claude: false, chatgpt: false, deepseek: false, fari: true },
-  { feature: "Truly Personal", claude: false, chatgpt: false, deepseek: false, fari: true },
+// Honest status table: what the live beta does today vs. the roadmap.
+const statusRows: { feature: string; today: string; status: Status }[] = [
+  { feature: "Smart routing", today: "Each message is classified (coding, reasoning, creative, research, multimodal, conversation) and answered with a specialised prompt", status: "Live" },
+  { feature: "5 specialized modes", today: "Companion, Health, Assistant, Security, Emergency", status: "Live" },
+  { feature: "Permanent memory + task list", today: "Facts and tasks stored per user — view, edit, export or erase any time", status: "Live" },
+  { feature: "Arabic-first", today: "Replies in the language of your latest message, mirrors your dialect, full RTL interface", status: "Live" },
+  { feature: "Voice + Chat", today: "Talk or type — voice in and out through your browser", status: "Live" },
+  { feature: "Images & PDFs", today: "Reads the photos and documents you share", status: "Live" },
+  { feature: "Reminders & notifications", today: "Push reminders for your tasks", status: "Planned" },
+  { feature: "Real-time web search", today: "Live answers from the web", status: "Planned" },
+  { feature: "Additional AI providers", today: "Frontier models (e.g. Claude, ChatGPT, DeepSeek, Gemini) added per route", status: "Planned" },
+  { feature: "Natural neural voice", today: "Premium voices (e.g. ElevenLabs)", status: "Planned" },
+  { feature: "Actions on your behalf", today: "Ordering online, sending emails", status: "Planned" },
+  { feature: "Smart home & cameras", today: "Monitoring and alerts from your devices", status: "Planned" },
+  { feature: "Emergency contacts & services", today: "Automatic alerts when you need help", status: "Planned" },
+  { feature: "Powers a robot", today: "Fari as the brain of Atiana", status: "Planned" },
 ];
-
-function ComparisonCell({ value }: { value: boolean | string }) {
-  if (value === false) {
-    return (
-      <svg className="w-5 h-5 text-red-400/60 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    );
-  }
-  if (value === true) {
-    return (
-      <svg className="w-5 h-5 text-amber-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-      </svg>
-    );
-  }
-  return <span className="text-xs font-medium">{value}</span>;
-}
 
 const pricing = [
   {
@@ -226,33 +251,34 @@ export default function Fari() {
             Futuristic Artificial Reasoning Intelligence
           </p>
           <p className="text-xl sm:text-2xl font-semibold text-foreground/90 mb-3">
-            Every Intelligence. One Companion. Your Life.
+            Every Kind of Help. One Companion. Your Life.
           </p>
           <span className="inline-flex px-3 py-1 rounded-full bg-amber-400/10 text-amber-400 text-[10px] font-mono tracking-wider mb-6">
             COMING SOON
           </span>
           <p className="text-foreground/60 max-w-2xl mx-auto text-lg leading-relaxed">
             SJA&apos;s multilingual AI companion — starting with Arabic and English,
-            expanding to every language. Not a generic assistant. Fari is
+            with more languages to follow. Not a generic assistant. Fari is
             your Rafiq (companion) for life — with specialized modes, permanent
             memory, and a warm personality that feels like a trusted friend.
           </p>
         </div>
 
         {/* ═══════════════════════════════════════════
-            MOST POWERFUL AI COMPANION
+            ONE COMPANION FOR EVERY KIND OF HELP
             ═══════════════════════════════════════════ */}
         <div className="mb-20">
           <div className="text-center mb-12">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-              The Most Powerful AI Companion{" "}
-              <span className="text-amber-400">Ever Built</span>
+              One Companion for{" "}
+              <span className="text-amber-400">Every Kind of Help</span>
             </h3>
             <p className="text-foreground/60 max-w-2xl mx-auto leading-relaxed">
-              Fari combines the best capabilities of the world&apos;s leading AI
-              systems into one unified companion. She doesn&apos;t just use one AI —
-              she intelligently routes every request to the best possible
-              intelligence available.
+              Fari recognises what kind of help you need — coding, reasoning,
+              creative, research, images and documents, or just conversation —
+              and answers with an approach built for that request. Today she
+              runs on efficient open models; her model layer is
+              provider-agnostic, so more providers can be added over time.
             </p>
           </div>
 
@@ -290,12 +316,12 @@ export default function Fari() {
           {/* Bold statement */}
           <div className="text-center">
             <p className="text-foreground/70 text-sm sm:text-base max-w-2xl mx-auto italic leading-relaxed">
-              &ldquo;Fari is not built to replace Claude, ChatGPT, or DeepSeek —
-              she is built to be{" "}
+              &ldquo;Fari isn&apos;t trying to be another general-purpose
+              chatbot — she is built to be{" "}
               <span className="text-amber-400 font-semibold not-italic">
-                better than all of them combined
+                the companion that knows you
               </span>
-              , for you.&rdquo;
+              , in your language.&rdquo;
             </p>
           </div>
         </div>
@@ -310,8 +336,9 @@ export default function Fari() {
               <span className="text-amber-400">Works</span>
             </h3>
             <p className="text-foreground/50 text-sm max-w-xl mx-auto">
-              You don&apos;t need to choose between AIs. Fari uses all of them —
-              and picks the best one for you, every time.
+              You don&apos;t need to choose between AIs. Fari reads each message,
+              routes it to a specialised approach, and answers — on a model
+              layer that isn&apos;t tied to any single provider.
             </p>
           </div>
 
@@ -342,7 +369,7 @@ export default function Fari() {
             </div>
 
             {/* Routing Engine */}
-            <div className="flex justify-center mb-1">
+            <div className="flex justify-center items-center gap-2 mb-1">
               <div className="rounded-lg bg-amber-400/5 border border-amber-400/15 px-5 py-2">
                 <p className="text-xs font-mono text-amber-400/70 tracking-wider flex items-center gap-2">
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -351,6 +378,7 @@ export default function Fari() {
                   INTELLIGENT ROUTING ENGINE
                 </p>
               </div>
+              <StatusBadge status="Live" />
             </div>
 
             {/* Branching lines */}
@@ -358,56 +386,20 @@ export default function Fari() {
               <div className="w-px h-4 bg-amber-400/20" />
             </div>
 
-            {/* AI Providers Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
-              {[
-                {
-                  name: "Claude",
-                  role: "Reasoning, Writing, Analysis",
-                  color: "text-orange-300",
-                  border: "border-orange-400/15",
-                  bg: "bg-orange-400/5",
-                },
-                {
-                  name: "ChatGPT",
-                  role: "General Knowledge, Conversation",
-                  color: "text-emerald-300",
-                  border: "border-emerald-400/15",
-                  bg: "bg-emerald-400/5",
-                },
-                {
-                  name: "DeepSeek",
-                  role: "Coding, Technical, Math",
-                  color: "text-blue-300",
-                  border: "border-blue-400/15",
-                  bg: "bg-blue-400/5",
-                },
-                {
-                  name: "Gemini",
-                  role: "Multimodal, Search, Real-time",
-                  color: "text-sky-300",
-                  border: "border-sky-400/15",
-                  bg: "bg-sky-400/5",
-                },
-                {
-                  name: "ElevenLabs",
-                  role: "Voice Synthesis, Natural Speech",
-                  color: "text-violet-300",
-                  border: "border-violet-400/15",
-                  bg: "bg-violet-400/5",
-                },
-              ].map((ai) => (
+            {/* Specialised routes (live) */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
+              {routes.map((route) => (
                 <div
-                  key={ai.name}
-                  className={`rounded-lg ${ai.bg} border ${ai.border} px-4 py-3 text-center hover:border-opacity-40 transition-colors`}
+                  key={route.name}
+                  className={`rounded-lg ${route.bg} border ${route.border} px-4 py-3 text-center hover:border-opacity-40 transition-colors`}
                 >
                   {/* Connector dot */}
-                  <div className={`w-1.5 h-1.5 rounded-full ${ai.bg} border ${ai.border} mx-auto mb-2`} />
-                  <p className={`text-sm font-bold ${ai.color} mb-0.5`}>
-                    {ai.name}
+                  <div className={`w-1.5 h-1.5 rounded-full ${route.bg} border ${route.border} mx-auto mb-2`} />
+                  <p className={`text-sm font-bold ${route.color} mb-0.5`}>
+                    {route.name}
                   </p>
                   <p className="text-[10px] text-foreground/40 leading-tight">
-                    {ai.role}
+                    {route.role}
                   </p>
                 </div>
               ))}
@@ -416,6 +408,43 @@ export default function Fari() {
             {/* Branching lines */}
             <div className="flex justify-center mb-1">
               <div className="w-px h-4 bg-amber-400/20" />
+            </div>
+
+            {/* Model layer — today vs. roadmap */}
+            <div className="grid sm:grid-cols-2 gap-3 mb-6">
+              <div className="rounded-lg bg-amber-400/5 border border-amber-400/15 px-4 py-3">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <p className="text-sm font-bold text-amber-300">
+                    Today: efficient open models
+                  </p>
+                  <StatusBadge status="Live" />
+                </div>
+                <p className="text-[11px] text-foreground/45 leading-snug">
+                  Low-cost open models (such as Qwen and Gemma) power every
+                  route, each with its own specialised prompt.
+                </p>
+              </div>
+              <div className="rounded-lg bg-foreground/[0.02] border border-dashed border-amber-400/15 px-4 py-3">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <p className="text-sm font-bold text-foreground/70">
+                    Roadmap: more providers
+                  </p>
+                  <StatusBadge status="Planned" />
+                </div>
+                <p className="text-[11px] text-foreground/45 leading-snug mb-2">
+                  Provider-agnostic by design — candidates to add per route:
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {plannedProviders.map((p) => (
+                    <span
+                      key={p}
+                      className="px-2 py-0.5 rounded-md border border-foreground/10 text-[10px] text-foreground/45"
+                    >
+                      {p}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Custom SJA Layer */}
@@ -429,16 +458,9 @@ export default function Fari() {
                 </p>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                {[
-                  "Permanent Memory",
-                  "5 Specialized Modes",
-                  "Arabic-first Language",
-                  "Personality Engine",
-                  "Privacy & Data Ownership",
-                  "Atiana Integration",
-                ].map((feature) => (
+                {sjaLayer.map((feature) => (
                   <div
-                    key={feature}
+                    key={feature.name}
                     className="flex items-center gap-2 rounded-md bg-[#0a0c14] border border-amber-400/8 px-3 py-2"
                   >
                     <svg
@@ -454,9 +476,10 @@ export default function Fari() {
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <span className="text-xs text-foreground/60">
-                      {feature}
+                    <span className="text-xs text-foreground/60 flex-1">
+                      {feature.name}
                     </span>
+                    <StatusBadge status={feature.status} />
                   </div>
                 ))}
               </div>
@@ -465,21 +488,23 @@ export default function Fari() {
 
           {/* Pitch line */}
           <p className="text-center text-foreground/50 text-sm mt-8 max-w-lg mx-auto">
-            If any single AI improves or a new one launches, Fari just adds it.
-            Your experience stays the same — only better.
+            Because the model layer is provider-agnostic, Fari is designed to
+            adopt better models as they arrive. Your memory, modes and
+            experience stay the same — only better.
           </p>
         </div>
 
         {/* ═══════════════════════════════════════════
-            COMPARISON TABLE
+            LIVE VS. NEXT
             ═══════════════════════════════════════════ */}
         <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-6 sm:p-10 mb-20 overflow-x-auto">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
-            Why Fari is{" "}
-            <span className="text-amber-400">Different</span>
+            What&apos;s Live vs.{" "}
+            <span className="text-amber-400">What&apos;s Next</span>
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-8 max-w-lg mx-auto">
-            A side-by-side look at what sets Fari apart from every other AI
+            The Fari demo is live in beta. Here&apos;s exactly what works today
+            — and what&apos;s on the roadmap.
           </p>
           <div className="min-w-[500px]">
             <table className="w-full">
@@ -488,22 +513,16 @@ export default function Fari() {
                   <th className="text-left text-sm font-semibold text-foreground/70 py-3 pr-4">
                     Feature
                   </th>
-                  <th className="text-center text-sm font-medium text-foreground/40 py-3 px-3">
-                    Claude
-                  </th>
-                  <th className="text-center text-sm font-medium text-foreground/40 py-3 px-3">
-                    ChatGPT
-                  </th>
-                  <th className="text-center text-sm font-medium text-foreground/40 py-3 px-3">
-                    DeepSeek
+                  <th className="text-left text-sm font-medium text-foreground/40 py-3 px-3">
+                    What it does
                   </th>
                   <th className="text-center text-sm font-bold text-amber-400 py-3 pl-3">
-                    Fari
+                    Status
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {comparisonRows.map((row) => (
+                {statusRows.map((row) => (
                   <tr
                     key={row.feature}
                     className="border-b border-amber-400/5 hover:bg-amber-400/[0.02] transition-colors"
@@ -511,19 +530,11 @@ export default function Fari() {
                     <td className="text-sm font-medium text-foreground/70 py-3.5 pr-4">
                       {row.feature}
                     </td>
-                    <td className="text-center py-3.5 px-3 text-foreground/40">
-                      <ComparisonCell value={row.claude} />
-                    </td>
-                    <td className="text-center py-3.5 px-3 text-foreground/40">
-                      <ComparisonCell value={row.chatgpt} />
-                    </td>
-                    <td className="text-center py-3.5 px-3 text-foreground/40">
-                      <ComparisonCell value={row.deepseek} />
+                    <td className="text-xs py-3.5 px-3 text-foreground/45 leading-relaxed">
+                      {row.today}
                     </td>
                     <td className="text-center py-3.5 pl-3">
-                      <div className="text-amber-400 font-semibold">
-                        <ComparisonCell value={row.fari} />
-                      </div>
+                      <StatusBadge status={row.status} />
                     </td>
                   </tr>
                 ))}
@@ -542,7 +553,8 @@ export default function Fari() {
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-10 max-w-lg mx-auto">
             Not just a chatbot — Fari transforms into what you need, when you
-            need it
+            need it. All five modes are live in the beta; items marked Planned
+            are on the roadmap.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {modes.map((mode, i) => (
@@ -580,11 +592,13 @@ export default function Fari() {
                 <ul className="space-y-2">
                   {mode.features.map((feature) => (
                     <li
-                      key={feature}
+                      key={feature.text}
                       className="flex items-start gap-2 text-sm"
                     >
                       <svg
-                        className="w-4 h-4 text-amber-400 mt-0.5 shrink-0"
+                        className={`w-4 h-4 mt-0.5 shrink-0 ${
+                          feature.planned ? "text-foreground/30" : "text-amber-400"
+                        }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -593,10 +607,21 @@ export default function Fari() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth={2}
-                          d="M5 13l4 4L19 7"
+                          d={
+                            feature.planned
+                              ? "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                              : "M5 13l4 4L19 7"
+                          }
                         />
                       </svg>
-                      <span className="text-foreground/60">{feature}</span>
+                      <span
+                        className={
+                          feature.planned ? "text-foreground/40" : "text-foreground/60"
+                        }
+                      >
+                        {feature.text}
+                      </span>
+                      {feature.planned && <StatusBadge status="Planned" />}
                     </li>
                   ))}
                 </ul>
@@ -611,7 +636,7 @@ export default function Fari() {
         <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
             What Makes Fari{" "}
-            <span className="text-amber-400">Unstoppable</span>
+            <span className="text-amber-400">Different</span>
           </h3>
           <p className="text-foreground/50 text-sm text-center mb-10 max-w-lg mx-auto">
             Built from the ground up to be truly personal — not a translation of
@@ -688,7 +713,7 @@ export default function Fari() {
             ═══════════════════════════════════════════ */}
         <div className="text-center mb-12">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(251,191,36,0.25)]">
+            <WaitlistButton product="Fari" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(251,191,36,0.25)]">
               Join Waitlist
               <svg
                 className="w-4 h-4"
@@ -703,7 +728,7 @@ export default function Fari() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </button>
+            </WaitlistButton>
             <a
               href="https://robotics.sjapathway.com/fari/"
               target="_blank"
@@ -738,7 +763,7 @@ export default function Fari() {
               <span className="text-amber-400">Four Forms.</span>
             </h3>
             <p className="text-foreground/50 text-sm max-w-lg mx-auto">
-              Fari is the intelligence behind every SJA product
+              Fari is designed to be the intelligence behind every SJA product
             </p>
           </div>
 
@@ -751,12 +776,15 @@ export default function Fari() {
                 </svg>
               </div>
               <h4 className="text-lg font-bold mb-1">Fari on Your Devices</h4>
-              <p className="text-amber-400/50 text-xs font-mono mb-3">
+              <p className="text-amber-400/50 text-xs font-mono mb-2">
                 PERSONAL COMPANION
               </p>
+              <div className="flex justify-center mb-3">
+                <StatusBadge status="Live" />
+              </div>
               <p className="text-foreground/50 text-sm leading-relaxed">
                 Your personal AI companion — voice + chat, permanent memory,
-                5 modes, Arabic + English
+                5 modes, Arabic + English. Live in beta today
               </p>
             </div>
 
@@ -768,12 +796,15 @@ export default function Fari() {
                 </svg>
               </div>
               <h4 className="text-lg font-bold mb-1">Fari inside Atiana</h4>
-              <p className="text-emerald-400/50 text-xs font-mono mb-3">
+              <p className="text-emerald-400/50 text-xs font-mono mb-2">
                 HUMANOID ROBOT
               </p>
+              <div className="flex justify-center mb-3">
+                <StatusBadge status="Planned" />
+              </div>
               <p className="text-foreground/50 text-sm leading-relaxed">
-                The brain of SJA&apos;s humanoid robot — thinks, speaks, decides,
-                acts autonomously
+                Will be the brain of SJA&apos;s humanoid robot — built to think,
+                speak, decide and act autonomously
               </p>
             </div>
 
@@ -785,11 +816,14 @@ export default function Fari() {
                 </svg>
               </div>
               <h4 className="text-lg font-bold mb-1">Fari inside Sueen</h4>
-              <p className="text-sky-400/50 text-xs font-mono mb-3">
+              <p className="text-sky-400/50 text-xs font-mono mb-2">
                 HOUSEHOLD DRONE
               </p>
+              <div className="flex justify-center mb-3">
+                <StatusBadge status="Planned" />
+              </div>
               <p className="text-foreground/50 text-sm leading-relaxed">
-                Powers the household drone — navigation, face recognition,
+                Will power the household drone — navigation, face recognition,
                 voice commands, object handling
               </p>
             </div>
@@ -802,11 +836,14 @@ export default function Fari() {
                 </svg>
               </div>
               <h4 className="text-lg font-bold mb-1">SAM — Smart Automated Manager</h4>
-              <p className="text-violet-400/50 text-xs font-mono mb-3">
+              <p className="text-violet-400/50 text-xs font-mono mb-2">
                 SMART HOME AI
               </p>
+              <div className="flex justify-center mb-3">
+                <StatusBadge status="Planned" />
+              </div>
               <p className="text-foreground/50 text-sm leading-relaxed">
-                Your Gen Z smart home AI — powered by Fari
+                Your Gen Z smart home AI — to be powered by Fari
               </p>
             </div>
           </div>
@@ -818,7 +855,7 @@ export default function Fari() {
               <span className="text-amber-400">One Intelligence</span>. Every
               Device. Your World.
             </p>
-            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(251,191,36,0.25)]">
+            <WaitlistButton product="Fari" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(251,191,36,0.25)]">
               Join Waitlist
               <svg
                 className="w-4 h-4"
@@ -833,7 +870,7 @@ export default function Fari() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </button>
+            </WaitlistButton>
           </div>
         </div>
 
@@ -850,8 +887,9 @@ export default function Fari() {
             </span>
           </p>
           <p className="text-foreground/40 text-sm">
-            Currently in development. Fari will power Atiana — SJA&apos;s
-            humanoid robot — when it launches.
+            The Fari demo is live in beta; the full product is in development.
+            Fari will power Atiana — SJA&apos;s humanoid robot — when it
+            launches.
           </p>
         </div>
       </div>

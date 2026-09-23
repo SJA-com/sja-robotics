@@ -1,3 +1,5 @@
+import WaitlistButton from "./WaitlistButton";
+
 const samFeatures = [
   {
     name: "Smart Home Control",
@@ -177,12 +179,12 @@ export default function SAM() {
 
       {/* SAM CTA */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold text-sm hover:opacity-90 transition-opacity glow-accent">
+        <WaitlistButton product="SAM" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold text-sm hover:opacity-90 transition-opacity glow-accent">
           Join Waitlist
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </button>
+        </WaitlistButton>
         <a
           href="https://robotics.sjapathway.com/sam/"
           target="_blank"

@@ -3,7 +3,7 @@ import { render, screen, within } from "@testing-library/react";
 import Fari from "@/components/Fari";
 
 const CHECK = 'path[d="M5 13l4 4L19 7"]';
-const CROSS = 'path[d="M6 18L18 6M6 6l12 12"]';
+const CLOCK = 'path[d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"]';
 
 describe("<Fari />", () => {
   it("renders the product header", () => {
@@ -14,9 +14,20 @@ describe("<Fari />", () => {
       screen.getByText("Futuristic Artificial Reasoning Intelligence")
     ).toBeInTheDocument();
     expect(
-      screen.getByText("Every Intelligence. One Companion. Your Life.")
+      screen.getByText("Every Kind of Help. One Companion. Your Life.")
     ).toBeInTheDocument();
     expect(screen.getByText("COMING SOON")).toBeInTheDocument();
+  });
+
+  it("uses defensible headline copy (no superlatives or rival claims)", () => {
+    const { container } = render(<Fari />);
+    expect(
+      screen.getByRole("heading", { level: 3, name: "One Companion for Every Kind of Help" })
+    ).toBeInTheDocument();
+    const text = container.textContent!;
+    expect(text).not.toMatch(/Ever Built/);
+    expect(text).not.toMatch(/better than all of them/);
+    expect(text).not.toMatch(/remembers you forever/);
   });
 
   it("lists the four capabilities", () => {
@@ -31,76 +42,104 @@ describe("<Fari />", () => {
     }
   });
 
-  it("shows the routing architecture with five AI providers", () => {
+  it("shows the routing architecture with six live routes", () => {
     render(<Fari />);
     expect(screen.getByText("INTELLIGENT ROUTING ENGINE")).toBeInTheDocument();
     expect(screen.getByText("USER-FACING COMPANION")).toBeInTheDocument();
     for (const [name, role] of [
-      ["Claude", "Reasoning, Writing, Analysis"],
-      ["ChatGPT", "General Knowledge, Conversation"],
-      ["DeepSeek", "Coding, Technical, Math"],
-      ["Gemini", "Multimodal, Search, Real-time"],
-      ["ElevenLabs", "Voice Synthesis, Natural Speech"],
+      ["Coding", "Code, debugging, technical"],
+      ["Reasoning", "Analysis, maths, planning"],
+      ["Creative", "Writing, ideas, storytelling"],
+      ["Research", "Facts, explanations, study"],
+      ["Multimodal", "Images & PDFs you share"],
+      ["Conversation", "Everyday chat & support"],
     ]) {
       const roleEl = screen.getByText(role);
       expect(roleEl.previousElementSibling).toHaveTextContent(name);
     }
   });
 
-  it("lists the Custom SJA Layer features", () => {
+  it("marks open models as live and other providers as planned", () => {
     render(<Fari />);
-    const layer = screen.getByText("Custom SJA Layer").closest("div.rounded-xl") as HTMLElement;
-    for (const f of [
-      "Permanent Memory",
-      "5 Specialized Modes",
-      "Arabic-first Language",
-      "Personality Engine",
-      "Privacy & Data Ownership",
-      "Atiana Integration",
-    ]) {
-      expect(within(layer).getByText(f)).toBeInTheDocument();
+    const today = screen.getByText("Today: efficient open models").parentElement!;
+    expect(within(today).getByText("Live")).toBeInTheDocument();
+    const roadmap = screen.getByText("Roadmap: more providers").closest("div.rounded-lg") as HTMLElement;
+    expect(within(roadmap).getByText("Planned")).toBeInTheDocument();
+    for (const p of ["Claude", "ChatGPT", "DeepSeek", "Gemini", "ElevenLabs voice"]) {
+      expect(within(roadmap).getByText(p)).toBeInTheDocument();
     }
   });
 
-  describe("comparison table", () => {
-    it("has Claude, ChatGPT, DeepSeek and Fari columns", () => {
+  it("lists the Custom SJA Layer features with their status", () => {
+    render(<Fari />);
+    const layer = screen.getByText("Custom SJA Layer").closest("div.rounded-xl") as HTMLElement;
+    for (const [f, status] of [
+      ["Permanent Memory", "Live"],
+      ["5 Specialized Modes", "Live"],
+      ["Arabic-first Language", "Live"],
+      ["Personality Engine", "Live"],
+      ["Privacy & Data Ownership", "Live"],
+      ["Atiana Integration", "Planned"],
+    ]) {
+      const el = within(layer).getByText(f);
+      expect(el.parentElement).toHaveTextContent(status);
+    }
+  });
+
+  describe("live vs. next table", () => {
+    it("has Feature, What it does and Status columns", () => {
       render(<Fari />);
+      expect(
+        screen.getByRole("heading", { level: 3, name: "What's Live vs. What's Next" })
+      ).toBeInTheDocument();
       expect(
         within(screen.getByRole("table"))
           .getAllByRole("columnheader")
           .map((th) => th.textContent)
-      ).toEqual(["Feature", "Claude", "ChatGPT", "DeepSeek", "Fari"]);
+      ).toEqual(["Feature", "What it does", "Status"]);
+    });
+
+    it("no longer names rival products as columns", () => {
+      render(<Fari />);
+      const headers = within(screen.getByRole("table"))
+        .getAllByRole("columnheader")
+        .map((th) => th.textContent);
+      for (const rival of ["Claude", "ChatGPT", "DeepSeek"]) {
+        expect(headers).not.toContain(rival);
+      }
     });
 
     it.each([
-      ["Permanent Memory", ["Limited", "Limited", CROSS, "Forever"]],
-      ["Arabic First", [CROSS, CROSS, CROSS, CHECK]],
-      ["5 Specialized Modes", [CROSS, CROSS, CROSS, CHECK]],
-      ["Voice + Chat", [CROSS, "Partial", CROSS, "Full"]],
-      ["Powers a Robot", [CROSS, CROSS, CROSS, "Atiana"]],
-      ["Culturally Aware", [CROSS, CROSS, CROSS, CHECK]],
-      ["Truly Personal", [CROSS, CROSS, CROSS, CHECK]],
-    ])("row '%s' renders the right values", (feature, expected) => {
+      ["Smart routing", "Live"],
+      ["5 specialized modes", "Live"],
+      ["Permanent memory + task list", "Live"],
+      ["Arabic-first", "Live"],
+      ["Voice + Chat", "Live"],
+      ["Images & PDFs", "Live"],
+      ["Reminders & notifications", "Planned"],
+      ["Real-time web search", "Planned"],
+      ["Additional AI providers", "Planned"],
+      ["Natural neural voice", "Planned"],
+      ["Actions on your behalf", "Planned"],
+      ["Smart home & cameras", "Planned"],
+      ["Emergency contacts & services", "Planned"],
+      ["Powers a robot", "Planned"],
+    ])("row '%s' is marked %s", (feature, status) => {
       render(<Fari />);
       const row = within(screen.getByRole("table"))
         .getByRole("cell", { name: feature })
         .parentElement!;
-      const cells = Array.from(row.querySelectorAll("td")).slice(1);
-      expected.forEach((value, i) => {
-        if (value === CHECK || value === CROSS) {
-          expect(cells[i].querySelector(value)).toBeTruthy();
-        } else {
-          expect(cells[i]).toHaveTextContent(value);
-          expect(cells[i].querySelector("svg")).toBeNull();
-        }
-      });
+      const cells = row.querySelectorAll("td");
+      expect(cells).toHaveLength(3);
+      expect(cells[1].textContent!.length).toBeGreaterThan(0);
+      expect(cells[2].querySelector("[data-status]")).toHaveTextContent(status);
     });
   });
 
   it.each([
     ["Health Mode", "Your personal health Rafiq"],
-    ["Security Mode", "Your home, always watched"],
-    ["Assistant Mode", "Your digital errand runner"],
+    ["Security Mode", "Home-safety guidance, on call"],
+    ["Assistant Mode", "Your organised right hand"],
     ["Emergency Mode", "Stays calm so you don't have to"],
     ["Companion Mode", "Your Rafiq — just talk"],
   ])("describes %s", (mode, tagline) => {
@@ -109,6 +148,40 @@ describe("<Fari />", () => {
     expect(h.nextElementSibling).toHaveTextContent(tagline);
     const card = h.closest("div.rounded-xl") as HTMLElement;
     expect(within(card).getAllByRole("listitem")).toHaveLength(4);
+  });
+
+  it.each([
+    ["Health Mode", ["Connecting you with doctors"]],
+    ["Security Mode", [
+      "Smart-home monitoring",
+      "Real-time alerts for unusual activity",
+      "Camera & sensor integration",
+    ]],
+    ["Assistant Mode", [
+      "Reminders & push notifications",
+      "Ordering online & sending emails for you",
+    ]],
+    ["Emergency Mode", [
+      "Contacting emergency services automatically",
+      "Alerting your chosen contacts",
+    ]],
+    ["Companion Mode", []],
+  ])("marks only the not-yet-built %s features as Planned", (mode, planned) => {
+    render(<Fari />);
+    const card = screen
+      .getByRole("heading", { level: 4, name: mode })
+      .closest("div.rounded-xl") as HTMLElement;
+    for (const li of within(card).getAllByRole("listitem")) {
+      const isPlanned = planned.some((p) => li.textContent!.startsWith(p));
+      if (isPlanned) {
+        expect(li.querySelector("[data-status]")).toHaveTextContent("Planned");
+        expect(li.querySelector(CLOCK)).toBeTruthy();
+      } else {
+        expect(li.querySelector("[data-status]")).toBeNull();
+        expect(li.querySelector(CHECK)).toBeTruthy();
+      }
+    }
+    expect(within(card).queryAllByText("Planned")).toHaveLength(planned.length);
   });
 
   it("lists the seven differentiators", () => {
@@ -120,7 +193,7 @@ describe("<Fari />", () => {
       "Voice + Chat",
       "Built for the world",
       "Privacy first",
-      "Powers Atiana",
+      "Will power Atiana",
     ]) {
       expect(screen.getAllByText(d).length).toBeGreaterThan(0);
     }
@@ -137,15 +210,17 @@ describe("<Fari />", () => {
     expect(card).toHaveTextContent(period);
   });
 
-  it("shows the four forms Fari powers", () => {
+  it("shows the four forms Fari powers, with only devices live", () => {
     render(<Fari />);
-    for (const f of [
-      "Fari on Your Devices",
-      "Fari inside Atiana",
-      "Fari inside Sueen",
-      "SAM — Smart Automated Manager",
+    for (const [f, status] of [
+      ["Fari on Your Devices", "Live"],
+      ["Fari inside Atiana", "Planned"],
+      ["Fari inside Sueen", "Planned"],
+      ["SAM — Smart Automated Manager", "Planned"],
     ]) {
-      expect(screen.getByRole("heading", { level: 4, name: f })).toBeInTheDocument();
+      const h = screen.getByRole("heading", { level: 4, name: f });
+      const card = h.parentElement!;
+      expect(card.querySelector("[data-status]")).toHaveTextContent(status);
     }
   });
 

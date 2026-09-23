@@ -25,54 +25,87 @@ describe("<MousFeatures />", () => {
     ]);
   });
 
-  it("lists the three world firsts", () => {
+  it.each([
+    ["Dialect Intelligence", "Live in demo"],
+    ["Cultural Intelligence", "Live in demo"],
+    ["Emotion Detection", "Live in demo"],
+    ["WhatsApp + Voice Combined", "In development"],
+    ["Arabic + English Document Intelligence", "Live in demo"],
+    ["Business Personality Modes", "Live in demo"],
+  ])("marks the %s feature as %s", (name, status) => {
     render(<MousFeatures />);
-    for (const t of [
-      "Cultural intelligence for both Muslim and Christian businesses",
-      "WhatsApp + voice agent seamlessly combined",
-      "Arabic + English document reading in real time",
+    const card = screen.getByRole("heading", { level: 4, name }).parentElement!;
+    expect(card.querySelector("[data-status]")).toHaveTextContent(status);
+  });
+
+  it("avoids unverifiable 'world first' claims", () => {
+    const { container } = render(<MousFeatures />);
+    const text = container.textContent!;
+    expect(text).not.toMatch(/world's first|nobody in the world|first voice agent/i);
+  });
+
+  it("lists the three core pillars with their status", () => {
+    render(<MousFeatures />);
+    expect(
+      screen.getByRole("heading", { level: 3, name: "Three things MOUS is built around" })
+    ).toBeInTheDocument();
+    for (const [t, status] of [
+      ["Cultural intelligence for both Muslim and Christian businesses", "Live in demo"],
+      ["WhatsApp + voice in one agent", "In development"],
+      ["Arabic + English document reading", "Live in demo"],
     ]) {
-      expect(screen.getByText(t)).toBeInTheDocument();
+      const el = screen.getByText(t);
+      expect(el.parentElement!.querySelector("[data-status]")).toHaveTextContent(status);
     }
   });
 
-  describe("comparison table", () => {
-    it("compares MOUS against Bland.ai, Vapi.ai and Retell AI", () => {
+  describe("live vs. next table", () => {
+    it("has Feature, What it does and Status columns (no competitor columns)", () => {
       render(<MousFeatures />);
-      const table = screen.getByRole("table");
       expect(
-        within(table)
-          .getAllByRole("columnheader")
-          .map((th) => th.textContent)
-      ).toEqual(["Feature", "Bland.ai", "Vapi.ai", "Retell AI", "MOUS"]);
-    });
-
-    it("has eight feature rows where MOUS always has a check", () => {
-      render(<MousFeatures />);
-      const rows = within(screen.getByRole("table")).getAllByRole("row").slice(1);
-      expect(rows.map((r) => r.querySelector("td")!.textContent)).toEqual([
-        "Arabic Dialects",
-        "Cultural Intelligence",
-        "Emotion Detection",
-        "WhatsApp + Voice",
-        "Arabic + English Docs",
-        "Muslim + Christian Aware",
-        "Dialect Specific",
-        "Arab World Focus",
-      ]);
-      for (const row of rows) {
-        const mousCell = row.querySelectorAll("td")[4];
-        expect(mousCell.querySelector('path[d="M5 13l4 4L19 7"]')).toBeTruthy();
+        screen.getByRole("heading", { level: 3, name: "What's Live vs. What's Next" })
+      ).toBeInTheDocument();
+      const headers = within(screen.getByRole("table"))
+        .getAllByRole("columnheader")
+        .map((th) => th.textContent);
+      expect(headers).toEqual(["Feature", "What it does", "Status"]);
+      for (const rival of ["Bland.ai", "Vapi.ai", "Retell AI"]) {
+        expect(headers).not.toContain(rival);
       }
     });
 
-    it("renders string values as text and false as a cross", () => {
+    it("lists every feature with an honest status", () => {
       render(<MousFeatures />);
-      const emotion = screen.getByRole("cell", { name: "Emotion Detection" })
-        .parentElement!;
-      const cells = emotion.querySelectorAll("td");
-      expect(cells[1].querySelector('path[d="M6 18L18 6M6 6l12 12"]')).toBeTruthy();
-      expect(cells[3]).toHaveTextContent("Partial");
+      const rows = within(screen.getByRole("table")).getAllByRole("row").slice(1);
+      expect(
+        rows.map((r) => {
+          const cells = r.querySelectorAll("td");
+          return [cells[0].textContent, cells[2].textContent];
+        })
+      ).toEqual([
+        ["No-code business setup", "Live in demo"],
+        ["Business personality modes", "Live in demo"],
+        ["Arabic dialects", "Live in demo"],
+        ["Cultural settings", "Live in demo"],
+        ["Emotion detection", "Live in demo"],
+        ["Bookings & appointments", "Live in demo"],
+        ["Arabic + English documents", "Live in demo"],
+        ["Voice", "Live in demo"],
+        ["Call analytics dashboard", "Live in demo"],
+        ["WhatsApp", "In development"],
+        ["Real phone numbers", "Planned"],
+        ["Custom cloned voices", "Planned"],
+        ["Shared memory across channels", "Planned"],
+      ]);
+      for (const row of rows) {
+        expect(row.querySelectorAll("td")[1].textContent!.length).toBeGreaterThan(0);
+      }
+    });
+
+    it("explains the WhatsApp status in the table", () => {
+      render(<MousFeatures />);
+      const row = screen.getByRole("cell", { name: "WhatsApp" }).parentElement!;
+      expect(row).toHaveTextContent("not yet connected to a live number");
     });
   });
 
