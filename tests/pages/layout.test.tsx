@@ -11,7 +11,7 @@ describe("Root layout", () => {
 
   it("sets the site title and description", () => {
     expect(metadata.title).toBe(
-      "SJA Robotics | Empowering Everyday Life Through Automation"
+      "Robotics | Empowering Everyday Life Through Automation"
     );
     expect(metadata.description).toMatch(/Atiana, Sueen/);
   });
