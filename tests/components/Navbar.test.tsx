@@ -26,7 +26,7 @@ describe("<Navbar /> logo", () => {
     expect(logoLink).toHaveAttribute("aria-label", "SJA Inc.");
 
     const img = within(logoLink).getByAltText("SJA Inc.");
-    expect(img.getAttribute("src")).toContain("sja-inc-mark-light.png");
+    expect(img.getAttribute("src")).toContain("sja-inc-circle.png");
 
     // The Robotics branding is not shown on the home page.
     expect(screen.queryByAltText("SJA Robotics")).not.toBeInTheDocument();

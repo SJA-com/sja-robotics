@@ -31,11 +31,11 @@ export default function Navbar() {
               className="flex items-center group"
             >
               <Image
-                src="/sja-inc-mark-light.png"
+                src="/sja-inc-circle.png"
                 alt="SJA Inc."
-                width={476}
-                height={315}
-                className="h-9 w-auto transition-transform group-hover:scale-105"
+                width={48}
+                height={48}
+                className="rounded-full transition-transform group-hover:scale-105"
                 unoptimized
                 priority
               />
