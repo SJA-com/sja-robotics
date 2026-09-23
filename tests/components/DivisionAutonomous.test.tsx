@@ -54,7 +54,7 @@ describe("<DivisionAutonomous />", () => {
       render(<DivisionAutonomous />);
       const c = productCard("Atiana Robot");
       const demo = within(c).getByRole("link", { name: "TRY DEMO" });
-      expect(demo).toHaveAttribute("href", "https://atiana.sja-affu765.workers.dev/");
+      expect(demo).toHaveAttribute("href", "https://robotics.sjapathway.com/atiana/");
       expect(demo).toHaveAttribute("target", "_blank");
       expect(demo).toHaveAttribute("rel", "noopener noreferrer");
       expect(within(c).getByRole("link", { name: /Learn More/ })).toHaveAttribute(
@@ -105,7 +105,7 @@ describe("<DivisionAutonomous />", () => {
       render(<DivisionAutonomous />);
       const c = productCard("Sueen");
       const demo = within(c).getByRole("link", { name: "TRY DEMO" });
-      expect(demo).toHaveAttribute("href", "https://sueen.pages.dev/");
+      expect(demo).toHaveAttribute("href", "https://robotics.sjapathway.com/sueen/");
       expect(demo).toHaveAttribute("target", "_blank");
       expect(within(c).getByRole("link", { name: /Learn More/ })).toHaveAttribute(
         "href",
@@ -136,9 +136,9 @@ describe("<DivisionAutonomous />", () => {
     expect(
       Array.from(container.querySelectorAll("a")).map((a) => a.getAttribute("href"))
     ).toEqual([
-      "https://atiana.sja-affu765.workers.dev/",
+      "https://robotics.sjapathway.com/atiana/",
       "/products/atiana",
-      "https://sueen.pages.dev/",
+      "https://robotics.sjapathway.com/sueen/",
       "/products/sueen",
     ]);
   });

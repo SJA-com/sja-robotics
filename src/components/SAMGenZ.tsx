@@ -244,7 +244,7 @@ export default function SAMGenZ() {
               </svg>
             </button>
             <a
-              href="https://sam.sja-affu765.workers.dev/"
+              href="https://robotics.sjapathway.com/sam/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-violet-400/40 text-violet-400 font-semibold hover:bg-violet-400/10 transition-colors"

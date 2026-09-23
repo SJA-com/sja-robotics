@@ -80,7 +80,7 @@ describe("<MousFeatures />", () => {
     render(<MousFeatures />);
     expect(screen.getByRole("button", { name: /Join Waitlist/ })).toBeInTheDocument();
     const demo = screen.getByRole("link", { name: /Try Demo/ });
-    expect(demo).toHaveAttribute("href", "https://mous.sja-affu765.workers.dev/");
+    expect(demo).toHaveAttribute("href", "https://robotics.sjapathway.com/mous/");
     expect(demo).toHaveAttribute("target", "_blank");
     expect(demo).toHaveAttribute("rel", "noopener noreferrer");
   });

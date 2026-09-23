@@ -11,6 +11,7 @@ const navLinks = [
   // { href: "/divisions/sja-tech", label: "Tech" }, // Uncomment when needed
   { href: "/divisions/sja-ai", label: "AI" },
   { href: "/divisions/sja-autonomous", label: "Autonomous" },
+  { href: "/features/", label: "Features" },
   { href: "#contact", label: "Contact" },
 ];
 

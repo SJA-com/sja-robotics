@@ -184,7 +184,7 @@ export default function SAM() {
           </svg>
         </button>
         <a
-          href="https://sam.sja-affu765.workers.dev/"
+          href="https://robotics.sjapathway.com/sam/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg border border-accent-2/40 text-accent-2 font-semibold text-sm hover:bg-accent-2/10 transition-colors"

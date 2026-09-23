@@ -705,7 +705,7 @@ export default function Fari() {
               </svg>
             </button>
             <a
-              href="https://fari.sja-affu765.workers.dev/"
+              href="https://robotics.sjapathway.com/fari/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-amber-400/40 text-amber-400 font-semibold hover:bg-amber-400/10 transition-colors"

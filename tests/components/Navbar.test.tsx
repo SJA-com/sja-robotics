@@ -8,6 +8,7 @@ const NAV = [
   { label: "Divisions", href: "/#divisions" },
   { label: "AI", href: "/divisions/sja-ai" },
   { label: "Autonomous", href: "/divisions/sja-autonomous" },
+  { label: "Features", href: "/features/" },
   { label: "Contact", href: "#contact" },
 ];
 

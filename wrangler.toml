@@ -1,4 +1,9 @@
-# SJA Robotics — static site on Cloudflare Workers (assets only).
+# SJA Robotics — static site on Cloudflare Workers, plus a small router
+# (worker/index.js) that mounts the product demos under the same domain:
+#
+#   /fari/   → fari worker      /mous/   → mous worker
+#   /sam/    → sam worker       /atiana/ → atiana worker
+#   /sueen/  → sueen.pages.dev
 #
 #   sja-robotics      (prod, main) → https://robotics.sjapathway.com
 #   sja-robotics-dev  (dev)        → https://sja-robotics-dev.<account>.workers.dev
@@ -8,6 +13,7 @@
 #   npm run deploy:dev     # dev worker
 
 name = "sja-robotics"
+main = "worker/index.js"
 compatibility_date = "2024-09-23"
 workers_dev = true
 
@@ -15,14 +21,30 @@ routes = [
   { pattern = "robotics.sjapathway.com", custom_domain = true }
 ]
 
+# Product demos (service bindings to their Workers)
+services = [
+  { binding = "FARI", service = "fari" },
+  { binding = "MOUS", service = "mous" },
+  { binding = "SAM", service = "sam" },
+  { binding = "ATIANA", service = "atiana" },
+]
+
 [assets]
 directory = "./out"
+binding = "ASSETS"
 not_found_handling = "404-page"
 
 [env.dev]
 name = "sja-robotics-dev"
 workers_dev = true
+services = [
+  { binding = "FARI", service = "fari" },
+  { binding = "MOUS", service = "mous" },
+  { binding = "SAM", service = "sam" },
+  { binding = "ATIANA", service = "atiana" },
+]
 
 [env.dev.assets]
 directory = "./out"
+binding = "ASSETS"
 not_found_handling = "404-page"

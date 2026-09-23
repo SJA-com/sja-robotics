@@ -687,11 +687,11 @@ Our Home Security & Monitoring systems leverage the latest in AI technology to p
 
 | Product | Demo URL |
 | --- | --- |
-| MOUS | https://mous.sja-affu765.workers.dev/ |
-| Fari | https://fari.sja-affu765.workers.dev/ |
-| SAM | https://sam.sja-affu765.workers.dev/ |
-| Atiana | https://atiana.sja-affu765.workers.dev/ |
-| Sueen | https://sueen.pages.dev/ |
+| MOUS | https://robotics.sjapathway.com/mous/ |
+| Fari | https://robotics.sjapathway.com/fari/ |
+| SAM | https://robotics.sjapathway.com/sam/ |
+| Atiana | https://robotics.sjapathway.com/atiana/ |
+| Sueen | https://robotics.sjapathway.com/sueen/ |
 
 ---
 

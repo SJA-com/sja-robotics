@@ -311,7 +311,7 @@ export default function MousFeatures() {
               </svg>
             </button>
             <a
-              href="https://mous.sja-affu765.workers.dev/"
+              href="https://robotics.sjapathway.com/mous/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-accent-2/40 text-accent-2 font-semibold hover:bg-accent-2/10 transition-colors"

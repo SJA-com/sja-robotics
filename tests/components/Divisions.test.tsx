@@ -50,20 +50,20 @@ describe("<Divisions />", () => {
   });
 
   it.each([
-    ["SJA AI", "Fari", "COMING SOON", "https://fari.sja-affu765.workers.dev/"],
-    ["SJA AI", "MOUS", "COMING SOON", "https://mous.sja-affu765.workers.dev/"],
-    ["SJA AI", "SAM", "COMING SOON", "https://sam.sja-affu765.workers.dev/"],
+    ["SJA AI", "Fari", "COMING SOON", "https://robotics.sjapathway.com/fari/"],
+    ["SJA AI", "MOUS", "COMING SOON", "https://robotics.sjapathway.com/mous/"],
+    ["SJA AI", "SAM", "COMING SOON", "https://robotics.sjapathway.com/sam/"],
     [
       "SJA Autonomous",
       "Atiana Robot",
       "IN DEVELOPMENT",
-      "https://atiana.sja-affu765.workers.dev/",
+      "https://robotics.sjapathway.com/atiana/",
     ],
     [
       "SJA Autonomous",
       "Sueen Drone",
       "IN DEVELOPMENT",
-      "https://sueen.pages.dev/",
+      "https://robotics.sjapathway.com/sueen/",
     ],
   ])("%s features %s (%s) with a demo link", (division, product, badge, demo) => {
     render(<Divisions />);

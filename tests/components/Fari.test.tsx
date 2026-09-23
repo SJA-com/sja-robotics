@@ -153,7 +153,7 @@ describe("<Fari />", () => {
     render(<Fari />);
     expect(screen.getAllByRole("button", { name: /Join Waitlist/ })).toHaveLength(2);
     const demo = screen.getByRole("link", { name: /Try Demo/ });
-    expect(demo).toHaveAttribute("href", "https://fari.sja-affu765.workers.dev/");
+    expect(demo).toHaveAttribute("href", "https://robotics.sjapathway.com/fari/");
     expect(demo).toHaveAttribute("target", "_blank");
     expect(demo).toHaveAttribute("rel", "noopener noreferrer");
     expect(screen.getAllByRole("link")).toHaveLength(1);

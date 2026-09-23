@@ -185,7 +185,7 @@ export default function DivisionAutonomous() {
                 Powered by Fari — the most advanced humanoid robot by SJA
               </p>
               <a
-                href="https://atiana.sja-affu765.workers.dev/"
+                href="https://robotics.sjapathway.com/atiana/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-400/30 text-emerald-400 text-xs font-mono hover:bg-emerald-400/10 transition-colors"
@@ -319,7 +319,7 @@ export default function DivisionAutonomous() {
                 for the ultimate home experience — SAM thinks, Sueen acts.
               </p>
               <a
-                href="https://sueen.pages.dev/"
+                href="https://robotics.sjapathway.com/sueen/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-400/30 text-emerald-400 text-xs font-mono hover:bg-emerald-400/10 transition-colors"

@@ -52,7 +52,7 @@ describe("<SAM />", () => {
     render(<SAM />);
     expect(screen.getByRole("button", { name: "Join Waitlist" })).toBeInTheDocument();
     const demo = screen.getByRole("link", { name: "Try Demo" });
-    expect(demo).toHaveAttribute("href", "https://sam.sja-affu765.workers.dev/");
+    expect(demo).toHaveAttribute("href", "https://robotics.sjapathway.com/sam/");
     expect(demo).toHaveAttribute("target", "_blank");
     expect(demo).toHaveAttribute("rel", "noopener noreferrer");
   });

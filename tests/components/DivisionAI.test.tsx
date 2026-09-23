@@ -89,11 +89,11 @@ describe("<DivisionAI />", () => {
       .getAllByRole("link", { name: /Try Demo/ })
       .map((a) => a.getAttribute("href"));
     expect(demos).toEqual([
-      "https://mous.sja-affu765.workers.dev/", // MOUS pricing CTA
-      "https://mous.sja-affu765.workers.dev/", // MousFeatures CTA
-      "https://fari.sja-affu765.workers.dev/", // Fari CTA
-      "https://sam.sja-affu765.workers.dev/", // SAM CTA
-      "https://sam.sja-affu765.workers.dev/", // SAM Gen Z CTA
+      "https://robotics.sjapathway.com/mous/", // MOUS pricing CTA
+      "https://robotics.sjapathway.com/mous/", // MousFeatures CTA
+      "https://robotics.sjapathway.com/fari/", // Fari CTA
+      "https://robotics.sjapathway.com/sam/", // SAM CTA
+      "https://robotics.sjapathway.com/sam/", // SAM Gen Z CTA
     ]);
   });
 
