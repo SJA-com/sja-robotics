@@ -86,9 +86,7 @@ describe("<ProductPage />", () => {
     render(<ProductPage {...base} />);
     for (const name of [/Back to Products/, /Explore All Products/]) {
       const href = screen.getByRole("link", { name }).getAttribute("href")!;
-      // NOTE: the href currently carries a "#products" hash with no matching
-      // anchor on the home page (see report); only the route is asserted here.
-      expect(new URL(href, "https://robotics.sjapathway.com").pathname).toBe("/");
+      expect(href).toBe("/#divisions");
     }
   });
 });

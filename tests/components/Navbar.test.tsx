@@ -4,8 +4,8 @@ import { usePathname } from "next/navigation";
 import Navbar from "@/components/Navbar";
 
 const NAV = [
-  { label: "About", href: "#about" },
-  { label: "Divisions", href: "#divisions" },
+  { label: "About", href: "/#about" },
+  { label: "Divisions", href: "/#divisions" },
   { label: "AI", href: "/divisions/sja-ai" },
   { label: "Autonomous", href: "/divisions/sja-autonomous" },
   { label: "Contact", href: "#contact" },

@@ -50,8 +50,8 @@ describe("<Footer />", () => {
     [
       "Company",
       [
-        ["About", "#about"],
-        ["Divisions", "#divisions"],
+        ["About", "/#about"],
+        ["Divisions", "/#divisions"],
         ["Careers", "#contact"],
         ["Contact", "#contact"],
       ],
@@ -78,6 +78,12 @@ describe("<Footer />", () => {
     expect(
       screen.getByText(/© 2031 SJA Robotics\. All rights reserved\./)
     ).toBeInTheDocument();
+  });
+
+  it("shows the site's real domain", () => {
+    render(<Footer />);
+    expect(screen.getByText("robotics.sjapathway.com")).toBeInTheDocument();
+    expect(screen.queryByText("robotics.sja.com")).toBeNull();
   });
 
   it("credits the founder", () => {

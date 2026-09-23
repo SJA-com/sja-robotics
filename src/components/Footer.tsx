@@ -16,8 +16,8 @@ const footerLinks = {
     { label: "Sueen Drone", href: "/divisions/sja-autonomous" },
   ],
   Company: [
-    { label: "About", href: "#about" },
-    { label: "Divisions", href: "#divisions" },
+    { label: "About", href: "/#about" },
+    { label: "Divisions", href: "/#divisions" },
     { label: "Careers", href: "#contact" },
     { label: "Contact", href: "#contact" },
   ],
@@ -40,7 +40,7 @@ export default function Footer() {
             <p className="text-foreground/50 text-sm leading-relaxed mb-4">
               Empowering everyday life through intelligent, automated solutions.
             </p>
-            <p className="text-accent/60 text-xs font-mono">robotics.sja.com</p>
+            <p className="text-accent/60 text-xs font-mono">robotics.sjapathway.com</p>
           </div>
 
           {/* Link Columns */}
