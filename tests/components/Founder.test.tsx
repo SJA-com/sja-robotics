@@ -41,8 +41,9 @@ describe("<Founder />", () => {
     expect(text).toMatch(/pursuing a Master of Engineering in\s+Robotics/);
     expect(text).toMatch(/over 5 years of experience in the IT industry/);
     expect(text).toMatch(/USA, France, Australia and the UK/);
-    expect(text).toMatch(/Product & Engineering Lead at map\.ca/);
-    expect(text).toMatch(/Founder and CEO of SJA\s+Pathway/);
+    expect(text).toMatch(/Today I lead SJA Inc\. full time as Founder & CEO, building all three companies/);
+    expect(text).toMatch(/Product &\s+Engineering Lead at map\.ca \(Nov 2025 – Mar 2026\)/);
+    expect(text).not.toMatch(/Currently, I serve/);
     for (const role of ["Tech Support Engineer", "Senior Software Engineer", "Lead Software Engineer", "CTO"]) {
       expect(text).toContain(role);
     }
@@ -71,11 +72,15 @@ describe("<Founder />", () => {
     );
     expect(items.map((li) => li.textContent)).toEqual(
       expect.arrayContaining([
-        expect.stringContaining("SJA Robotics"),
+        expect.stringContaining("SJA Inc."),
         expect.stringContaining("map.ca"),
-        expect.stringContaining("SJA Pathway"),
       ])
     );
+    // Current role is SJA Inc. (all three companies); map.ca ended Mar 2026.
+    expect(experience[0]).toMatchObject({ org: "SJA Inc.", current: true });
+    expect(experience[0].detail).toMatch(/SJA Robotics.*SJA Pathway.*SJA Verse/);
+    expect(experience.find((e) => e.org === "map.ca")).toMatchObject({ current: false });
+    expect(experience.find((e) => e.org === "map.ca")!.detail).toContain("Nov 2025 – Mar 2026");
   });
 
   it("links to her profiles over https in a new tab", () => {

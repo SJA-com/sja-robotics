@@ -11,23 +11,17 @@ export const FOUNDER_PHOTO_ALT = "Syeda Juveria Afreen, Founder of SJA Robotics"
 
 export const experience = [
   {
-    role: "Founder",
-    org: "SJA Robotics",
-    detail: "Building AI products and the robots they will power next.",
+    role: "Founder & CEO",
+    org: "SJA Inc.",
+    detail:
+      "Building all three companies: SJA Robotics (AI products and the robots they will power), SJA Pathway (AI career platform) and SJA Verse (browser game studio).",
     current: true,
   },
   {
     role: "Product & Engineering Lead",
     org: "map.ca",
-    detail: "Contributing to impactful, community-driven technology solutions.",
-    current: true,
-  },
-  {
-    role: "Founder & CEO",
-    org: "SJA Pathway",
-    detail:
-      "A platform helping people unlock global career opportunities and build strong professional identities.",
-    current: true,
+    detail: "Nov 2025 – Mar 2026 · impactful, community-driven technology solutions.",
+    current: false,
   },
   {
     role: "Tech Support Engineer → Senior Software Engineer → Lead Software Engineer → CTO",
@@ -155,10 +149,10 @@ export default function Founder() {
                 collaborating with teams across the USA, France, Australia and the UK.
               </p>
               <p data-reveal="right" style={motionDelay(160)}>
-                Currently, I serve as the Product &amp; Engineering Lead at map.ca, contributing to
-                impactful, community-driven technology solutions. I&apos;m also the Founder and CEO of SJA
-                Pathway, a platform dedicated to helping individuals unlock global career opportunities and
-                build strong professional identities.
+                Today I lead SJA Inc. full time as Founder &amp; CEO, building all three companies: SJA
+                Robotics, bringing AI and automation into everyday devices; SJA Pathway, the AI career
+                platform; and SJA Verse, a browser game studio. Before this, I was the Product &amp;
+                Engineering Lead at map.ca (Nov 2025 &ndash; Mar 2026).
               </p>
               <p data-reveal="right" style={motionDelay(240)}>
                 Beyond engineering, I&apos;m also a Game Developer, Content Writer and Content Creator,
