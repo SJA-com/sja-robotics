@@ -9,10 +9,11 @@ const navLinks = [
   { href: "/#about", label: "About" },
   { href: "/#founder", label: "Founder" },
   { href: "/products/", label: "Products" },
-  { href: "/#divisions", label: "Divisions" },
-  // { href: "/divisions/sja-tech", label: "Tech" }, // Uncomment when needed
-  { href: "/divisions/sja-ai", label: "AI" },
-  { href: "/divisions/sja-autonomous", label: "Autonomous" },
+  // Hidden from the navbar for now; the pages still exist. Uncomment when needed.
+  // { href: "/#divisions", label: "Divisions" },
+  // { href: "/divisions/sja-tech", label: "Tech" },
+  // { href: "/divisions/sja-ai", label: "AI" },
+  // { href: "/divisions/sja-autonomous", label: "Autonomous" },
   { href: "/features/", label: "Features" },
   { href: "#contact", label: "Contact" },
 ];

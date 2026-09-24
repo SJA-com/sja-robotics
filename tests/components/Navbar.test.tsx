@@ -7,9 +7,6 @@ const NAV = [
   { label: "About", href: "/#about" },
   { label: "Founder", href: "/#founder" },
   { label: "Products", href: "/products/" },
-  { label: "Divisions", href: "/#divisions" },
-  { label: "AI", href: "/divisions/sja-ai" },
-  { label: "Autonomous", href: "/divisions/sja-autonomous" },
   { label: "Features", href: "/features/" },
   { label: "Contact", href: "#contact" },
 ];
@@ -143,7 +140,15 @@ describe("<Navbar /> mobile menu", () => {
     onRoute("/products/atiana");
     render(<Navbar />);
     fireEvent.click(screen.getByRole("button", { name: "Toggle menu" }));
-    expect(screen.getAllByRole("link", { name: "Autonomous" })).toHaveLength(2);
+    expect(screen.getAllByRole("link", { name: "Products" })).toHaveLength(2);
+  });
+
+  it("hides Divisions, AI and Autonomous from the navbar for now", () => {
+    render(<Navbar />);
+    fireEvent.click(screen.getByRole("button", { name: "Toggle menu" }));
+    for (const name of ["Divisions", "AI", "Autonomous"]) {
+      expect(screen.queryByRole("link", { name })).toBeNull();
+    }
   });
 });
 
