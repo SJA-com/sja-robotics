@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import Home from "@/app/page";
 
 describe("Home page (/)", () => {
-  it("renders Navbar, Hero, Products, About, Divisions and Footer in order", () => {
+  it("renders Navbar, Hero, Products, About, Founder, Divisions and Footer in order", () => {
     const { container } = render(<Home />);
     const nav = container.querySelector("nav")!;
     const main = container.querySelector("main")!;
@@ -14,11 +14,12 @@ describe("Home page (/)", () => {
 
     const sections = Array.from(main.querySelectorAll(":scope > section"));
     // SocialProof renders nothing until live stats exist, so it isn't counted here.
-    expect(sections).toHaveLength(4);
+    expect(sections).toHaveLength(5);
     expect(sections[0]).toContainElement(screen.getByRole("heading", { level: 1 }));
     expect(sections[1]).toHaveAttribute("id", "products");
     expect(sections[2]).toHaveAttribute("id", "about");
-    expect(sections[3]).toHaveAttribute("id", "divisions");
+    expect(sections[3]).toHaveAttribute("id", "founder");
+    expect(sections[4]).toHaveAttribute("id", "divisions");
   });
 
   it("has a single h1 with the site headline", () => {
@@ -58,5 +59,13 @@ describe("Home page (/)", () => {
     expect(internal).toContain("/divisions/sja-ai");
     expect(internal).toContain("/divisions/sja-autonomous");
     expect(internal).not.toContain("/divisions/sja-tech");
+  });
+
+  it("has the #founder anchor that the navbar's /#founder link points at", () => {
+    const { container } = render(<Home />);
+    const founder = container.querySelector("#founder");
+    expect(founder).toBeTruthy();
+    expect(founder).toHaveTextContent("Meet the Founder");
+    expect(container.querySelector('nav a[href="/#founder"]')).toBeTruthy();
   });
 });

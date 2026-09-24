@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/#about", label: "About" },
+  { href: "/#founder", label: "Founder" },
   { href: "/#divisions", label: "Divisions" },
   // { href: "/divisions/sja-tech", label: "Tech" }, // Uncomment when needed
   { href: "/divisions/sja-ai", label: "AI" },
@@ -58,12 +59,12 @@ export default function Navbar() {
           )}
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-foreground/70 hover:text-accent transition-colors"
+                className="nav-link text-sm text-foreground/70 hover:text-accent transition-colors"
               >
                 {link.label}
               </a>
@@ -73,8 +74,9 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-foreground/70 hover:text-accent"
+            className="md:hidden p-2 text-foreground/70 hover:text-accent transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             <svg
               width="24"
@@ -96,7 +98,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-surface border-t border-border">
+        <div className="menu-enter md:hidden bg-surface border-t border-border">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <a
@@ -111,6 +113,9 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      {/* Scroll progress (CSS scroll-driven animation; hidden where unsupported) */}
+      <div aria-hidden="true" className="scroll-progress" />
     </nav>
   );
 }

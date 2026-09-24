@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { isValidElement, type ReactElement } from "react";
 import RootLayout, { metadata } from "@/app/layout";
+import RevealController from "@/components/RevealController";
 
 describe("Root layout", () => {
   it("sets the canonical metadata base to the production domain", () => {
@@ -35,7 +36,7 @@ describe("Root layout", () => {
     );
   });
 
-  it("renders <html lang='en'> with the font variables and wraps children in <body>", () => {
+  it("renders <html lang='en'> with the font variables, wraps children in <body> and mounts the reveal controller", () => {
     const child = <p>child</p>;
     const html = RootLayout({ children: child }) as ReactElement<{
       lang: string;
@@ -49,6 +50,8 @@ describe("Root layout", () => {
     const body = html.props.children;
     expect(isValidElement(body)).toBe(true);
     expect(body.type).toBe("body");
-    expect(body.props.children).toBe(child);
+    const kids = body.props.children as ReactElement[];
+    expect(kids[0]).toBe(child);
+    expect(kids[1].type).toBe(RevealController);
   });
 });

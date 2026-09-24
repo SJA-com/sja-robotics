@@ -1,12 +1,13 @@
 import { MOUS_DEMO_URL } from "./ProductShowcase";
+import { motionDelay } from "@/lib/motion";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-circuit overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent-2/20 rounded-full blur-[120px]" />
+        <div className="glow-breathe absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px]" />
+        <div className="glow-breathe absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent-2/20 rounded-full blur-[120px]" style={{ animationDelay: "-3s" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-accent-3/10 rounded-full blur-[80px]" />
 
         {/* Circuit trace decorative lines */}
@@ -134,7 +135,7 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-accent text-sm mb-8">
+        <div className="enter inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-accent text-sm mb-8">
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
           AI · Voice · Robotics
         </div>
@@ -144,10 +145,11 @@ export default function Hero() {
         <img
           src="/sja-robotics-logo-dark.png"
           alt="SJA Robotics"
-          className="mx-auto mb-8 h-28 w-auto sm:h-36 lg:h-44 drop-shadow-[0_0_40px_rgba(59,130,246,0.35)]"
+          style={motionDelay(60)}
+          className="enter mx-auto mb-8 h-28 w-auto sm:h-36 lg:h-44 drop-shadow-[0_0_40px_rgba(59,130,246,0.35)]"
         />
 
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+        <h1 style={motionDelay(120)} className="enter text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
           <span className="block">AI products built</span>
           <span className="block bg-gradient-to-r from-accent via-accent-2 to-accent-3 bg-clip-text text-transparent animate-gradient">
             for the Arab world.
@@ -155,42 +157,44 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="max-w-2xl mx-auto text-lg sm:text-xl text-foreground/60 mb-10">
+        <p style={motionDelay(180)} className="enter max-w-2xl mx-auto text-lg sm:text-xl text-foreground/60 mb-10">
           Voice agents that speak your customers&apos; dialect, an AI engine that remembers what matters,
           and the robots it will power next.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div style={motionDelay(240)} className="enter flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href={MOUS_DEMO_URL}
-            className="px-8 py-3 rounded-lg bg-gradient-to-r from-accent to-accent-2 text-white font-semibold hover:opacity-90 transition-opacity glow-accent"
+            className="px-8 py-3 rounded-lg bg-gradient-to-r from-accent to-accent-2 text-white font-semibold hover:opacity-90 glow-accent press"
           >
             Try the MOUS Demo
           </a>
           <a
             href="#products"
-            className="px-8 py-3 rounded-lg border border-border text-foreground/80 hover:border-accent/50 hover:text-accent transition-all"
+            className="px-8 py-3 rounded-lg border border-border text-foreground/80 hover:border-accent/50 hover:text-accent press"
           >
             Explore Products
           </a>
         </div>
 
         {/* Scroll indicator */}
-        <div className="mt-20 animate-bounce">
-          <svg
-            className="w-6 h-6 mx-auto text-foreground/30"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+        <div className="enter-fade mt-20" style={motionDelay(400)}>
+          <div className="animate-bounce">
+            <svg
+              className="w-6 h-6 mx-auto text-foreground/30"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </section>

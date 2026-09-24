@@ -36,8 +36,10 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .glow-accent {
@@ -172,4 +174,215 @@ html {
     linear-gradient(0deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
   background-size: 100% 100%, 60px 60px, 60px 60px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Motion system
+   Only transform and opacity are animated. Everything is visible by default:
+   elements are hidden only after RevealController (client JS) has marked them
+   data-reveal-state="pending", and only when the user has not asked for
+   reduced motion. No JS / no IntersectionObserver / reduced motion → no hiding.
+   ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-duration: 560ms;
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translate3d(0, 22px, 0); }
+}
+@keyframes reveal-left {
+  from { opacity: 0; transform: translate3d(-28px, 0, 0); }
+}
+@keyframes reveal-right {
+  from { opacity: 0; transform: translate3d(28px, 0, 0); }
+}
+@keyframes reveal-scale {
+  from { opacity: 0; transform: scale(0.96); }
+}
+@keyframes reveal-fade {
+  from { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Scroll reveals: waiting to scroll into view */
+  [data-reveal][data-reveal-state="pending"],
+  [data-reveal-stagger][data-reveal-state="pending"] > * {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+  [data-reveal="left"][data-reveal-state="pending"] { transform: translate3d(-28px, 0, 0); }
+  [data-reveal="right"][data-reveal-state="pending"] { transform: translate3d(28px, 0, 0); }
+  [data-reveal="scale"][data-reveal-state="pending"] { transform: scale(0.96); }
+  [data-reveal="fade"][data-reveal-state="pending"] { transform: none; }
+
+  /* Revealed. `backwards` fill only, so once finished the element falls back to
+     its own styles (hover transforms keep working). */
+  [data-reveal][data-reveal-state="shown"] {
+    animation: reveal-up var(--reveal-duration) var(--ease-out) var(--delay, 0ms) backwards;
+  }
+  [data-reveal="left"][data-reveal-state="shown"] { animation-name: reveal-left; }
+  [data-reveal="right"][data-reveal-state="shown"] { animation-name: reveal-right; }
+  [data-reveal="scale"][data-reveal-state="shown"] { animation-name: reveal-scale; }
+  [data-reveal="fade"][data-reveal-state="shown"] { animation-name: reveal-fade; }
+
+  [data-reveal-stagger][data-reveal-state="shown"] > * {
+    animation: reveal-up 480ms var(--ease-out) var(--delay, 0ms) backwards;
+  }
+  [data-reveal-stagger][data-reveal-state="shown"] > :nth-child(2) { --delay: 70ms; }
+  [data-reveal-stagger][data-reveal-state="shown"] > :nth-child(3) { --delay: 140ms; }
+  [data-reveal-stagger][data-reveal-state="shown"] > :nth-child(4) { --delay: 210ms; }
+  [data-reveal-stagger][data-reveal-state="shown"] > :nth-child(5) { --delay: 280ms; }
+  [data-reveal-stagger][data-reveal-state="shown"] > :nth-child(6) { --delay: 330ms; }
+  [data-reveal-stagger][data-reveal-state="shown"] > :nth-child(7) { --delay: 380ms; }
+  [data-reveal-stagger][data-reveal-state="shown"] > :nth-child(n + 8) { --delay: 420ms; }
+
+  /* Page-load entrance for above-the-fold content (pure CSS, no JS needed) */
+  .enter {
+    animation: reveal-up 520ms var(--ease-out) var(--delay, 0ms) backwards;
+  }
+  .enter-fade {
+    animation: reveal-fade 600ms var(--ease-out) var(--delay, 0ms) backwards;
+  }
+
+  /* Ambient glow: soft opacity "breathing" on decorative blurred blobs */
+  .glow-breathe {
+    animation: glow-breathe 6s ease-in-out infinite alternate;
+  }
+
+  /* Robotics HUD scan line sweeping over the founder photo */
+  .scanline {
+    animation: scanline 5s linear infinite;
+  }
+
+  /* Mobile menu drop-in */
+  .menu-enter {
+    animation: menu-in 220ms var(--ease-out) backwards;
+  }
+}
+
+@keyframes glow-breathe {
+  from { opacity: 0.45; }
+  to { opacity: 1; }
+}
+
+@keyframes scanline {
+  from { transform: translate3d(0, -100%, 0); }
+  to { transform: translate3d(0, 100%, 0); }
+}
+
+@keyframes menu-in {
+  from { opacity: 0; transform: translate3d(0, -8px, 0); }
+}
+
+/* Hover lift for cards: transform + a glow ring that fades in (opacity only).
+   Colour transitions are kept so existing hover:border-* utilities still ease. */
+.lift {
+  position: relative;
+  transition:
+    transform 220ms var(--ease-out),
+    opacity 200ms ease-out,
+    border-color 200ms ease-out,
+    background-color 200ms ease-out,
+    color 200ms ease-out;
+}
+.lift::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow:
+    inset 0 0 0 1px var(--lift-ring, rgba(124, 134, 232, 0.35)),
+    0 18px 40px -18px var(--lift-glow, rgba(76, 87, 200, 0.6));
+  transition: opacity 220ms var(--ease-out);
+}
+.lift-gold { --lift-ring: rgba(212, 168, 83, 0.35); --lift-glow: rgba(212, 168, 83, 0.35); }
+.lift-emerald { --lift-ring: rgba(52, 211, 153, 0.3); --lift-glow: rgba(16, 185, 129, 0.35); }
+.lift-violet { --lift-ring: rgba(167, 139, 250, 0.3); --lift-glow: rgba(139, 92, 246, 0.35); }
+
+@media (hover: hover) {
+  .lift:hover::after { opacity: 1; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .lift:hover { transform: translate3d(0, -4px, 0); }
+}
+
+/* Buttons: tiny rise on hover, press-in on click */
+.press {
+  transition:
+    transform 160ms var(--ease-out),
+    opacity 160ms ease-out,
+    border-color 160ms ease-out,
+    background-color 160ms ease-out,
+    color 160ms ease-out;
+}
+@media (prefers-reduced-motion: no-preference) {
+  @media (hover: hover) {
+    .press:hover { transform: translate3d(0, -2px, 0); }
+  }
+  .press:active { transform: scale(0.97); }
+}
+
+/* Arrow icons nudge right when their .group is hovered */
+.nudge { transition: transform 200ms var(--ease-out); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .group:hover .nudge { transform: translate3d(3px, 0, 0); }
+}
+
+/* Nav links: underline grows from the left (scaleX) */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent-3), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms var(--ease-out);
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after { transform: scaleX(1); }
+
+/* Reading-progress bar under the navbar, driven by CSS scroll timelines
+   (no JS). Browsers without scroll-driven animations just don't show it. */
+.scroll-progress { display: none; }
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-progress {
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 2px;
+      transform-origin: left center;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent-3));
+      animation-name: scroll-progress;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-duration: auto;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+@keyframes scroll-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.nudge-back { transition: transform 200ms var(--ease-out); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .group:hover .nudge-back { transform: translate3d(-3px, 0, 0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Dialogs: quick scale-in */
+  .pop-in { animation: reveal-scale 200ms var(--ease-out) backwards; }
+  .fade-in { animation: reveal-fade 180ms ease-out backwards; }
 }

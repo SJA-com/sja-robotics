@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 
 const NAV = [
   { label: "About", href: "/#about" },
+  { label: "Founder", href: "/#founder" },
   { label: "Divisions", href: "/#divisions" },
   { label: "AI", href: "/divisions/sja-ai" },
   { label: "Autonomous", href: "/divisions/sja-autonomous" },
@@ -142,5 +143,33 @@ describe("<Navbar /> mobile menu", () => {
     render(<Navbar />);
     fireEvent.click(screen.getByRole("button", { name: "Toggle menu" }));
     expect(screen.getAllByRole("link", { name: "Autonomous" })).toHaveLength(2);
+  });
+});
+
+describe("<Navbar /> founder link", () => {
+  it.each(["/", "/products/atiana", "/divisions/sja-ai"])(
+    "links to the home-page founder section with an absolute /#founder href on %s",
+    (path) => {
+      onRoute(path);
+      render(<Navbar />);
+      const link = screen.getByRole("link", { name: "Founder" });
+      expect(link).toHaveAttribute("href", "/#founder");
+    }
+  );
+
+  it("sits right after About", () => {
+    const { container } = render(<Navbar />);
+    const labels = Array.from(
+      container.querySelectorAll("div.hidden.md\\:flex a")
+    ).map((a) => a.textContent);
+    expect(labels.indexOf("Founder")).toBe(labels.indexOf("About") + 1);
+  });
+
+  it("reports the mobile menu state with aria-expanded", () => {
+    render(<Navbar />);
+    const toggle = screen.getByRole("button", { name: "Toggle menu" });
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
+    fireEvent.click(toggle);
+    expect(toggle).toHaveAttribute("aria-expanded", "true");
   });
 });

@@ -241,7 +241,7 @@ export default function Fari() {
         {/* ═══════════════════════════════════════════
             SECTION HEADER
             ═══════════════════════════════════════════ */}
-        <div className="text-center mb-20">
+        <div data-reveal className="text-center mb-20">
           <p className="text-amber-400 text-xs font-mono mb-2 tracking-wider uppercase">
             Product 02
           </p>
@@ -271,7 +271,7 @@ export default function Fari() {
             ONE COMPANION FOR EVERY KIND OF HELP
             ═══════════════════════════════════════════ */}
         <div className="mb-20">
-          <div className="text-center mb-12">
+          <div data-reveal className="text-center mb-12">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
               One Companion for{" "}
               <span className="text-amber-400">Every Kind of Help</span>
@@ -285,11 +285,11 @@ export default function Fari() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <div data-reveal-stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {capabilities.map((cap) => (
               <div
                 key={cap.name}
-                className="rounded-xl bg-[#0a0c14] border border-amber-400/10 p-6 hover:border-amber-400/25 transition-all group"
+                className="lift lift-gold rounded-xl bg-[#0a0c14] border border-amber-400/10 p-6 hover:border-amber-400/25 group"
               >
                 <div
                   className={`w-12 h-12 rounded-xl ${cap.bg} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform`}
@@ -332,7 +332,7 @@ export default function Fari() {
         {/* ═══════════════════════════════════════════
             ARCHITECTURE — HOW FARI WORKS
             ═══════════════════════════════════════════ */}
-        <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
+        <div data-reveal className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
           <div className="text-center mb-10">
             <h3 className="text-2xl sm:text-3xl font-bold mb-3">
               How Fari{" "}
@@ -390,7 +390,7 @@ export default function Fari() {
             </div>
 
             {/* Specialised routes (live) */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
+            <div data-reveal-stagger className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
               {routes.map((route) => (
                 <div
                   key={route.name}
@@ -437,7 +437,7 @@ export default function Fari() {
                 <p className="text-[11px] text-foreground/45 leading-snug mb-2">
                   Provider-agnostic by design — candidates to add per route:
                 </p>
-                <div className="flex flex-wrap gap-1.5">
+                <div data-reveal-stagger className="flex flex-wrap gap-1.5">
                   {plannedProviders.map((p) => (
                     <span
                       key={p}
@@ -452,7 +452,7 @@ export default function Fari() {
 
             {/* Custom SJA Layer */}
             <div className="rounded-xl bg-gradient-to-r from-amber-400/8 to-amber-500/5 border border-amber-400/20 p-6">
-              <div className="text-center mb-4">
+              <div data-reveal className="text-center mb-4">
                 <p className="text-sm font-bold text-amber-400 mb-0.5">
                   Custom SJA Layer
                 </p>
@@ -460,7 +460,7 @@ export default function Fari() {
                   WHAT MAKES FARI UNIQUELY FARI
                 </p>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <div data-reveal-stagger className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {sjaLayer.map((feature) => (
                   <div
                     key={feature.name}
@@ -500,7 +500,7 @@ export default function Fari() {
         {/* ═══════════════════════════════════════════
             LIVE VS. NEXT
             ═══════════════════════════════════════════ */}
-        <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-6 sm:p-10 mb-20 overflow-x-auto">
+        <div data-reveal className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-6 sm:p-10 mb-20 overflow-x-auto">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
             What&apos;s Live vs.{" "}
             <span className="text-amber-400">What&apos;s Next</span>
@@ -559,7 +559,7 @@ export default function Fari() {
             need it. All five modes are live in the beta; items marked Planned
             are on the roadmap.
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div data-reveal-stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {modes.map((mode, i) => (
               <div
                 key={mode.name}
@@ -636,7 +636,7 @@ export default function Fari() {
         {/* ═══════════════════════════════════════════
             DIFFERENTIATORS
             ═══════════════════════════════════════════ */}
-        <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
+        <div data-reveal className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-12 mb-20">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
             What Makes Fari{" "}
             <span className="text-amber-400">Different</span>
@@ -645,7 +645,7 @@ export default function Fari() {
             Built from the ground up to be truly personal — not a translation of
             something generic
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div data-reveal-stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {differentiators.map((item) => (
               <div
                 key={item.text}
@@ -680,7 +680,7 @@ export default function Fari() {
         {/* ═══════════════════════════════════════════
             PRICING
             ═══════════════════════════════════════════ */}
-        <div className="text-center mb-10">
+        <div data-reveal className="text-center mb-10">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3">
             Choose Your{" "}
             <span className="text-amber-400">Plan</span>
@@ -689,7 +689,7 @@ export default function Fari() {
             Start personal. Grow with family. Or commit for life.
           </p>
         </div>
-        <div className="grid sm:grid-cols-3 gap-6 mb-16">
+        <div data-reveal-stagger className="grid sm:grid-cols-3 gap-6 mb-16">
           {pricing.map((plan) => (
             <div
               key={plan.name}
@@ -714,9 +714,9 @@ export default function Fari() {
         {/* ═══════════════════════════════════════════
             CTA
             ═══════════════════════════════════════════ */}
-        <div className="text-center mb-12">
+        <div data-reveal className="text-center mb-12">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-            <WaitlistButton product="Fari" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(251,191,36,0.25)]">
+            <WaitlistButton product="Fari" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black font-semibold hover:opacity-90 press shadow-[0_0_20px_rgba(251,191,36,0.25)]">
               Join Waitlist
               <svg
                 className="w-4 h-4"
@@ -759,7 +759,7 @@ export default function Fari() {
         {/* ═══════════════════════════════════════════
             FARI POWERS EVERYTHING
             ═══════════════════════════════════════════ */}
-        <div className="rounded-2xl bg-[#07090f] border-2 border-amber-400/20 p-8 sm:p-12 mb-12 shadow-[0_0_60px_rgba(251,191,36,0.04)]">
+        <div data-reveal className="rounded-2xl bg-[#07090f] border-2 border-amber-400/20 p-8 sm:p-12 mb-12 shadow-[0_0_60px_rgba(251,191,36,0.04)]">
           <div className="text-center mb-10">
             <h3 className="text-3xl sm:text-4xl font-bold mb-3">
               One Brain.{" "}
@@ -772,7 +772,7 @@ export default function Fari() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {/* Fari on Devices */}
-            <div className="rounded-xl bg-[#0a0c14] border border-amber-400/15 p-7 hover:border-amber-400/30 transition-all group text-center">
+            <div className="lift lift-gold rounded-xl bg-[#0a0c14] border border-amber-400/15 p-7 hover:border-amber-400/30 group text-center">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center mx-auto mb-5 shadow-[0_0_30px_rgba(251,191,36,0.2)] group-hover:shadow-[0_0_40px_rgba(251,191,36,0.3)] transition-shadow">
                 <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -792,7 +792,7 @@ export default function Fari() {
             </div>
 
             {/* Fari inside Atiana */}
-            <div className="rounded-xl bg-[#0a0c14] border border-emerald-400/15 p-7 hover:border-emerald-400/30 transition-all group text-center">
+            <div className="lift lift-emerald rounded-xl bg-[#0a0c14] border border-emerald-400/15 p-7 hover:border-emerald-400/30 group text-center">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto mb-5 shadow-[0_0_30px_rgba(52,211,153,0.15)] group-hover:shadow-[0_0_40px_rgba(52,211,153,0.25)] transition-shadow">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
@@ -812,7 +812,7 @@ export default function Fari() {
             </div>
 
             {/* Fari inside Sueen */}
-            <div className="rounded-xl bg-[#0a0c14] border border-sky-400/15 p-7 hover:border-sky-400/30 transition-all group text-center">
+            <div className="lift rounded-xl bg-[#0a0c14] border border-sky-400/15 p-7 hover:border-sky-400/30 group text-center">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center mx-auto mb-5 shadow-[0_0_30px_rgba(56,189,248,0.15)] group-hover:shadow-[0_0_40px_rgba(56,189,248,0.25)] transition-shadow">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -832,7 +832,7 @@ export default function Fari() {
             </div>
 
             {/* SAM — powered by Fari */}
-            <div className="rounded-xl bg-[#0a0c14] border border-violet-400/15 p-7 hover:border-violet-400/30 transition-all group text-center">
+            <div className="lift lift-violet rounded-xl bg-[#0a0c14] border border-violet-400/15 p-7 hover:border-violet-400/30 group text-center">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-400 to-sky-500 flex items-center justify-center mx-auto mb-5 shadow-[0_0_30px_rgba(139,92,246,0.15)] group-hover:shadow-[0_0_40px_rgba(139,92,246,0.25)] transition-shadow">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -858,7 +858,7 @@ export default function Fari() {
               <span className="text-amber-400">One Intelligence</span>. Every
               Device. Your World.
             </p>
-            <WaitlistButton product="Fari" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(251,191,36,0.25)]">
+            <WaitlistButton product="Fari" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 text-black font-semibold hover:opacity-90 press shadow-[0_0_20px_rgba(251,191,36,0.25)]">
               Join Waitlist
               <svg
                 className="w-4 h-4"
@@ -880,7 +880,7 @@ export default function Fari() {
         {/* ═══════════════════════════════════════════
             CLOSING
             ═══════════════════════════════════════════ */}
-        <div className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-10 text-center">
+        <div data-reveal className="rounded-2xl bg-[#0a0c14] border border-amber-400/15 p-8 sm:p-10 text-center">
           <p className="text-lg sm:text-xl font-semibold text-foreground/90 mb-3 leading-relaxed">
             Fari is not just an AI — she is your{" "}
             <span className="text-amber-400">companion for life</span>.

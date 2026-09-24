@@ -140,7 +140,7 @@ export default function MousFeatures() {
         {/* ═══════════════════════════════════════════
             HEADER
             ═══════════════════════════════════════════ */}
-        <div className="text-center mb-16">
+        <div data-reveal className="text-center mb-16">
           <p className="text-accent-2 text-xs font-mono mb-3 tracking-wider uppercase">
             What Makes MOUS Different
           </p>
@@ -164,11 +164,11 @@ export default function MousFeatures() {
         {/* ═══════════════════════════════════════════
             6 UNIQUE FEATURES
             ═══════════════════════════════════════════ */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div data-reveal-stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {uniqueFeatures.map((feature) => (
             <div
               key={feature.name}
-              className="rounded-xl bg-surface border border-accent-2/10 p-7 hover:border-accent-2/25 transition-all"
+              className="lift rounded-xl bg-surface border border-accent-2/10 p-7 hover:border-accent-2/25"
             >
               <div className="flex items-start justify-between gap-3 mb-4">
                 <div
@@ -201,7 +201,7 @@ export default function MousFeatures() {
         {/* ═══════════════════════════════════════════
             CORE PILLARS
             ═══════════════════════════════════════════ */}
-        <div className="rounded-2xl bg-surface border border-accent-2/15 p-8 sm:p-12 mb-20">
+        <div data-reveal className="rounded-2xl bg-surface border border-accent-2/15 p-8 sm:p-12 mb-20">
           <div className="text-center mb-10">
             <h3 className="text-2xl sm:text-3xl font-bold mb-3">
               Three things MOUS is{" "}
@@ -212,7 +212,7 @@ export default function MousFeatures() {
               today.
             </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div data-reveal-stagger className="grid sm:grid-cols-3 gap-6">
             {pillars.map((item) => (
               <div
                 key={item.title}
@@ -247,7 +247,7 @@ export default function MousFeatures() {
         {/* ═══════════════════════════════════════════
             LIVE VS. NEXT
             ═══════════════════════════════════════════ */}
-        <div className="rounded-2xl bg-surface border border-accent-2/15 p-6 sm:p-10 mb-20 overflow-x-auto">
+        <div data-reveal className="rounded-2xl bg-surface border border-accent-2/15 p-6 sm:p-10 mb-20 overflow-x-auto">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-center">
             What&apos;s Live vs.{" "}
             <span className="text-accent-2">What&apos;s Next</span>
@@ -296,7 +296,7 @@ export default function MousFeatures() {
         {/* ═══════════════════════════════════════════
             TAGLINE + CTA
             ═══════════════════════════════════════════ */}
-        <div className="text-center mb-12">
+        <div data-reveal className="text-center mb-12">
           <p className="text-lg sm:text-xl font-semibold text-foreground/80 mb-2 max-w-3xl mx-auto leading-relaxed">
             MOUS — A culturally intelligent, dialect-aware voice agent,
             designed for WhatsApp and the phone.
@@ -305,7 +305,7 @@ export default function MousFeatures() {
             Built for the Arab world. Built for everyone.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-            <WaitlistButton product="MOUS" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold hover:opacity-90 transition-opacity glow-accent">
+            <WaitlistButton product="MOUS" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold hover:opacity-90 press glow-accent">
               Join Waitlist
               <svg
                 className="w-4 h-4"

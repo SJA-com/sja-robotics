@@ -3,8 +3,8 @@ export default function About() {
     <section id="about" className="py-24 relative bg-neural overflow-hidden">
       {/* Neural network decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-16 right-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-16 w-48 h-48 bg-accent-2/10 rounded-full blur-3xl" />
+        <div className="glow-breathe absolute top-16 right-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+        <div className="glow-breathe absolute bottom-20 left-16 w-48 h-48 bg-accent-2/10 rounded-full blur-3xl" style={{ animationDelay: "-3s" }} />
         {/* Connecting lines */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.15]" xmlns="http://www.w3.org/2000/svg">
           <line x1="10%" y1="20%" x2="30%" y2="40%" stroke="#4C57C8" strokeWidth="1" />
@@ -24,7 +24,7 @@ export default function About() {
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-12">
+        <div data-reveal className="max-w-3xl mb-12">
           <p className="text-accent text-sm font-mono mb-3 tracking-wider uppercase">
             About Us
           </p>
@@ -36,7 +36,7 @@ export default function About() {
 
         {/* Content */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <div>
+          <div data-reveal="left">
             <blockquote className="border-l-2 border-accent/50 pl-4 text-foreground/60 italic mb-8">
               &ldquo;To revolutionize everyday life through intelligent,
               automated solutions that bring convenience, efficiency, and
@@ -58,7 +58,7 @@ export default function About() {
               applications.
             </p>
           </div>
-          <div>
+          <div data-reveal="right">
             <p className="text-foreground/70 leading-relaxed mb-6">
               With innovations like voice-automated devices, intelligent
               health-tracking tools, and AI-driven household assistants, SJA
@@ -78,7 +78,7 @@ export default function About() {
         </div>
 
         {/* Stats - 4 in a row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div data-reveal-stagger className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
             {
               number: "7+",
@@ -103,7 +103,7 @@ export default function About() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="gradient-border rounded-xl p-6 bg-surface hover:bg-surface-2 transition-colors text-center"
+              className="lift gradient-border rounded-xl p-6 bg-surface hover:bg-surface-2 text-center"
             >
               <svg
                 className="w-8 h-8 text-accent mb-3 mx-auto"

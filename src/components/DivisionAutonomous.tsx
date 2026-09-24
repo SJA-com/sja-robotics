@@ -127,7 +127,7 @@ export default function DivisionAutonomous() {
     <section id="sja-autonomous" className="py-24 relative bg-radar overflow-hidden">
       {/* Radar/scan background accents */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-400/6 rounded-full blur-[150px]" />
+        <div className="glow-breathe absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-400/6 rounded-full blur-[150px]" />
         <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-400/15 to-transparent" />
         <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-emerald-400/10 to-transparent" />
         {/* Corner brackets */}
@@ -139,7 +139,7 @@ export default function DivisionAutonomous() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Division Header */}
-        <div className="text-center mb-16">
+        <div className="enter text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-400/10 text-emerald-400 text-xs font-mono mb-4 tracking-wider">
             DIVISION 03
           </div>
@@ -158,7 +158,7 @@ export default function DivisionAutonomous() {
 
         {/* ─── ATIANA ROBOT (FLAGSHIP) ─── */}
         <div className="mb-24">
-          <div className="gradient-border rounded-2xl bg-surface p-8 sm:p-12 mb-8">
+          <div data-reveal="scale" className="gradient-border rounded-2xl bg-surface p-8 sm:p-12 mb-8">
             <div className="flex flex-wrap items-center gap-3 mb-2">
               <span className="px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-400 text-xs font-mono">
                 FLAGSHIP
@@ -198,7 +198,7 @@ export default function DivisionAutonomous() {
               </a>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+            <div data-reveal-stagger className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
               {atianaFeatures.map((feature) => (
                 <div
                   key={feature.title}
@@ -216,7 +216,7 @@ export default function DivisionAutonomous() {
 
             <Link
               href="/products/atiana"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-emerald-400 to-teal-500 text-white font-semibold text-sm hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-emerald-400 to-teal-500 text-white font-semibold text-sm hover:opacity-90 press"
             >
               Learn More
               <svg
@@ -239,11 +239,11 @@ export default function DivisionAutonomous() {
           <h4 className="text-xl font-bold mb-6 text-center">
             Atiana <span className="text-emerald-400">Variants</span>
           </h4>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div data-reveal-stagger className="grid md:grid-cols-3 gap-6">
             {atianaVariants.map((variant) => (
               <div
                 key={variant.name}
-                className="rounded-xl bg-surface border border-border p-8 hover:border-emerald-400/30 transition-all"
+                className="lift lift-emerald rounded-xl bg-surface border border-border p-8 hover:border-emerald-400/30"
               >
                 <div className="flex items-center justify-between mb-5">
                   <div
@@ -290,7 +290,7 @@ export default function DivisionAutonomous() {
 
         {/* ─── SUEEN DRONE ─── */}
         <div className="mb-24">
-          <div className="rounded-2xl bg-surface border border-emerald-400/30 p-8 sm:p-10 hover:border-emerald-400/50 transition-all">
+          <div data-reveal className="lift lift-emerald rounded-2xl bg-surface border border-emerald-400/30 p-8 sm:p-10 hover:border-emerald-400/50">
             <div className="flex flex-wrap items-center gap-3 mb-2">
               <span className="px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-400 text-xs font-mono">
                 FEATURED
@@ -335,7 +335,7 @@ export default function DivisionAutonomous() {
               Powered by Fari. Part of the SJA Autonomous division.
             </p>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+            <div data-reveal-stagger className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
               {sueenFeatures.map((feature) => (
                 <div
                   key={feature.title}
@@ -374,7 +374,7 @@ export default function DivisionAutonomous() {
         </div>
 
         {/* ─── BRANDING ─── */}
-        <div className="rounded-2xl bg-surface border border-border p-8 sm:p-12 mb-12">
+        <div data-reveal className="rounded-2xl bg-surface border border-border p-8 sm:p-12 mb-12">
           <div className="text-center mb-8">
             <h3 className="text-2xl sm:text-3xl font-bold mb-3">
               Company <span className="text-emerald-400">Branding</span>
@@ -385,7 +385,7 @@ export default function DivisionAutonomous() {
               brand names are considered:
             </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div data-reveal-stagger className="grid sm:grid-cols-3 gap-4">
             {branding.map((brand) => (
               <div
                 key={brand.name}
@@ -400,7 +400,7 @@ export default function DivisionAutonomous() {
 
         {/* Join Waitlist */}
         <div className="text-center">
-          <WaitlistButton product="Autonomous" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-emerald-400 to-teal-500 text-white font-semibold hover:opacity-90 transition-opacity mb-3">
+          <WaitlistButton product="Autonomous" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-emerald-400 to-teal-500 text-white font-semibold hover:opacity-90 press mb-3">
             Join Waitlist
             <svg
               className="w-4 h-4"

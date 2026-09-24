@@ -78,7 +78,7 @@ const samPricing = [
 export default function SAM() {
   return (
     <div className="mb-24">
-      <div className="text-center mb-10">
+      <div data-reveal className="text-center mb-10">
         <p className="text-accent-2 text-xs font-mono mb-2 tracking-wider uppercase">
           Product 03
         </p>
@@ -115,7 +115,7 @@ export default function SAM() {
       </p>
 
       {/* SAM Features */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+      <div data-reveal-stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
         {samFeatures.map((feature) => (
           <div
             key={feature.name}
@@ -147,7 +147,7 @@ export default function SAM() {
       </div>
 
       {/* SAM Pricing */}
-      <div className="text-center mb-8">
+      <div data-reveal className="text-center mb-8">
         <h4 className="text-xl font-bold mb-2">
           SAM <span className="text-accent-2">Pricing</span>
         </h4>
@@ -155,7 +155,7 @@ export default function SAM() {
           From smart home control to full life management
         </p>
       </div>
-      <div className="grid sm:grid-cols-3 gap-4 mb-8">
+      <div data-reveal-stagger className="grid sm:grid-cols-3 gap-4 mb-8">
         {samPricing.map((plan) => (
           <div
             key={plan.name}
@@ -179,7 +179,7 @@ export default function SAM() {
 
       {/* SAM CTA */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <WaitlistButton product="SAM" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold text-sm hover:opacity-90 transition-opacity glow-accent">
+        <WaitlistButton product="SAM" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold text-sm hover:opacity-90 press glow-accent">
           Join Waitlist
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

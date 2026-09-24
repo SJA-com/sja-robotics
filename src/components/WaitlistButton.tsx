@@ -68,7 +68,7 @@ export default function WaitlistButton({
 
       {open && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          className="fade-in fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
           onClick={(e) => e.target === e.currentTarget && setOpen(false)}
         >
           <div
@@ -76,7 +76,7 @@ export default function WaitlistButton({
             role="dialog"
             aria-modal="true"
             aria-labelledby="waitlist-title"
-            className="w-full max-w-md rounded-2xl bg-surface border border-border p-6 text-left shadow-2xl"
+            className="pop-in w-full max-w-md rounded-2xl bg-surface border border-border p-6 text-left shadow-2xl"
           >
             <div className="flex items-start justify-between gap-4 mb-1">
               <h2 id="waitlist-title" className="text-xl font-bold text-foreground">

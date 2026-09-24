@@ -25,17 +25,18 @@ export default function ProductShowcase() {
   return (
     <section id="products" className="relative py-24 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
+        <div data-reveal className="text-center mb-14">
           <p className="text-xs font-mono tracking-widest text-[#d4a853] uppercase mb-3">Products</p>
           <h2 className="text-3xl sm:text-4xl font-bold">One engine. Products that speak your language.</h2>
         </div>
 
         {/* Main product */}
         <article
+          data-reveal="scale"
           aria-labelledby="mous-title"
           className="relative overflow-hidden rounded-3xl border border-[#1a4fd6]/40 bg-gradient-to-br from-[#1a4fd6]/15 via-surface to-surface p-8 sm:p-12 mb-6"
         >
-          <div className="absolute -top-24 -right-24 w-80 h-80 bg-[#1a4fd6]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="glow-breathe absolute -top-24 -right-24 w-80 h-80 bg-[#1a4fd6]/20 rounded-full blur-3xl pointer-events-none" />
           <div className="relative grid gap-10 lg:grid-cols-[1.4fr_1fr] items-center">
             <div>
               <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -57,21 +58,21 @@ export default function ProductShowcase() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href={MOUS_DEMO_URL}
-                  className="inline-flex justify-center items-center px-7 py-3 rounded-lg bg-[#1a4fd6] text-white font-semibold hover:bg-[#1a4fd6]/85 transition-colors"
+                  className="inline-flex justify-center items-center px-7 py-3 rounded-lg bg-[#1a4fd6] text-white font-semibold hover:bg-[#1a4fd6]/85 press"
                 >
                   Try Demo
                 </a>
                 <a
                   href={MOUS_PRICING_URL}
-                  className="inline-flex justify-center items-center px-7 py-3 rounded-lg border border-[#d4a853]/50 text-[#d4a853] font-semibold hover:bg-[#d4a853]/10 transition-colors"
+                  className="inline-flex justify-center items-center px-7 py-3 rounded-lg border border-[#d4a853]/50 text-[#d4a853] font-semibold hover:bg-[#d4a853]/10 press"
                 >
                   View Pricing
                 </a>
               </div>
             </div>
-            <ul className="space-y-3">
+            <ul data-reveal-stagger className="space-y-3">
               {mousPoints.map((p) => (
-                <li key={p} className="flex gap-3 items-start p-4 rounded-xl bg-background/60 border border-border">
+                <li key={p} className="lift lift-gold flex gap-3 items-start p-4 rounded-xl bg-background/60 border border-border">
                   <span className="mt-0.5 text-[#d4a853]" aria-hidden="true">✦</span>
                   <span className="text-sm text-foreground/80">{p}</span>
                 </li>
@@ -82,7 +83,7 @@ export default function ProductShowcase() {
 
         <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
           {/* Technology */}
-          <article aria-labelledby="fari-title" className="rounded-2xl border border-border bg-surface p-8">
+          <article data-reveal="left" aria-labelledby="fari-title" className="lift rounded-2xl border border-border bg-surface p-8">
             <span className="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-accent/15 text-accent-3 border border-accent/30">
               Technology
             </span>
@@ -96,19 +97,19 @@ export default function ProductShowcase() {
             <p className="text-sm font-semibold text-[#d4a853] mb-6">Powers MOUS today. Powers Atiana tomorrow.</p>
             <a
               href={FARI_URL}
-              className="inline-flex items-center px-6 py-2.5 rounded-lg bg-accent text-white font-semibold hover:bg-accent-2 transition-colors"
+              className="inline-flex items-center px-6 py-2.5 rounded-lg bg-accent text-white font-semibold hover:bg-accent-2 press"
             >
               Try Fari
             </a>
           </article>
 
           {/* Coming soon */}
-          <div className="grid gap-3" aria-label="Coming soon">
+          <div data-reveal-stagger className="grid gap-3" aria-label="Coming soon">
             {comingSoon.map((p) => (
               <Link
                 key={p.name}
                 href={p.href}
-                className="flex items-center justify-between gap-4 p-5 rounded-xl border border-border bg-surface/60 opacity-75 hover:opacity-100 hover:border-accent/40 transition-all"
+                className="flex items-center justify-between gap-4 p-5 rounded-xl border border-border bg-surface/60 opacity-75 hover:opacity-100 hover:border-accent/40 lift"
               >
                 <div>
                   <h3 className="font-semibold">{p.name}</h3>
@@ -123,20 +124,20 @@ export default function ProductShowcase() {
         </div>
 
         {/* Early access */}
-        <div className="mt-10 rounded-2xl border border-[#d4a853]/40 bg-[#d4a853]/10 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div data-reveal className="mt-10 rounded-2xl border border-[#d4a853]/40 bg-[#d4a853]/10 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <p className="text-lg font-semibold">
             <span aria-hidden="true">🚀 </span>First 10 businesses get MOUS free for 3 months
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               href={MOUS_SETUP_URL}
-              className="inline-flex justify-center items-center px-6 py-2.5 rounded-lg bg-[#d4a853] text-black font-semibold hover:bg-[#d4a853]/90 transition-colors"
+              className="inline-flex justify-center items-center px-6 py-2.5 rounded-lg bg-[#d4a853] text-black font-semibold hover:bg-[#d4a853]/90 press"
             >
               Set up now →
             </a>
             <WaitlistButton
               product="MOUS"
-              className="inline-flex justify-center items-center px-6 py-2.5 rounded-lg border border-[#d4a853]/50 text-[#d4a853] font-semibold hover:bg-[#d4a853]/10 transition-colors"
+              className="inline-flex justify-center items-center px-6 py-2.5 rounded-lg border border-[#d4a853]/50 text-[#d4a853] font-semibold hover:bg-[#d4a853]/10 press"
             >
               Join Waitlist
             </WaitlistButton>

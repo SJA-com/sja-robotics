@@ -100,12 +100,12 @@ export default function Divisions() {
     <section id="divisions" className="py-24 relative bg-hextech overflow-hidden">
       {/* Hexagonal tech background accents */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-2/10 rounded-full blur-[120px]" />
+        <div className="glow-breathe absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-2/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
         <div className="absolute top-1/4 right-10 w-48 h-48 bg-accent-3/10 rounded-full blur-3xl" />
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div data-reveal className="text-center mb-16">
           <p className="text-accent text-sm font-mono mb-3 tracking-wider uppercase">
             Our Divisions
           </p>
@@ -123,7 +123,8 @@ export default function Divisions() {
           {divisions.map((div) => (
             <div
               key={div.name}
-              className={`rounded-2xl bg-surface border ${div.borderColor} p-8 sm:p-10 hover:border-opacity-60 transition-all`}
+              data-reveal
+              className={`lift rounded-2xl bg-surface border ${div.borderColor} p-8 sm:p-10 hover:border-opacity-60`}
             >
               <div className="flex flex-col lg:flex-row lg:items-start gap-8">
                 {/* Left — Division info */}
@@ -168,11 +169,11 @@ export default function Divisions() {
                   <p className="text-xs font-mono text-foreground/40 uppercase tracking-wider mb-4">
                     Featured Products
                   </p>
-                  <div className="space-y-3 mb-6">
+                  <div data-reveal-stagger className="space-y-3 mb-6">
                     {div.highlights.map((product) => (
                       <div
                         key={product.name}
-                        className="flex items-center justify-between gap-4 rounded-lg bg-surface-2 border border-border px-5 py-3.5"
+                        className="flex items-center justify-between gap-4 rounded-lg bg-surface-2 border border-border px-5 py-3.5 hover:border-accent/30 transition-colors"
                       >
                         <div className="min-w-0">
                           <div className="text-sm font-semibold text-foreground truncate">
@@ -212,11 +213,11 @@ export default function Divisions() {
                   </div>
                   <Link
                     href={div.href}
-                    className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r ${div.gradient} text-white font-semibold text-sm hover:opacity-90 transition-opacity`}
+                    className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r ${div.gradient} text-white font-semibold text-sm hover:opacity-90 press group`}
                   >
                     Explore {div.name}
                     <svg
-                      className="w-4 h-4"
+                      className="nudge w-4 h-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

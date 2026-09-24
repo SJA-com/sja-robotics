@@ -105,7 +105,7 @@ export default function SAMGenZ() {
         {/* ═══════════════════════════════════════════
             HEADER
             ═══════════════════════════════════════════ */}
-        <div className="text-center mb-16">
+        <div data-reveal className="text-center mb-16">
           <p className="text-violet-400 text-xs font-mono mb-3 tracking-wider uppercase">
             Why Gen Z Loves SAM
           </p>
@@ -129,11 +129,11 @@ export default function SAMGenZ() {
         {/* ═══════════════════════════════════════════
             GEN Z FEATURE CARDS
             ═══════════════════════════════════════════ */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div data-reveal-stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {genZFeatures.map((feature) => (
             <div
               key={feature.title}
-              className="rounded-2xl bg-[#10121e] border border-violet-400/10 p-7 hover:border-violet-400/25 transition-all group"
+              className="lift lift-violet rounded-2xl bg-[#10121e] border border-violet-400/10 p-7 hover:border-violet-400/25 group"
             >
               <div className="text-3xl mb-3">{feature.emoji}</div>
               <h4 className="text-lg font-bold mb-3">{feature.title}</h4>
@@ -170,11 +170,11 @@ export default function SAMGenZ() {
           <p className="text-foreground/50 text-sm text-center mb-10">
             Actual conversations you&apos;ll have with SAM. Probably at 2am.
           </p>
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div data-reveal-stagger className="grid sm:grid-cols-2 gap-5">
             {scenarios.map((s) => (
               <div
                 key={s.situation}
-                className="rounded-2xl bg-[#10121e] border border-sky-400/10 p-6 hover:border-sky-400/20 transition-all"
+                className="lift rounded-2xl bg-[#10121e] border border-sky-400/10 p-6 hover:border-sky-400/20"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-2xl">{s.emoji}</span>
@@ -208,7 +208,7 @@ export default function SAMGenZ() {
         {/* ═══════════════════════════════════════════
             BOLD STATEMENT
             ═══════════════════════════════════════════ */}
-        <div className="rounded-2xl bg-gradient-to-r from-violet-400/5 via-sky-400/5 to-emerald-400/5 border border-violet-400/15 p-8 sm:p-10 mb-16 text-center">
+        <div data-reveal className="rounded-2xl bg-gradient-to-r from-violet-400/5 via-sky-400/5 to-emerald-400/5 border border-violet-400/15 p-8 sm:p-10 mb-16 text-center">
           <p className="text-xl sm:text-2xl font-bold text-foreground/90 mb-3">
             SAM doesn&apos;t judge your lifestyle.{" "}
             <span className="bg-gradient-to-r from-violet-400 to-sky-400 bg-clip-text text-transparent">
@@ -229,7 +229,7 @@ export default function SAMGenZ() {
             Gen Z.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-5">
-            <WaitlistButton product="SAM" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-sky-500 text-white font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(139,92,246,0.25)]">
+            <WaitlistButton product="SAM" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-sky-500 text-white font-semibold hover:opacity-90 press shadow-[0_0_20px_rgba(139,92,246,0.25)]">
               Join Waitlist
               <svg
                 className="w-4 h-4"

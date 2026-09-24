@@ -86,6 +86,7 @@ import SAMGenZ from "@/components/SAMGenZ";
 import MousFeatures from "@/components/MoussFeatures";
 import WaitlistButton from "@/components/WaitlistButton";
 import StatusBadge, { type Status } from "@/components/StatusBadge";
+import { motionDelay } from "@/lib/motion";
 
 /* ─── Component ─── */
 
@@ -97,13 +98,13 @@ export default function DivisionAI() {
           ═══════════════════════════════════════════════════ */}
       <section className="py-24 pb-12 relative bg-hextech overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent-2/8 rounded-full blur-[120px]" />
+          <div className="glow-breathe absolute top-0 left-1/4 w-96 h-96 bg-accent-2/8 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent-3/8 rounded-full blur-[120px]" />
           <div className="absolute top-0 left-[20%] w-px h-full bg-gradient-to-b from-transparent via-accent-2/10 to-transparent" />
           <div className="absolute top-0 left-[80%] w-px h-full bg-gradient-to-b from-transparent via-accent-2/10 to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="enter text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-2/10 text-accent-2 text-xs font-mono mb-4 tracking-wider">
               DIVISION 02
             </div>
@@ -121,7 +122,7 @@ export default function DivisionAI() {
           </div>
 
           {/* Product Directory */}
-          <div className="rounded-2xl bg-surface border border-border p-8 sm:p-10">
+          <div style={motionDelay(120)} className="enter rounded-2xl bg-surface border border-border p-8 sm:p-10">
             <h3 className="text-xl font-bold mb-6 text-center">
               Products Under{" "}
               <span className="text-accent-2">SJA AI</span>
@@ -191,13 +192,13 @@ export default function DivisionAI() {
           ═══════════════════════════════════════════════════ */}
       <section className="py-24 relative bg-datastream overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-2/8 rounded-full blur-[100px]" />
+          <div className="glow-breathe absolute top-0 right-0 w-96 h-96 bg-accent-2/8 rounded-full blur-[100px]" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent-3/8 rounded-full blur-[100px]" />
           <div className="absolute top-0 left-[15%] w-px h-full bg-gradient-to-b from-transparent via-accent-2/12 to-transparent" />
           <div className="absolute top-0 left-[75%] w-px h-full bg-gradient-to-b from-transparent via-accent-3/12 to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
+          <div data-reveal className="text-center mb-10">
             <p className="text-accent-2 text-xs font-mono mb-2 tracking-wider uppercase">
               Product 01
             </p>
@@ -220,11 +221,11 @@ export default function DivisionAI() {
           </div>
 
           {/* Use Cases */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div data-reveal-stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {voiceUseCases.map((useCase) => (
               <div
                 key={useCase.industry}
-                className="rounded-xl bg-surface border border-border p-6 hover:border-accent-2/30 transition-all"
+                className="lift rounded-xl bg-surface border border-border p-6 hover:border-accent-2/30"
               >
                 <div
                   className={`w-12 h-12 rounded-xl ${useCase.bg} flex items-center justify-center mb-4`}
@@ -252,7 +253,7 @@ export default function DivisionAI() {
           </div>
 
           {/* Features */}
-          <div className="rounded-2xl bg-surface border border-border p-8 sm:p-12 mb-12">
+          <div data-reveal className="rounded-2xl bg-surface border border-border p-8 sm:p-12 mb-12">
             <div className="text-center mb-8">
               <h4 className="text-2xl font-bold mb-3">
                 Key <span className="text-accent-2">Features</span>
@@ -261,7 +262,7 @@ export default function DivisionAI() {
                 What&apos;s live in the demo today — and what&apos;s coming next
               </p>
             </div>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div data-reveal-stagger className="flex flex-wrap justify-center gap-4">
               {voiceFeatures.map((feature) => (
                 <div
                   key={feature.name}
@@ -298,7 +299,7 @@ export default function DivisionAI() {
           </div>
 
           {/* Pricing */}
-          <div className="text-center mb-8">
+          <div data-reveal className="text-center mb-8">
             <h4 className="text-xl font-bold mb-2">
               Simple <span className="text-accent-2">Pricing</span>
             </h4>
@@ -306,7 +307,7 @@ export default function DivisionAI() {
               Choose the plan that fits your business
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-4">
+          <div data-reveal-stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-4">
             {voicePricing.map((plan) => (
               <div
                 key={plan.name}
@@ -344,7 +345,7 @@ export default function DivisionAI() {
           </p>
           <div className="text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-3">
-              <WaitlistButton product="MOUS" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold hover:opacity-90 transition-opacity glow-accent">
+              <WaitlistButton product="MOUS" className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-accent-2 to-accent-3 text-white font-semibold hover:opacity-90 press glow-accent">
                 Join Waitlist
                 <svg
                   className="w-4 h-4"
