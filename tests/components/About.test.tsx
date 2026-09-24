@@ -31,7 +31,7 @@ describe("<About />", () => {
   });
 
   it.each([
-    ["7+", "Product Lines"],
+    ["5", "Products"],
     ["AI", "Driven Solutions"],
     ["360°", "Home Integration"],
     ["∞", "Possibilities"],

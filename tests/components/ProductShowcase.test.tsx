@@ -20,16 +20,15 @@ describe("<ProductShowcase />", () => {
     expect(within(card).getByRole("link", { name: "Try Fari" })).toHaveAttribute("href", "https://robotics.sjapathway.com/fari/");
   });
 
-  it.each([
-    ["Atiana", "AI assistant robot", "In Development", "/products/atiana"],
-    ["SAM", "Smart home & security", "Coming 2027", "/divisions/sja-ai"],
-    ["Sueen", "Logistics automation", "Coming 2027", "/products/sueen"],
-  ])("lists %s as coming soon", (name, tagline, status, href) => {
+  it("points to the full lineup instead of repeating the other products", () => {
     render(<ProductShowcase />);
-    const link = screen.getByRole("heading", { name }).closest("a")!;
-    expect(link).toHaveAttribute("href", href);
-    expect(link).toHaveTextContent(tagline);
-    expect(link).toHaveTextContent(status);
+    const link = screen.getByRole("link", { name: /Browse all products/ });
+    expect(link.getAttribute("href")).toMatch(/^\/products\/?$/);
+    // Only MOUS and Fari are showcased on the home page; the rest live on /products/.
+    expect(screen.getAllByRole("heading", { level: 3 }).map((h) => h.textContent)).toEqual(["MOUS", "Fari"]);
+    for (const name of ["SAM", "Atiana", "Sueen"]) {
+      expect(screen.queryByRole("heading", { name })).toBeNull();
+    }
   });
 
   it("offers early access to the first 10 businesses", () => {

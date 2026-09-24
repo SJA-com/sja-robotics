@@ -42,6 +42,12 @@ body {
   }
 }
 
+/* Side-entering reveals (translateX ±28px) and edge glows must never cause sideways scroll.
+   `clip` (not `hidden`) so it doesn't create a scroll container or break position: sticky. */
+main {
+  overflow-x: clip;
+}
+
 .glow-accent {
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.25), 0 0 60px rgba(59, 130, 246, 0.08);
 }
@@ -386,3 +392,155 @@ body {
   .pop-in { animation: reveal-scale 200ms var(--ease-out) backwards; }
   .fade-in { animation: reveal-fade 180ms ease-out backwards; }
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Site background (<SiteBackground />): fixed behind every page.
+   Only transform / opacity animate, on a few large pre-blurred layers
+   (radial gradients, never `filter`). Canvas drawing lives in lib/background.ts.
+   ────────────────────────────────────────────────────────────────────────── */
+
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  /* Static glow + edge vignette underneath the canvases (this is all you see without JS).
+     Kept in the base layer rather than a separate overlay so there's one less full-screen layer to composite. */
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 45%, transparent 55%, rgba(4, 5, 12, 0.5) 100%),
+    radial-gradient(60% 50% at 10% 5%, rgba(52, 50, 195, 0.28), transparent 70%),
+    radial-gradient(50% 45% at 92% 45%, rgba(76, 87, 200, 0.18), transparent 70%),
+    radial-gradient(120% 80% at 50% -10%, #0e1233 0%, transparent 60%),
+    var(--background);
+}
+
+/* Aurora: a 1/12-size canvas scaled up by CSS (smooth bilinear scaling = free blur) */
+.site-bg__aurora {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Static: animating a viewport-sized grid layer costs a full composite every frame */
+.site-bg__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(124, 134, 232, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 134, 232, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 80%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 80%);
+}
+
+.site-bg__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.site-bg__scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 35vh;
+  background: linear-gradient(to bottom, transparent, rgba(124, 134, 232, 0.045) 50%, transparent);
+  transform: translate3d(0, -40vh, 0);
+}
+
+/* Inner pages: calmer */
+.site-bg[data-variant="lite"] .site-bg__grid { opacity: 0.6; }
+
+/* Small screens: fewer layers */
+@media (max-width: 767px) {
+  .site-bg__scan { display: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .site-bg__scan { animation: bg-scan 14s cubic-bezier(0.45, 0, 0.55, 1) infinite; will-change: transform; }
+}
+
+@keyframes bg-scan {
+  0% { transform: translate3d(0, -40vh, 0); }
+  100% { transform: translate3d(0, 110vh, 0); }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Shared section styling (home + products)
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* Eyebrow label above section headings: gold mono caps with a short rule */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #d4a853;
+}
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4a853);
+}
+
+/* Readable brand gradient for highlighted heading words (the old --accent-2 text was too dark) */
+.text-brand {
+  background: linear-gradient(100deg, #a5b0ff 0%, #7c86e8 45%, #e3c56a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hero headline line: slow shimmer across indigo → white → gold */
+.text-shimmer {
+  background: linear-gradient(90deg, #8b95f0 0%, #c7ccff 22%, #e3c56a 45%, #8b95f0 70%, #c7ccff 85%, #8b95f0 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@media (prefers-reduced-motion: no-preference) {
+  /* background-position repaints the text, so step it (~20 paints/s) instead of every frame;
+     the gradient is soft enough that the steps aren't visible */
+  .text-shimmer { animation: text-shimmer 9s steps(180) infinite; }
+}
+@keyframes text-shimmer {
+  from { background-position: 0% 50%; }
+  to { background-position: -200% 50%; }
+}
+
+/* Hairline divider that glows at the centre, used between home sections */
+.section-rule {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(80rem, 92%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(124, 134, 232, 0.35), rgba(212, 168, 83, 0.35), transparent);
+  pointer-events: none;
+}
+
+/* Card surface: translucent so the moving background glows through a little.
+   Deliberately no backdrop-filter: over an animated canvas it would re-blur every frame. */
+.glass {
+  background: linear-gradient(180deg, rgba(20, 24, 50, 0.78), rgba(11, 14, 28, 0.86));
+}
+
+/* Floating chips / illustration bob */
+@media (prefers-reduced-motion: no-preference) {
+  .float-slow { animation: float-slow 7s ease-in-out infinite; }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+}
+

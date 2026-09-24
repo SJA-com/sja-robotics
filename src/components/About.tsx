@@ -1,43 +1,22 @@
+import { allProducts } from "@/data/products";
 export default function About() {
   return (
-    <section id="about" className="py-24 relative bg-neural overflow-hidden">
-      {/* Neural network decorative elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="glow-breathe absolute top-16 right-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-        <div className="glow-breathe absolute bottom-20 left-16 w-48 h-48 bg-accent-2/10 rounded-full blur-3xl" style={{ animationDelay: "-3s" }} />
-        {/* Connecting lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.15]" xmlns="http://www.w3.org/2000/svg">
-          <line x1="10%" y1="20%" x2="30%" y2="40%" stroke="#4C57C8" strokeWidth="1" />
-          <line x1="30%" y1="40%" x2="60%" y2="30%" stroke="#3432C3" strokeWidth="1" />
-          <line x1="60%" y1="30%" x2="85%" y2="55%" stroke="#7C86E8" strokeWidth="1" />
-          <line x1="85%" y1="55%" x2="70%" y2="80%" stroke="#4C57C8" strokeWidth="1" />
-          <line x1="20%" y1="70%" x2="50%" y2="60%" stroke="#3432C3" strokeWidth="1" />
-          <line x1="50%" y1="60%" x2="30%" y2="40%" stroke="#7C86E8" strokeWidth="1" />
-          <circle cx="10%" cy="20%" r="3" fill="#4C57C8" />
-          <circle cx="30%" cy="40%" r="3" fill="#3432C3" />
-          <circle cx="60%" cy="30%" r="3" fill="#7C86E8" />
-          <circle cx="85%" cy="55%" r="3" fill="#4C57C8" />
-          <circle cx="70%" cy="80%" r="3" fill="#3432C3" />
-          <circle cx="20%" cy="70%" r="3" fill="#7C86E8" />
-          <circle cx="50%" cy="60%" r="3" fill="#4C57C8" />
-        </svg>
-      </div>
+    <section id="about" className="py-24 relative scroll-mt-16">
+      <div aria-hidden="true" className="section-rule" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div data-reveal className="max-w-3xl mb-12">
-          <p className="text-accent text-sm font-mono mb-3 tracking-wider uppercase">
-            About Us
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+          <p className="eyebrow mb-4">About Us</p>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
             Building the Future of{" "}
-            <span className="text-accent">Intelligent</span> Living
+            <span className="text-brand">Intelligent</span> Living
           </h2>
         </div>
 
         {/* Content */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           <div data-reveal="left">
-            <blockquote className="border-l-2 border-accent/50 pl-4 text-foreground/60 italic mb-8">
+            <blockquote className="border-l-2 border-[#d4a853]/60 pl-5 text-foreground/75 italic text-lg leading-relaxed mb-8">
               &ldquo;To revolutionize everyday life through intelligent,
               automated solutions that bring convenience, efficiency, and
               innovation to every home and individual. We empower users by
@@ -81,8 +60,8 @@ export default function About() {
         <div data-reveal-stagger className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
             {
-              number: "7+",
-              label: "Product Lines",
+              number: String(allProducts.length),
+              label: "Products",
               icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
             },
             {
@@ -103,10 +82,10 @@ export default function About() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="lift gradient-border rounded-xl p-6 bg-surface hover:bg-surface-2 text-center"
+              className="lift glass gradient-border rounded-xl p-6 text-center"
             >
               <svg
-                className="w-8 h-8 text-accent mb-3 mx-auto"
+                className="w-8 h-8 text-accent-3 mb-3 mx-auto"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -118,10 +97,10 @@ export default function About() {
                   d={stat.icon}
                 />
               </svg>
-              <div className="text-3xl font-bold text-accent mb-1">
+              <div className="text-3xl font-bold text-brand mb-1">
                 {stat.number}
               </div>
-              <div className="text-sm text-foreground/50">{stat.label}</div>
+              <div className="text-sm text-foreground/60">{stat.label}</div>
             </div>
           ))}
         </div>

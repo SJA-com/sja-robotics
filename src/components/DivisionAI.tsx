@@ -190,7 +190,7 @@ export default function DivisionAI() {
       {/* ═══════════════════════════════════════════════════
           PRODUCT 1 — MOUS
           ═══════════════════════════════════════════════════ */}
-      <section className="py-24 relative bg-datastream overflow-hidden">
+      <section id="mous" className="py-24 relative bg-datastream overflow-hidden scroll-mt-16">
         <div className="absolute inset-0 pointer-events-none">
           <div className="glow-breathe absolute top-0 right-0 w-96 h-96 bg-accent-2/8 rounded-full blur-[100px]" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent-3/8 rounded-full blur-[100px]" />
@@ -391,7 +391,7 @@ export default function DivisionAI() {
       {/* ═══════════════════════════════════════════════════
           PRODUCT 3 — SAM
           ═══════════════════════════════════════════════════ */}
-      <section className="py-24 relative bg-neural overflow-hidden">
+      <section id="sam" className="py-24 relative bg-neural overflow-hidden scroll-mt-16">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-16 right-20 w-64 h-64 bg-accent-2/8 rounded-full blur-3xl" />
           <div className="absolute bottom-20 left-16 w-48 h-48 bg-accent-3/8 rounded-full blur-3xl" />

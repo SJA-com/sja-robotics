@@ -1,97 +1,47 @@
 import { describe, expect, it } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import Divisions from "@/components/Divisions";
+import { divisions } from "@/data/products";
 
 function card(name: string) {
-  const h = screen.getByRole("heading", { level: 3, name });
-  // Walk up to the division card (the rounded-2xl container).
-  return h.closest("div.rounded-2xl") as HTMLElement;
+  return screen.getByRole("heading", { level: 3, name }).closest("article") as HTMLElement;
 }
 
 describe("<Divisions />", () => {
   it("is the #divisions anchor target with its heading", () => {
     const { container } = render(<Divisions />);
-    expect(container.querySelector("section")).toHaveAttribute(
-      "id",
-      "divisions"
-    );
+    expect(container.querySelector("section")).toHaveAttribute("id", "divisions");
     expect(screen.getByText("Our Divisions")).toBeInTheDocument();
-    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
-      "Two Specialized Divisions"
-    );
+    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent("Two Specialized Divisions");
   });
 
   it("lists exactly SJA AI and SJA Autonomous (SJA Tech disabled)", () => {
     render(<Divisions />);
-    expect(
-      screen.getAllByRole("heading", { level: 3 }).map((h) => h.textContent)
-    ).toEqual(["SJA AI", "SJA Autonomous"]);
+    expect(screen.getAllByRole("heading", { level: 3 }).map((h) => h.textContent)).toEqual([
+      "SJA AI",
+      "SJA Autonomous",
+    ]);
     expect(screen.queryByText("SJA Tech")).toBeNull();
   });
 
-  it("describes SJA AI with its tagline, product count and explore link", () => {
-    render(<Divisions />);
-    const c = card("SJA AI");
-    expect(within(c).getByText("Artificial Intelligence")).toBeInTheDocument();
-    expect(within(c).getByText("3 Products")).toBeInTheDocument();
-    expect(
-      within(c).getByRole("link", { name: /Explore SJA AI/ })
-    ).toHaveAttribute("href", "/divisions/sja-ai");
-  });
-
-  it("describes SJA Autonomous with its tagline, product count and explore link", () => {
-    render(<Divisions />);
-    const c = card("SJA Autonomous");
-    expect(within(c).getByText("Physical Robots & Drones")).toBeInTheDocument();
-    expect(within(c).getByText("2 Products")).toBeInTheDocument();
-    expect(
-      within(c).getByRole("link", { name: /Explore SJA Autonomous/ })
-    ).toHaveAttribute("href", "/divisions/sja-autonomous");
-  });
-
   it.each([
-    ["SJA AI", "Fari", "COMING SOON", "https://robotics.sjapathway.com/fari/"],
-    ["SJA AI", "MOUS", "COMING SOON", "https://robotics.sjapathway.com/mous/"],
-    ["SJA AI", "SAM", "COMING SOON", "https://robotics.sjapathway.com/sam/"],
-    [
-      "SJA Autonomous",
-      "Atiana Robot",
-      "IN DEVELOPMENT",
-      "https://robotics.sjapathway.com/atiana/",
-    ],
-    [
-      "SJA Autonomous",
-      "Sueen Drone",
-      "IN DEVELOPMENT",
-      "https://robotics.sjapathway.com/sueen/",
-    ],
-  ])("%s features %s (%s) with a demo link", (division, product, badge, demo) => {
+    ["SJA AI", "Artificial Intelligence", "3 Products", "/divisions/sja-ai", "sja-ai"],
+    ["SJA Autonomous", "Physical Robots & Drones", "2 Products", "/divisions/sja-autonomous", "sja-autonomous"],
+  ])("describes %s with its tagline, product count and links", (name, tagline, count, href, id) => {
     render(<Divisions />);
-    const c = card(division);
-    const row = within(c).getByText(product).closest(
-      "div.flex.items-center.justify-between"
-    ) as HTMLElement;
-    expect(row).toBeTruthy();
-    expect(within(row).getByText(badge)).toBeInTheDocument();
-    const demoLink = within(row).getByRole("link", { name: "DEMO" });
-    expect(demoLink).toHaveAttribute("href", demo);
-    expect(demoLink).toHaveAttribute("target", "_blank");
-    expect(demoLink).toHaveAttribute("rel", "noopener noreferrer");
+    const c = card(name);
+    expect(within(c).getByText(tagline)).toBeInTheDocument();
+    expect(within(c).getByRole("link", { name: new RegExp(`Explore ${name}`) })).toHaveAttribute("href", href);
+    const countLink = within(c).getByRole("link", { name: count });
+    expect(countLink.getAttribute("href")).toMatch(new RegExp(`^/products/?#${id}$`));
   });
 
-  it("styles In Development badges amber and Coming Soon badges accent", () => {
+  it("doesn't repeat the product list (that lives on /products/)", () => {
     render(<Divisions />);
-    for (const b of screen.getAllByText("IN DEVELOPMENT")) {
-      expect(b.className).toContain("text-amber-400");
+    for (const p of divisions.flatMap((d) => d.products)) {
+      expect(screen.queryByText(p.name)).toBeNull();
     }
-    for (const b of screen.getAllByText("COMING SOON")) {
-      expect(b.className).toContain("text-accent-2");
-    }
-  });
-
-  it("has 5 demo links and 2 explore links in total", () => {
-    render(<Divisions />);
-    expect(screen.getAllByRole("link", { name: "DEMO" })).toHaveLength(5);
+    expect(screen.queryByRole("link", { name: "DEMO" })).toBeNull();
     expect(screen.getAllByRole("link", { name: /^Explore/ })).toHaveLength(2);
   });
 });

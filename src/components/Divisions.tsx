@@ -1,238 +1,74 @@
 import Link from "next/link";
+import { divisions, productCount } from "@/data/products";
 
-// SJA Tech division — commented out (uncomment when needed)
-// {
-//   name: "SJA Tech",
-//   tagline: "Consumer Electronics",
-//   description:
-//     "Designing and manufacturing next-generation consumer electronics — laptops, smartphones, tablets, and smart devices that seamlessly integrate with the SJA ecosystem.",
-//   productCount: "9 Products",
-//   href: "/divisions/sja-tech",
-//   icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-//   gradient: "from-accent to-accent-2",
-//   accentColor: "text-accent",
-//   borderColor: "border-accent/30",
-//   bgColor: "bg-accent/5",
-//   highlights: [
-//     {
-//       name: "Home Security & Monitoring",
-//       detail: "AI-powered security with voice commands and real-time alerts",
-//       badge: "In Development",
-//     },
-//     {
-//       name: "Voice-Automated Weighing Scale",
-//       detail: "Smart health tracking with voice recognition and AI insights",
-//       badge: "In Development",
-//     },
-//     {
-//       name: "Laptops & Desktops",
-//       detail: "High-performance computing built for the AI era",
-//       badge: "Coming Soon",
-//     },
-//   ],
-// },
+// SJA Tech division is disabled (see src/components/DivisionTech.tsx); add it to
+// src/data/products.ts when it comes back.
 
-const divisions = [
-  {
-    name: "SJA AI",
-    tagline: "Artificial Intelligence",
-    description:
-      "Building AI products — voice agents, personal companions and smart-home intelligence — designed to power every product across SJA Robotics.",
-    productCount: "3 Products",
-    href: "/divisions/sja-ai",
-    icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
-    gradient: "from-accent-2 to-accent-3",
-    accentColor: "text-accent-2",
-    borderColor: "border-accent-2/30",
-    bgColor: "bg-accent-2/5",
-    highlights: [
-      {
-        name: "Fari",
-        detail: "Futuristic Artificial Reasoning Intelligence — personal AI companion",
-        badge: "Coming Soon",
-        demo: "https://robotics.sjapathway.com/fari/",
-      },
-      {
-        name: "MOUS",
-        detail: "AI voice agent platform — deploy in minutes, no coding needed",
-        badge: "Coming Soon",
-        demo: "https://robotics.sjapathway.com/mous/",
-      },
-      {
-        name: "SAM",
-        detail: "Smart Automated Manager — so you don't have to",
-        badge: "Coming Soon",
-        demo: "https://robotics.sjapathway.com/sam/",
-      },
-    ],
-  },
-  {
-    name: "SJA Autonomous",
-    tagline: "Physical Robots & Drones",
-    description:
-      "Engineering autonomous machines that operate in the real world — from household robots and rescue drones to military-grade defense systems built for any environment.",
-    productCount: "2 Products",
-    href: "/divisions/sja-autonomous",
-    icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z",
-    gradient: "from-emerald-400 to-teal-500",
-    accentColor: "text-emerald-400",
-    borderColor: "border-emerald-400/30",
-    bgColor: "bg-emerald-400/5",
-    highlights: [
-      {
-        name: "Atiana Robot",
-        detail: "Flagship autonomous robot for homes, hospitals, and defense",
-        badge: "In Development",
-        demo: "https://robotics.sjapathway.com/atiana/",
-      },
-      {
-        name: "Sueen Drone",
-        detail: "Smart household drone for delivering items around your home",
-        badge: "In Development",
-        demo: "https://robotics.sjapathway.com/sueen/",
-      },
-    ],
-  },
-];
-
+/**
+ * Home-page overview of the divisions. It deliberately doesn't list the products again
+ * (MOUS and Fari are showcased above; the full lineup lives on /products/).
+ */
 export default function Divisions() {
   return (
-    <section id="divisions" className="py-24 relative bg-hextech overflow-hidden">
-      {/* Hexagonal tech background accents */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="glow-breathe absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-2/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/4 right-10 w-48 h-48 bg-accent-3/10 rounded-full blur-3xl" />
-      </div>
+    <section id="divisions" className="py-24 relative scroll-mt-16">
+      <div aria-hidden="true" className="section-rule" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div data-reveal className="text-center mb-16">
-          <p className="text-accent text-sm font-mono mb-3 tracking-wider uppercase">
-            Our Divisions
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Two Specialized{" "}
-            <span className="text-accent">Divisions</span>
+        <div data-reveal className="text-center mb-14">
+          <p className="eyebrow mb-4">Our Divisions</p>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+            Two Specialized <span className="text-brand">Divisions</span>
           </h2>
-          <p className="text-foreground/60 max-w-2xl mx-auto">
+          <p className="text-foreground/65 max-w-2xl mx-auto">
             SJA Robotics operates through focused divisions — each driving
             innovation in their domain while powering the broader ecosystem.
           </p>
         </div>
 
-        <div className="space-y-10">
+        <div data-reveal-stagger className="grid gap-6 lg:grid-cols-2">
           {divisions.map((div) => (
-            <div
-              key={div.name}
-              data-reveal
-              className={`lift rounded-2xl bg-surface border ${div.borderColor} p-8 sm:p-10 hover:border-opacity-60`}
+            <article
+              key={div.id}
+              aria-labelledby={`division-${div.id}`}
+              className={`lift glass relative overflow-hidden rounded-2xl border ${div.tone.border} p-6 sm:p-10 flex flex-col`}
             >
-              <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-                {/* Left — Division info */}
-                <div className="lg:w-1/3 shrink-0">
-                  <div
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${div.gradient} flex items-center justify-center mb-5 opacity-80`}
-                  >
-                    <svg
-                      className="w-7 h-7 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d={div.icon}
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-1">
+              <div
+                aria-hidden="true"
+                className={`absolute -top-16 -right-16 w-56 h-56 rounded-full opacity-25 bg-gradient-to-br ${div.tone.gradient} [mask-image:radial-gradient(closest-side,#000,transparent)]`}
+              />
+              <div className="relative flex items-start gap-5 mb-5">
+                <div
+                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${div.tone.gradient} flex items-center justify-center shrink-0 shadow-lg`}
+                >
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={div.icon} />
+                  </svg>
+                </div>
+                <div>
+                  <h3 id={`division-${div.id}`} className="text-2xl sm:text-3xl font-bold mb-1">
                     {div.name}
                   </h3>
-                  <p className={`${div.accentColor} text-sm font-mono mb-4`}>
-                    {div.tagline}
-                  </p>
-                  <p className="text-foreground/60 text-sm leading-relaxed mb-5">
-                    {div.description}
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <span
-                      className={`rounded-lg ${div.bgColor} border ${div.borderColor} px-3 py-1.5 text-xs font-mono ${div.accentColor}`}
-                    >
-                      {div.productCount}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Right — Featured products + Explore */}
-                <div className="lg:flex-1">
-                  <p className="text-xs font-mono text-foreground/40 uppercase tracking-wider mb-4">
-                    Featured Products
-                  </p>
-                  <div data-reveal-stagger className="space-y-3 mb-6">
-                    {div.highlights.map((product) => (
-                      <div
-                        key={product.name}
-                        className="flex items-center justify-between gap-4 rounded-lg bg-surface-2 border border-border px-5 py-3.5 hover:border-accent/30 transition-colors"
-                      >
-                        <div className="min-w-0">
-                          <div className="text-sm font-semibold text-foreground truncate">
-                            {product.name}
-                          </div>
-                          <p className="text-xs text-foreground/50 truncate">
-                            {product.detail}
-                          </p>
-                        </div>
-                        <div className="flex items-center gap-2 shrink-0">
-                          {product.demo && (
-                            <a
-                              href={product.demo}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={`px-2 py-0.5 rounded-full text-[10px] font-mono tracking-wider border ${
-                                product.badge === "In Development"
-                                  ? "border-amber-400/30 text-amber-400 hover:bg-amber-400/10"
-                                  : "border-accent-2/30 text-accent-2 hover:bg-accent-2/10"
-                              } transition-colors`}
-                            >
-                              DEMO
-                            </a>
-                          )}
-                          <span
-                            className={`px-2 py-0.5 rounded-full text-[10px] font-mono tracking-wider ${
-                              product.badge === "In Development"
-                                ? "bg-amber-400/10 text-amber-400"
-                                : "bg-accent-2/10 text-accent-2"
-                            }`}
-                          >
-                            {product.badge.toUpperCase()}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <Link
-                    href={div.href}
-                    className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r ${div.gradient} text-white font-semibold text-sm hover:opacity-90 press group`}
-                  >
-                    Explore {div.name}
-                    <svg
-                      className="nudge w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </Link>
+                  <p className={`${div.tone.text} text-sm font-mono`}>{div.tagline}</p>
                 </div>
               </div>
-            </div>
+              <p className="relative text-foreground/70 leading-relaxed mb-8 flex-1">{div.description}</p>
+              <div className="relative flex flex-wrap items-center gap-3">
+                <Link
+                  href={div.href}
+                  className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r ${div.tone.gradient} text-white font-semibold text-sm hover:opacity-90 press group`}
+                >
+                  Explore {div.name}
+                  <svg className="nudge w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <Link
+                  href={`/products/#${div.id}`}
+                  className={`inline-flex items-center rounded-lg ${div.tone.bg} border ${div.tone.border} px-4 py-2.5 text-xs font-mono ${div.tone.text} hover:opacity-80 transition-opacity`}
+                >
+                  {productCount(div)}
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
       </div>

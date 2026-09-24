@@ -1,6 +1,7 @@
 import { describe, expect, it, vi, afterEach } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import Footer from "@/components/Footer";
+import { divisions } from "@/data/products";
 
 describe("<Footer />", () => {
   afterEach(() => vi.useRealTimers());
@@ -35,22 +36,23 @@ describe("<Footer />", () => {
     [
       "SJA AI",
       [
-        ["Fari", "/divisions/sja-ai"],
-        ["MOUS", "/divisions/sja-ai"],
-        ["SAM", "/divisions/sja-ai"],
+        ["MOUS", "/divisions/sja-ai/#mous"],
+        ["Fari", "/divisions/sja-ai/#fari"],
+        ["SAM", "/divisions/sja-ai/#sam"],
       ],
     ],
     [
       "SJA Autonomous",
       [
-        ["Atiana Robot", "/divisions/sja-autonomous"],
-        ["Sueen Drone", "/divisions/sja-autonomous"],
+        ["Atiana Robot", "/products/atiana/"],
+        ["Sueen Drone", "/products/sueen/"],
       ],
     ],
     [
       "Company",
       [
         ["About", "/#about"],
+        ["All Products", "/products/"],
         ["Divisions", "/#divisions"],
         ["Careers", "#contact"],
         ["Contact", "#contact"],
@@ -73,9 +75,21 @@ describe("<Footer />", () => {
     expect(link).toHaveAttribute("rel", "noopener noreferrer");
   });
 
+  it("builds its product columns from the shared product data", () => {
+    render(<Footer />);
+    for (const d of divisions) {
+      const column = screen.getByRole("heading", { name: d.name }).parentElement!;
+      expect(within(column).getAllByRole("link").map((a) => a.getAttribute("href"))).toEqual(
+        d.products.map((p) => p.href)
+      );
+    }
+  });
+
   it("does not link to the disabled SJA Tech products", () => {
     const { container } = render(<Footer />);
-    expect(container.querySelector('a[href^="/products/"]')).toBeNull();
+    for (const slug of ["weighing-scale", "smart-bell", "smart-kitchen", "home-security", "health-monitoring"]) {
+      expect(container.querySelector(`a[href*="${slug}"]`)).toBeNull();
+    }
     expect(screen.queryByText("SJA Tech")).toBeNull();
   });
 

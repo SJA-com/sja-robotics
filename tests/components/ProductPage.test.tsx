@@ -82,11 +82,12 @@ describe("<ProductPage />", () => {
     );
   });
 
-  it("has 'Back to Products' and 'Explore All Products' links that return to the home page", () => {
+  it("has 'Back to Products' and 'Explore All Products' links that go to the products page", () => {
     render(<ProductPage {...base} />);
     for (const name of [/Back to Products/, /Explore All Products/]) {
       const href = screen.getByRole("link", { name }).getAttribute("href")!;
-      expect(href).toBe("/#divisions");
+      // next/link drops the trailing slash in tests; the static export adds it back.
+      expect(href).toMatch(/^\/products\/?$/);
     }
   });
 });

@@ -67,25 +67,16 @@ export default function Founder() {
     <section
       id="founder"
       aria-labelledby="founder-title"
-      className="relative py-24 scroll-mt-16 grid-bg overflow-hidden bg-gradient-to-b from-background via-navy/40 to-background"
+      className="relative py-24 scroll-mt-16"
     >
-      {/* Ambient glows */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="glow-breathe absolute -top-24 left-[10%] w-[420px] h-[420px] bg-accent-2/15 rounded-full blur-[110px]" />
-        <div
-          className="glow-breathe absolute bottom-0 right-[5%] w-80 h-80 bg-accent-3/10 rounded-full blur-[100px]"
-          style={{ animationDelay: "-3s" }}
-        />
-        <div className="absolute top-0 left-[8%] w-px h-full bg-gradient-to-b from-transparent via-accent/15 to-transparent" />
-        <div className="absolute top-0 right-[8%] w-px h-full bg-gradient-to-b from-transparent via-accent-2/15 to-transparent" />
-      </div>
+      <div aria-hidden="true" className="section-rule" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div data-reveal className="max-w-3xl mb-14">
-          <p className="text-accent text-sm font-mono mb-3 tracking-wider uppercase">Founder</p>
-          <h2 id="founder-title" className="text-4xl sm:text-5xl font-bold">
-            Meet the <span className="text-accent">Founder</span>
+          <p className="eyebrow mb-4">Founder</p>
+          <h2 id="founder-title" className="text-4xl sm:text-5xl font-bold tracking-tight">
+            Meet the <span className="text-brand">Founder</span>
           </h2>
         </div>
 
@@ -164,7 +155,7 @@ export default function Founder() {
             {/* Quick stats */}
             <div data-reveal-stagger className="grid grid-cols-3 gap-3 mt-8">
               {stats.map((s) => (
-                <div key={s.label} className="lift gradient-border rounded-xl bg-surface/80 p-4 text-center">
+                <div key={s.label} className="lift glass gradient-border rounded-xl p-4 text-center">
                   <div className="text-2xl sm:text-3xl font-bold text-accent-3">{s.value}</div>
                   <div className="text-[11px] sm:text-xs text-foreground/50 mt-1">{s.label}</div>
                 </div>
@@ -176,7 +167,7 @@ export default function Founder() {
 
         {/* Experience + Education */}
         <div className="grid md:grid-cols-2 gap-6">
-          <div data-reveal className="lift rounded-2xl bg-surface/90 border border-border p-6 sm:p-8">
+          <div data-reveal className="lift glass rounded-2xl border border-border p-6 sm:p-8">
             <h3 className="flex items-center gap-3 text-xl font-bold mb-6">
               <span className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/30 flex items-center justify-center" aria-hidden="true">
                 <svg className="w-5 h-5 text-accent-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -202,7 +193,7 @@ export default function Founder() {
             </ol>
           </div>
 
-          <div data-reveal style={motionDelay(100)} className="lift rounded-2xl bg-surface/90 border border-border p-6 sm:p-8">
+          <div data-reveal style={motionDelay(100)} className="lift glass rounded-2xl border border-border p-6 sm:p-8">
             <h3 className="flex items-center gap-3 text-xl font-bold mb-6">
               <span className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/30 flex items-center justify-center" aria-hidden="true">
                 <svg className="w-5 h-5 text-accent-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

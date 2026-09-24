@@ -221,7 +221,7 @@ const pricing = [
 
 export default function Fari() {
   return (
-    <section className="py-24 relative bg-fari overflow-hidden">
+    <section id="fari" className="py-24 relative bg-fari overflow-hidden scroll-mt-16">
       {/* Premium dark background with gold accents */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-amber-500/4 rounded-full blur-[180px]" />

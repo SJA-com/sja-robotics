@@ -1,22 +1,14 @@
-const footerLinks = {
-  // "SJA Tech": [ // Uncomment when needed
-  //   { label: "Smart Scale", href: "/products/weighing-scale" },
-  //   { label: "Smart Bell", href: "/products/smart-bell" },
-  //   { label: "Smart Kitchen", href: "/products/smart-kitchen" },
-  //   { label: "Home Security", href: "/products/home-security" },
-  //   { label: "Health Monitoring", href: "/products/health-monitoring" },
-  // ],
-  "SJA AI": [
-    { label: "Fari", href: "/divisions/sja-ai" },
-    { label: "MOUS", href: "/divisions/sja-ai" },
-    { label: "SAM", href: "/divisions/sja-ai" },
-  ],
-  "SJA Autonomous": [
-    { label: "Atiana Robot", href: "/divisions/sja-autonomous" },
-    { label: "Sueen Drone", href: "/divisions/sja-autonomous" },
-  ],
+import { divisions } from "@/data/products";
+
+// Product columns come from the shared product data so they always match /products/.
+// (SJA Tech is disabled; its links return with it in src/data/products.ts.)
+const footerLinks: Record<string, { label: string; href: string }[]> = {
+  ...Object.fromEntries(
+    divisions.map((d) => [d.name, d.products.map((p) => ({ label: p.name, href: p.href }))])
+  ),
   Company: [
     { label: "About", href: "/#about" },
+    { label: "All Products", href: "/products/" },
     { label: "Divisions", href: "/#divisions" },
     { label: "Careers", href: "#contact" },
     { label: "Contact", href: "#contact" },
@@ -26,7 +18,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer id="contact" className="border-t border-border bg-surface">
+    <footer id="contact" className="relative border-t border-border bg-surface/90">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div data-reveal-stagger className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand */}

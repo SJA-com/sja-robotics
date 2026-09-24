@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 const NAV = [
   { label: "About", href: "/#about" },
   { label: "Founder", href: "/#founder" },
+  { label: "Products", href: "/products/" },
   { label: "Divisions", href: "/#divisions" },
   { label: "AI", href: "/divisions/sja-ai" },
   { label: "Autonomous", href: "/divisions/sja-autonomous" },
@@ -143,6 +144,20 @@ describe("<Navbar /> mobile menu", () => {
     render(<Navbar />);
     fireEvent.click(screen.getByRole("button", { name: "Toggle menu" }));
     expect(screen.getAllByRole("link", { name: "Autonomous" })).toHaveLength(2);
+  });
+});
+
+describe("<Navbar /> products link", () => {
+  it.each(["/", "/products/", "/divisions/sja-ai"])("points at the /products/ page on %s", (path) => {
+    onRoute(path);
+    render(<Navbar />);
+    expect(screen.getByRole("link", { name: "Products" })).toHaveAttribute("href", "/products/");
+  });
+
+  it("sits right after Founder", () => {
+    const { container } = render(<Navbar />);
+    const labels = Array.from(container.querySelectorAll("div.hidden.md\\:flex a")).map((a) => a.textContent);
+    expect(labels.indexOf("Products")).toBe(labels.indexOf("Founder") + 1);
   });
 });
 

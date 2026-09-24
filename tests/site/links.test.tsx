@@ -6,6 +6,7 @@ import type { ComponentType } from "react";
 import { usePathname } from "next/navigation";
 
 import Home from "@/app/page";
+import ProductsIndex from "@/app/products/page";
 import SJAAIPage from "@/app/divisions/sja-ai/page";
 import SJAAutonomousPage from "@/app/divisions/sja-autonomous/page";
 import Atiana from "@/app/products/atiana/page";
@@ -26,6 +27,7 @@ function routeExists(pathname: string) {
 
 const pages: [string, ComponentType][] = [
   ["/", Home],
+  ["/products/", ProductsIndex],
   ["/divisions/sja-ai", SJAAIPage],
   ["/divisions/sja-autonomous", SJAAutonomousPage],
   ["/products/atiana", Atiana],

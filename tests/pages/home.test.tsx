@@ -68,4 +68,34 @@ describe("Home page (/)", () => {
     expect(founder).toHaveTextContent("Meet the Founder");
     expect(container.querySelector('nav a[href="/#founder"]')).toBeTruthy();
   });
+
+  it("doesn't repeat products across sections, and still showcases MOUS and Fari", () => {
+    const { container } = render(<Home />);
+    const main = container.querySelector("main")!;
+    const h3s = Array.from(main.querySelectorAll("h3")).map((h) => h.textContent?.trim());
+    expect(new Set(h3s).size).toBe(h3s.length);
+
+    const products = main.querySelector("#products")!;
+    expect(products.querySelector("#mous-title")).toHaveTextContent("MOUS");
+    expect(products.querySelector("#fari-title")).toHaveTextContent("Fari");
+
+    // The other products appear on /products/, not as cards on the home page.
+    for (const name of ["SAM", "Atiana", "Atiana Robot", "Sueen", "Sueen Drone"]) {
+      expect(h3s).not.toContain(name);
+    }
+    // No product has a demo link in more than one place.
+    const demoHrefs = Array.from(main.querySelectorAll('a[href^="https://robotics.sjapathway.com/"]'))
+      .map((a) => a.getAttribute("href"))
+      .filter((h) => /\/(sam|atiana|sueen)\//.test(h!));
+    expect(demoHrefs).toHaveLength(0);
+  });
+
+  it("links to the /products/ page from the hero, showcase and navbar", () => {
+    const { container } = render(<Home />);
+    const toProducts = Array.from(container.querySelectorAll("a")).filter((a) =>
+      /^\/products\/?$/.test(a.getAttribute("href") ?? "")
+    );
+    expect(toProducts.length).toBeGreaterThanOrEqual(3);
+    expect(container.querySelector('nav a[href="/products/"]')).toHaveTextContent("Products");
+  });
 });

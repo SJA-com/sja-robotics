@@ -43,7 +43,7 @@ export default function ProductPage({
           </div>
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
-              href="/#divisions"
+              href="/products/"
               className="enter group inline-flex items-center gap-2 text-sm text-foreground/50 hover:text-accent transition-colors mb-8"
             >
               <svg
@@ -168,7 +168,7 @@ export default function ProductPage({
         <section className="py-16">
           <div data-reveal className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Link
-              href="/#divisions"
+              href="/products/"
               className="inline-flex px-8 py-3 rounded-lg bg-gradient-to-r from-accent to-accent-2 text-white font-semibold hover:opacity-90 glow-accent press"
             >
               Explore All Products
